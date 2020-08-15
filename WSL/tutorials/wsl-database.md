@@ -19,7 +19,7 @@ ms.locfileid: "86160223"
 ## <a name="prerequisites"></a>前提条件
 
 - [バージョン 2004](ms-settings:windowsupdate)、**ビルド 19041** 以上に更新された Windows 10 を実行している。
-- [Wsl が有効になり、インストールされ、wsl 2 に更新されました](https://docs.microsoft.com/windows/wsl/install-win10)。
+- [WSL が有効になり、インストールされ、WSL 2 に更新されました](https://docs.microsoft.com/windows/wsl/install-win10)。
 - [Linux ディストリビューションがインストールされている](https://docs.microsoft.com/windows/wsl/install-win10#install-your-linux-distribution-of-choice)(例については Ubuntu 18.04)。
 - Ubuntu 18.04 のディストリビューションが[WSL 2 モードで実行](https://docs.microsoft.com/windows/wsl/install-win10#set-your-distribution-version-to-wsl-1-or-wsl-2)されていることを確認します。 (WSL では、v1 モードと v2 モードの両方でディストリビューションを実行できます)。これを確認するには、PowerShell を開き、次のように入力します。`wsl -l -v`
 
