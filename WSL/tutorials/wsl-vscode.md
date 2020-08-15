@@ -90,13 +90,13 @@ VS Code リモートで実行しているときに、[拡張機能] タブを選
 
 Git をインストールするには、「 [Windows Subsystem For Linux で動作するように git を設定する](./wsl-git.md)」を参照してください。
 
-## <a name="install-windows-terminal-optional"></a>Windows ターミナルをインストールする (省略可能)
+## <a name="install-windows-terminal-optional"></a>Windows Terminal をインストールする (省略可能)
 
-新しい Windows ターミナルでは、複数のタブが有効になり (コマンドプロンプト、PowerShell、または複数の Linux ディストリビューションをすばやく切り替えることができます)、カスタムキーバインド (タブを開いたり閉じたりするための独自のショートカットキーを作成する、コピーと貼り付けなど)、絵文字☺、カスタムテーマ (配色、フォントスタイルとサイズ、背景画像、 詳細については、 [Windows ターミナルのドキュメント](https://docs.microsoft.com/windows/terminal)を参照してください。
+新しい Windows Terminal では、複数のタブが有効になり (コマンドプロンプト、PowerShell、または複数の Linux ディストリビューションをすばやく切り替えることができます)、カスタムキーバインド (タブを開いたり閉じたりするための独自のショートカットキーを作成する、コピーと貼り付けなど)、絵文字☺、カスタムテーマ (配色、フォントスタイルとサイズ、背景画像、 詳細については、 [Windows Terminal のドキュメント](https://docs.microsoft.com/windows/terminal)を参照してください。
 
-1. [Microsoft Store で Windows ターミナル](https://www.microsoft.com/store/apps/9n0dx20hk701)を取得します: ストアを介してインストールすると、更新プログラムが自動的に処理されます。
+1. [Microsoft Store で Windows Terminal](https://www.microsoft.com/store/apps/9n0dx20hk701) を取得します: ストアを介してインストールすると、更新プログラムが自動的に処理されます。
 
-2. インストールが完了したら、Windows ターミナルを開き、 **[設定]** を選択して、`profile.json` ファイルによってターミナルをカスタマイズします。
+2. インストールが完了したら、Windows Terminal を開き、 **[設定]** を選択して、`profile.json` ファイルによってターミナルをカスタマイズします。
 
 ## <a name="additional-resources"></a>その他の情報
 
