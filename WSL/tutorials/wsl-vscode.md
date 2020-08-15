@@ -88,7 +88,7 @@ VS Code リモートで実行しているときに、[拡張機能] タブを選
 
 共同作業で開発する場合や、(GitHub のような) オープンソース サイトでプロジェクトをホストする場合のために、VS Code では [Git によるバージョン管理](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support)がサポートされています。 VS Code の [ソース管理] タブでは、すべての変更が追跡され、一般的な Git コマンド (追加、コミット、プッシュ、プル) が UI に組み込まれています。
 
-Git をインストールするには、「 [Windows Subsystem For Linux で動作するように git を設定する](./wsl-git.md)」を参照してください。
+Git をインストールするには、「[Windows Subsystem For Linux で動作するように Git を設定する](./wsl-git.md)」を参照してください。
 
 ## <a name="install-windows-terminal-optional"></a>Windows ターミナルをインストールする (省略可能)
 
