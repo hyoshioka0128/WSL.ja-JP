@@ -36,7 +36,7 @@ WSL ドキュメントに投稿するには、ドキュメント リポジトリ
 
 ## <a name="terminal-or-command-line"></a>ターミナルまたはコマンド ライン
 
-最後に、問題が Windows ターミナル、Windows コンソール、またはコマンドライン UI に関連している場合は、Windows ターミナル リポジトリを使用します: https://github.com/microsoft/terminal
+最後に、問題が Windows Terminal、Windows コンソール、またはコマンドライン UI に関連している場合は、Windows Terminal リポジトリを使用します: https://github.com/microsoft/terminal
 
 ## <a name="common-issues"></a>一般的な問題
 
