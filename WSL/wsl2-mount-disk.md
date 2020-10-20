@@ -1,18 +1,18 @@
 ---
-title: WSL 2 (プレビュー) で linux ディスクのマウントを開始する
+title: WSL 2 (プレビュー) で Linux ディスクのマウントを開始する
 description: WSL 2 でディスクマウントを設定する方法と、そのアクセス方法について説明します。
 keywords: wsl、windows、windowssubsystem、gnu、linux、bash、disk、ext4、filesystem、mount
 ms.date: 06/08/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ea7d7adae42a44b040408575e7345c456f3acac
-ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
+ms.openlocfilehash: 8c67b0f34dcde925bb91979e9153049fdd474db3
+ms.sourcegitcommit: dee2bf22c0c9f5725122a155d2876fcb2b7427d0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91413283"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92211736"
 ---
-# <a name="get-started-mounting-a-linux-disk-in-wsl-2-preview"></a>WSL 2 (プレビュー) で linux ディスクのマウントを開始する
+# <a name="get-started-mounting-a-linux-disk-in-wsl-2-preview"></a>WSL 2 (プレビュー) で Linux ディスクのマウントを開始する
 
 Windows でサポートされていない Linux ディスクフォーマットにアクセスする場合は、WSL 2 を使用してディスクをマウントし、そのコンテンツにアクセスすることができます。
 

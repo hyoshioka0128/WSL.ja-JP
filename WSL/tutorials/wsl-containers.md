@@ -5,14 +5,14 @@ keywords: wsl、windows、windowssubsystem、windows 10、docker、コンテナ�
 ms.date: 08/28/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a1187336341d73f662b7e9f27b19df4fd0e1e73
-ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
+ms.openlocfilehash: cca53f2079e026fbe765ad13cc67722457f83c23
+ms.sourcegitcommit: dee2bf22c0c9f5725122a155d2876fcb2b7427d0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91413333"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92211786"
 ---
-# <a name="get-started-with-docker-remote-containers-on-wsl-2"></a>WSL 2 で Docker リモートコンテナーを使ってみる
+# <a name="get-started-with-docker-remote-containers-on-wsl-2"></a>WSL 2 での Docker リモート コンテナーの概要
 
 このステップバイステップガイドでは、WSL 2 (windows Subsystem for Linux、バージョン 2) を使用して **Docker Desktop For Windows** をセットアップすることで、リモートコンテナーを使用した開発を始めることができます。
 
@@ -28,11 +28,11 @@ Docker コンテナーは仮想マシンに似ていますが、仮想オペレ�
 
 詳細については、Microsoft Learn の [Docker コンテナーの概要](/learn/modules/intro-to-docker-containers/) に関するページを参照してください。
 
-## <a name="prerequisites"></a>[前提条件]
+## <a name="prerequisites"></a>前提条件
 
 - コンピューターで Windows 10 が実行されていること、バージョン2004、**ビルド 18362**以降[に更新さ](ms-settings:windowsupdate)れていることを確認します。
 - [WSL を有効にし、Linux ディストリビューションをインストールして、wsl 2 に更新](../install-win10.md)します。
-- [Linux カーネル更新パッケージをダウンロードしてインストール](/windows/wsl/wsl2-kernel)します。
+- [Linux カーネル更新パッケージをダウンロードしてインストール](../install-win10.md#step-4---download-the-linux-kernel-update-package)します。
 - [Visual Studio Code をインストール](https://code.visualstudio.com/download)します *(省略可能)*。 これにより、リモート Docker コンテナー内でコードおよびデバッグを行い、Linux ディストリビューションに接続する機能など、最適なエクスペリエンスが提供されます。
 - [Windows ターミナルをインストール](/windows/terminal/get-started)します *(省略可能)*。 これにより、同じインターフェイス (Ubuntu、Debian、PowerShell、Azure CLI など) で複数のターミナルをカスタマイズして開く機能など、最適なエクスペリエンスが得られます。
 - Docker [Hub で DOCKER ID にサインアップ](https://hub.docker.com/signup)します *(省略可能)*。
@@ -78,13 +78,13 @@ WSL 2 で Docker を使用してアプリの開発を開始するには、リモ
 
 - [VS Code Remote WSL 拡張機能をインストール](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)します。 この拡張機能を使用すると、VS Code の WSL で実行されている Linux プロジェクトを開くことができます (パスの問題、バイナリの互換性、またはその他の OS 間の課題について心配する必要はありません)。
 
-- [VS Code リモートコンテナー拡張機能をインストール](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)します。 この拡張機能を使用すると、コンテナー内のプロジェクトフォルダーまたはリポジトリを開くことができます。これにより、Visual Studio Code の完全な機能セットを利用して、コンテナー内で開発作業を行うことができます。
+- [VS code Remote-Containers 拡張機能をインストール](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)します。 この拡張機能を使用すると、コンテナー内のプロジェクトフォルダーまたはリポジトリを開くことができます。これにより、Visual Studio Code の完全な機能セットを利用して、コンテナー内で開発作業を行うことができます。
 
-- [VS Code Docker 拡張機能をインストール](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)します。 この拡張機能により、VS Code の内部からコンテナー化アプリケーションをビルド、管理、およびデプロイする機能が追加されます。 (コンテナーを開発環境として実際に使用するには、リモートコンテナー拡張機能が必要です)。
+- [VS Code Docker 拡張機能をインストール](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)します。 この拡張機能により、VS Code の内部からコンテナー化アプリケーションをビルド、管理、およびデプロイする機能が追加されます。 (実際に開発環境としてコンテナーを使用するには、Remote-Container の拡張機能が必要です)。
 
 Docker を使用して、既存のアプリプロジェクトの開発コンテナーを作成しましょう。
 
-1. この例では、Python 開発環境の [Django に関する Hello World](/windows/python/web-frameworks#hello-world-tutorial-for-django) 記事のソースコードを使用して、ドキュメントを設定します。独自のプロジェクトソースコードを使用する場合は、この手順を省略できます。 GitHub から Django web アプリをダウンロードするには、WSL ターミナル (Ubuntu など) を開き、次のように入力します。 `git clone https://github.com/mattwojo/helloworld-django.git`
+1. この例では、Python 開発環境の [Django に関する Hello World](/windows/python/web-frameworks#hello-world-tutorial-for-django) 記事のソースコードを使用して、ドキュメントを設定します。独自のプロジェクトソースコードを使用する場合は、この手順を省略できます。 GitHub から HelloWorld-Django web アプリをダウンロードするには、WSL ターミナル (Ubuntu など) を開き、次のように入力します。 `git clone https://github.com/mattwojo/helloworld-django.git`
 
     > [!NOTE]
     > コードは、ツールを使用しているのと同じファイルシステムに常に格納してください。 これにより、ファイルアクセスのパフォーマンスが向上します。 この例では、Linux ディストリビューション (Ubuntu) を使用して、WSL ファイルシステムにプロジェクトファイルを格納し `\\wsl\` ます。 Windows ファイルシステムにプロジェクトファイルを格納すると、WSL の Linux ツールを使用してこれらのファイルにアクセスするときに、処理が大幅に遅くなります。
