@@ -6,14 +6,19 @@ author: benhillis
 ms.date: 05/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: d7b868f959c62879524dcbdad20509ef35fecfce
-ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
+ms.openlocfilehash: c772185501b009369d7d47752dc792b8f90b482d
+ms.sourcegitcommit: dee2bf22c0c9f5725122a155d2876fcb2b7427d0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91413273"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92211746"
 ---
 # <a name="release-notes-for-windows-subsystem-for-linux"></a>Windows Subsystem for Linux のリリース ノート
+
+## <a name="build-20226"></a>ビルド 20226
+ビルド 20226 の一般的な Windows 情報については、[Windows ブログ](https://blogs.windows.com/windows-insider/2020/09/10/announcing-windows-10-insider-preview-build-20226/)を参照してください。
+
+* LxssManager サービスのクラッシュを修正します。 [GH 5902]
 
 ## <a name="build-20211"></a>ビルド 20211
 ビルド 20211 の一般的な Windows 情報については、[Windows ブログ](https://blogs.windows.com/windows-insider/2020/09/10/announcing-windows-10-insider-preview-build-20211/)を参照してください。
@@ -1360,7 +1365,7 @@ Windows 10 の Creators Update への組み込みが予定されている WSL �
 
 - コンソールが一部の Ctrl + <key> 入力を認識しないという既知のバグがあります。  これには、通常の "c" キーが押されたものとして機能する ctrl-c コマンドが含まれます。
 
-  - 対応策 :代替キーを Ctrl+C にマップします。 たとえば、Ctrl+K を Ctrl+C にマップするには、`stty intr \^k` を実行します。  このマッピングはターミナルごとに行い、*毎回* bash が起動されるたびに実行する必要があります。 ユーザーはオプションを探索し、これを `.bashrc` に含めることができます。
+  - 対応策 :代替キーを Ctrl+C にマップします。 たとえば、Ctrl+K を Ctrl+C にマップするには、`stty intr \^k` を実行します。  このマッピングはターミナルごとに行い、 *毎回* bash が起動されるたびに実行する必要があります。 ユーザーはオプションを探索し、これを `.bashrc` に含めることができます。
 
 ### <a name="fixed"></a>固定
 
@@ -1386,7 +1391,7 @@ Windows 10 の Creators Update への組み込みが予定されている WSL �
 2 つの既知の問題:
 - コンソールが一部の Ctrl + <key> 入力を認識しないという既知のバグがあります。  これには、通常の "c" キーが押されたものとして機能する ctrl-c コマンドが含まれます。
 
-  - 対応策 :代替キーを Ctrl+C にマップします。 たとえば、Ctrl+K を Ctrl+C にマップするには、`stty intr \^k` を実行します。  このマッピングはターミナルごとに行い、*毎回* bash が起動されるたびに実行する必要があります。 ユーザーはオプションを探索し、これを `.bashrc` に含めることができます。
+  - 対応策 :代替キーを Ctrl+C にマップします。 たとえば、Ctrl+K を Ctrl+C にマップするには、`stty intr \^k` を実行します。  このマッピングはターミナルごとに行い、 *毎回* bash が起動されるたびに実行する必要があります。 ユーザーはオプションを探索し、これを `.bashrc` に含めることができます。
 
 - WSL が実行されている間、システム スレッドは CPU コアの 100% を消費します。  根本原因は、内部で対処されて修正されています。
 

@@ -5,22 +5,22 @@ keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, ubuntu
 ms.date: 01/20/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 78d122ce22e3ab4d67339cc6f0d6038502e23dbb
-ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
+ms.openlocfilehash: c3becde51cf16b95f96222a08a2fe7249cd936c1
+ms.sourcegitcommit: dee2bf22c0c9f5725122a155d2876fcb2b7427d0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91413293"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92211756"
 ---
 # <a name="troubleshooting-windows-subsystem-for-linux"></a>Windows Subsystem for Linux のトラブルシューティング
 
-WSL に関連する問題のサポートについては、GitHub リポジトリを参照してください。 https://github.com/Microsoft/wsl/issues
+WSL に関連する問題のサポートについては、[GitHub 上の WSL 製品リポジトリ](https://github.com/Microsoft/wsl/issues)を参照してください。
 
 ## <a name="search-for-any-existing-issues-related-to-your-problem"></a>発生している問題に関連する既存の問題を検索します
 
-技術的な問題については、製品リポジトリを使用します: https://github.com/Microsoft/wsl/issues
+技術的な問題については、[製品リポジトリ](https://github.com/Microsoft/wsl/issues)を使用します。
 
-このドキュメントの内容に関連する問題については、ドキュメント リポジトリを使用します: https://github.com/MicrosoftDocs/wsl/issues
+このドキュメントの内容に関連する問題については、[ドキュメント リポジトリ](https://github.com/MicrosoftDocs/wsl/issues)を使用します。
 
 ## <a name="submit-a-bug-report"></a>バグ報告の送信
 
@@ -28,7 +28,7 @@ WSL の関数または機能に関連するバグについては、製品リポ�
 
 ## <a name="submit-a-feature-request"></a>機能リクエストの送信
 
-WSL の機能または互換性に関連する新しい機能を要求する場合は、製品リポジトリに問題を報告します: https://github.com/Microsoft/wsl/issues
+WSL の機能または互換性に関連する新しい機能をリクエストする場合は、[製品リポジトリに問題を報告します](https://github.com/Microsoft/wsl/issues)。
 
 ## <a name="contribute-to-the-docs"></a>ドキュメントに投稿する
 
@@ -40,34 +40,37 @@ WSL ドキュメントに投稿するには、ドキュメント リポジトリ
 
 ## <a name="common-issues"></a>一般的な問題
 
-### <a name="im-on-windows-10-version-1903-and-i-still-do-not-see-options-for-wsl-2"></a>Windows 10 バージョン 1903 を使用しており、WSL 2 のオプションがまだ表示されません。 
+### <a name="im-on-windows-10-version-1903-and-i-still-do-not-see-options-for-wsl-2"></a>Windows 10 バージョン 1903 を使用しているものの、WSL 2 のオプションがまだ表示されない
 
-これはおそらく、お客様のマシンが WSL 2 のバックポートをまだ取得していないことが原因です。 これの最も簡単な解決方法は、Windows 設定に移動し、[更新プログラムの確認] をクリックして最新の更新プログラムをお客様のシステムにインストールすることです。 バックポート取得の詳細な手順については、[こちら](https://devblogs.microsoft.com/commandline/wsl-2-support-is-coming-to-windows-10-versions-1903-and-1909/#how-do-i-get-it)をご覧ください。 
+これはおそらく、お客様のマシンが WSL 2 のバックポートをまだ取得していないことが原因です。 これの最も簡単な解決方法は、Windows 設定に移動し、[更新プログラムの確認] をクリックして最新の更新プログラムをお客様のシステムにインストールすることです。 [バックポート取得の詳細な手順](https://devblogs.microsoft.com/commandline/wsl-2-support-is-coming-to-windows-10-versions-1903-and-1909/#how-do-i-get-it)をご覧ください。
 
-[更新プログラムの確認] を押しても更新プログラムが届かない場合は、[このリンクに従って](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4566116)手動で KB KB4566116 をインストールすることができます。  
+[更新プログラムの確認] を押しても更新プログラムが届かない場合は、[手動で KB4566116 をインストール](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4566116)することができます。  
 
 ### <a name="error-0x1bc-when-wsl---set-default-version-2"></a>エラー: 0x1bc (`wsl --set-default-version 2` の場合)
+
 これは、[表示言語] または [システム ロケール] の設定が英語ではない場合に発生する可能性があります。
-```
+
+```powershell
 wsl --set-default-version 2
 Error: 0x1bc
 For information on key differences with WSL 2 please visit https://aka.ms/wsl2
 ```
 
 `0x1bc` の実際のエラーは次のとおりです。
-```
+
+```powershell
 WSL 2 requires an update to its kernel component. For information please visit https://aka.ms/wsl2kernel
 ```
 
 詳細については、問題 [5749](https://github.com/microsoft/WSL/issues/5749) を参照してください。
 
-
 ### <a name="cannot-access-wsl-files-from-windows"></a>Windows から WSL ファイルにアクセスできない
+
 9P プロトコル ファイル サーバーは、Linux 側のサービスを提供して、Windows が Linux ファイル システムにアクセスできるようにします。 Windows で `\\wsl$` を使用して WSL にアクセスできない場合は、9P が正常に開始されなかった可能性があります。
 
-これを確認するには、`dmesg |grep 9p` によってスタートアップ ログをチェックして、エラーを表示します。 正常な出力は次のようになります。 
+これを確認するには、`dmesg |grep 9p` によってスタートアップ ログをチェックして、エラーを表示します。 正常な出力は次のようになります。
 
-```
+```bash
 [    0.363323] 9p: Installing v9fs 9p2000 file system support
 [    0.363336] FS-Cache: Netfs '9p' registered for caching
 [    0.398989] 9pnet: Installing 9P2000 support
@@ -75,7 +78,8 @@ WSL 2 requires an update to its kernel component. For information please visit h
 
 この問題の詳細については、[この Github スレッド](https://github.com/microsoft/wsl/issues/5307)を参照してください。
 
-### <a name="cant-start-wsl-2-distro-and-only-see-wsl-2-in-output"></a>WSL 2 ディストリビューションを開始できず、出力で 'WSL 2' のみが表示される
+### <a name="cant-start-wsl-2-distribution-and-only-see-wsl-2-in-output"></a>WSL 2 ディストリビューションを開始できず、出力で 'WSL 2' のみが表示される
+
 表示言語が英語でない場合は、切り捨てられたエラー テキストが表示される可能性があります。
 
 ```powershell
@@ -85,17 +89,49 @@ WSL 2
 
 この問題を解決するには、`https://aka.ms/wsl2kernel` にアクセスし、そのドキュメント ページの指示に従って手動でカーネルをインストールしてください。 
 
-### <a name="please-enable-the-virtual-machine-platform-windows-feature-and-ensure-virtualization-is-enabled-in-the-bios"></a>仮想マシン プラットフォームの Windows 機能を有効にし、BIOS で仮想化が有効になっていることを確認してください。
+### <a name="command-not-found-when-executing-windows-exe-in-linux"></a>Linux で Windows の .exe を実行すると、`command not found` と表示される
 
-1. [Hyper-V のシステム要件](/windows-server/virtualization/hyper-v/system-requirements-for-hyper-v-on-windows#:~:text=on%20Windows%20Server.-,General%20requirements,the%20processor%20must%20have%20SLAT.)を確認
-2. マシンが VM の場合は、[入れ子になった仮想化](./wsl2-faq.md#can-i-run-wsl-2-in-a-virtual-machine)を手動で有効にしてください。 管理者で Powershell を起動し、次を実行します。 
+ユーザーは、notepad.exe などの Windows の実行可能ファイルを Linux から直接実行できます。 場合によっては、次のように "command not found" と表示されることがあります。 
 
-```powershell
-Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true
+```Bash
+$ notepad.exe
+-bash: notepad.exe: command not found
 ```
 
-3. 仮想化を有効にする方法については、お使いの PC の製造元のガイドラインに従ってください。 一般に、これらの機能が CPU で確実に有効になるようにするには、システム BIOS の使用が必要になる場合があります。 
-4. `Virtual Machine Platform` のオプションのコンポーネントを有効にしたら、コンピューターを再起動してください。 
+$PATH に Win32 パスがないと、相互運用によって .exe が検出されません。
+これを確認するには、Linux で `echo $PATH` を実行します。 出力に Win32 パス (たとえば、/mnt/c/Windows) が表示されるはずです。
+Windows パスが表示されない場合は、Linux シェルによって PATH が上書きされている可能性があります。 
+
+次に、Debian 上で /etc/profile が原因でこの問題が起こった例を示します。
+
+```Bash
+if [ "`id -u`" -eq 0 ]; then
+  PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+else
+  PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
+fi
+```
+
+Debian での正しい方法は、上記の行を削除することです。
+以下に示すように、割り当て時に $PATH を追加することもできますが、これは WSL と VSCode に関連する[その他の問題](https://salsa.debian.org/debian/WSL/-/commit/7611edba482fd0b3f67143aa0fc1e2cc1d4100a6)につながります。
+
+詳細については、問題 [5296](https://github.com/microsoft/WSL/issues/5296) と問題 [5779](https://github.com/microsoft/WSL/issues/5779) を参照してください。
+
+### <a name="please-enable-the-virtual-machine-platform-windows-feature-and-ensure-virtualization-is-enabled-in-the-bios"></a>仮想マシン プラットフォームの Windows 機能を有効にし、BIOS で仮想化が有効になっていることを確認してください
+
+仮想マシン プラットフォームの Windows 機能を有効にし、BIOS で仮想化が有効になっていることを確認してください。
+
+1. [Hyper-V のシステム要件](/windows-server/virtualization/hyper-v/system-requirements-for-hyper-v-on-windows#:~:text=on%20Windows%20Server.-,General%20requirements,the%20processor%20must%20have%20SLAT.)を確認
+
+2. マシンが VM の場合は、[入れ子になった仮想化](./wsl2-faq.md#can-i-run-wsl-2-in-a-virtual-machine)を手動で有効にしてください。 管理者で Powershell を起動し、次を実行します。
+
+    ```powershell
+    Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true
+    ```
+
+3. 仮想化を有効にする方法については、お使いの PC の製造元のガイドラインに従ってください。 一般に、これらの機能が CPU で確実に有効になるようにするには、システム BIOS の使用が必要になる場合があります。 このプロセスの手順は、マシンによって異なる場合があります。一例として、Bleeping Computer による[この記事](https://www.bleepingcomputer.com/tutorials/how-to-enable-cpu-virtualization-in-your-computer-bios/)を参照してください。
+
+4. `Virtual Machine Platform` のオプションのコンポーネントを有効にしたら、コンピューターを再起動してください。
 
 ### <a name="bash-loses-network-connectivity-once-connected-to-a-vpn"></a>VPN に接続されると、bash のネットワーク接続が切断される
 
@@ -309,7 +345,7 @@ sudo apt-get install openssh-server
 
 以下のエラーが表示される場合:
 
-```
+```bash
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -318,7 +354,7 @@ Permissions 0777 for '/home/artur/.ssh/private-key.pem' are too open.
 
 これを修正するには、```/etc/wsl.conf``` ファイルに以下を追加します。
 
-```
+```bash
 [automount]
 enabled = true
 options = metadata,uid=1000,gid=1000,umask=0022

@@ -1,17 +1,17 @@
 ---
 title: WSL 2 と WSL 1 の比較
-description: Linux 用 Windows サブシステムのバージョン 1 とバージョン 2 を比較します。 WSL 2 の新機能について説明します。これには、実際の Linux カーネル、速度の向上、システム コールの完全な互換性が含まれます。 複数のオペレーティング ファイル システムをまたいでファイルを格納している場合は、WSL 1 の方が適しています。 WSL 2 の仮想ハードウェア ディスク (VHD) のサイズは拡張できます。
-keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, gnu, linux, ubuntu, debian, suse, windows 10, UX の変更, WSL 2, linux カーネル, ネットワーク アプリケーション, localhost, IPv6, 仮想ハードウェア ディスク, VHD, VHD の制限, VHD エラー
+description: Linux 用 Windows サブシステムのバージョン 1 とバージョン 2 を比較します。 WSL 2 の新機能について説明します。これには、実際の Linux カーネル、速度の向上、システム コールの完全な互換性が含まれます。 複数のオペレーティング ファイル システムをまたいでファイルを格納している場合は、WSL 1 の方が適しています。 WSL 2 の仮想ハード ディスク (VHD) のサイズは拡張できます。
+keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, gnu, linux, ubuntu, debian, suse, windows 10, UX の変更, WSL 2, linux カーネル, ネットワーク アプリケーション, localhost, IPv6, 仮想ハード ディスク, VHD, VHD の制限, VHD エラー
 ms.date: 09/15/2020
 ms.topic: conceptual
 ms.localizationpriority: high
 ms.custom: contperfq1
-ms.openlocfilehash: 5aa37c632fe1e02680bdef307a5923d05dfb3f60
-ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
+ms.openlocfilehash: ce68a19da519ddae5dd562c75c9ba2bac3659190
+ms.sourcegitcommit: dee2bf22c0c9f5725122a155d2876fcb2b7427d0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91413123"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92211766"
 ---
 # <a name="comparing-wsl-1-and-wsl-2"></a>WSL 1 と WSL 2 の比較
 
@@ -51,7 +51,7 @@ Linux 用 Windows サブシステムを WSL 1 から WSL 2 に更新する際の
 
 Linux ルート ファイル システムには、エクスプローラーなどの Windows アプリやツールを使用してアクセスできます。 Linux ディストリビューション (Ubuntu など) を開いてみてください。また、次のコマンドを入力して、Linux ホーム ディレクトリにいることを確認してください: `cd ~`。 次に、以下を入力して、エクスプローラーで Linux ファイル システムを開きます " *(末尾のピリオドを忘れないでください)* ": `explorer.exe .`
 
-WSL 2 は、Windows 10 (バージョン 1903、ビルド 18362 以上) でのみ使用できます。 Windows のバージョンを確認するには **Windows ロゴ キー + R** キーを押します。次に「**winver**」と入力し、 **[OK]** を選択します (または、Windows コマンド プロンプトで `ver` コマンドを入力します)。 [最新の Windows バージョンに更新する](ms-settings:windowsupdate)必要がある場合があります。 18362 より前のビルドでは、WSL はまったくサポートされていません。
+WSL 2 は、Windows 10 (バージョン 1903、ビルド 18362 以上) でのみ使用できます。 Windows のバージョンを確認するには **Windows ロゴ キー + R** キーを押します。次に「 **winver** 」と入力し、 **[OK]** を選択します (または、Windows コマンド プロンプトで `ver` コマンドを入力します)。 [最新の Windows バージョンに更新する](ms-settings:windowsupdate)必要がある場合があります。 18362 より前のビルドでは、WSL はまったくサポートされていません。
 
 > [!NOTE]
 > WSL 2 は [VMware 15.5.5+](https://blogs.vmware.com/workstation/2020/05/vmware-workstation-now-supports-hyper-v-mode.html) と [VirtualBox 6+](https://www.virtualbox.org/wiki/Changelog-6.0) で動作します。 詳細については、[WSL 2 に関するよくあるご質問](./wsl2-faq.md#will-i-be-able-to-run-wsl-2-and-other-3rd-party-virtualization-tools-such-as-vmware-or-virtualbox)を参照してください。
@@ -160,11 +160,11 @@ netsh interface portproxy add v4tov4 listenport=4000 listenaddress=0.0.0.0 conne
 
 WSL 2 ディストリビューションは、現在、IPv6 のみのアドレスに到達できません。 Microsoft は、この機能の追加に取り組んでいます。
 
-## <a name="expanding-the-size-of-your-wsl-2-virtual-hardware-disk"></a>WSL 2 仮想ハードウェア ディスクのサイズの拡張
+## <a name="expanding-the-size-of-your-wsl-2-virtual-hard-disk"></a>WSL 2 仮想ハード ディスクのサイズの拡張
 
-WSL 2 では、仮想ハードウェア ディスク (VHD) を使用して Linux ファイルを格納します。 場合によっては、その最大サイズに達したときにサイズを拡張する必要があります。
+WSL 2 では、仮想ハード ディスク (VHD) を使用して Linux ファイルを格納します。 WSL 2 では、VHD は Windows ハード ディスク ドライブ上で *.vhdx* ファイルとして表されます。
 
-WSL 2 VHD では、ext4 ファイル システムが使用されます。 この VHD は、ストレージのニーズに合わせて自動的にサイズが変更されます。初期の最大サイズは 256 GB です。 ディストリビューションが 256 GB を超えるサイズになると、ディスク領域が不足していることを示すエラーが表示されます。 このエラーは、VHD サイズを拡張することで修正できます。
+WSL 2 VHD では、ext4 ファイル システムが使用されます。 この VHD は、ストレージのニーズに合わせて自動的にサイズが変更されます。初期の最大サイズは 256 GB です。 Linux ファイルで必要とされる記憶領域がこのサイズを超える場合は、拡張が必要になることがあります。 ディストリビューションが 256 GB を超えるサイズになると、ディスク領域が不足していることを示すエラーが表示されます。 このエラーは、VHD サイズを拡張することで修正できます。
 
 256 GB を超えて VHD の最大サイズを拡張するには、次のようにします。
 
@@ -179,18 +179,54 @@ WSL 2 VHD では、ext4 ファイル システムが使用されます。 この
 
 4. 次のコマンドを実行して、WSL 2 VHD のサイズを変更します。
    - 管理者特権で Windows コマンド プロンプトを開き、次のように入力します。
-      - `diskpart`
-      - `Select vdisk file="<pathToVHD>"`
-      - `expand vdisk maximum="<sizeInMegaBytes>"`
+
+      ```powershell
+      diskpart
+      DISKPART> Select vdisk file="<pathToVHD>"
+      DISKPART> detail vdisk
+      ```
+
+   - **detail** コマンドの出力を確認します。  出力には **[仮想サイズ]** の値が含まれます。  これは現在の最大値です。  この値を MB (メガバイト) に変換します。  サイズ変更した後の新しい値は、この値より大きくなければなりません。  たとえば、 **detail** の出力に **[仮想サイズ:256 GB]** と示されている場合、 **256000** より大きい値を指定する必要があります。  新しいサイズを MB (メガバイト) 単位にしたら、 **diskpart** で次のコマンドを入力します。
+
+      ```powershell
+      DISKPART> expand vdisk maximum=<sizeInMegaBytes>
+      ```
+
+   - **diskpart** を終了します。
+
+      ```powershell
+      DISKPART> exit
+      ```
 
 5. WSL ディストリビューション (たとえば、Ubuntu) を起動します。
 
 6. Linux ディストリビューションのコマンド ラインから次のコマンドを実行して、ファイル システムのサイズを拡張できることを WSL に認識させます。
-    - `sudo mount -t devtmpfs none /dev`
-    - `mount | grep ext4`
-    - `/dev/sdXX` のようなこのエントリの名前をコピーします (X は他の文字を表します)
-    - `sudo resize2fs /dev/sdXX`
-    - 前の手順でコピーした値を使用します。 resize2fs のインストールが必要になる場合もあります: `apt install resize2fs`
+
+   > [!NOTE]
+   > 最初の **mount** コマンドへの応答として、 **/dev: none already mounted on /dev** というメッセージが表示されることがあります。  このメッセージは無視しても問題ありません。
+
+   ```powershell
+      sudo mount -t devtmpfs none /dev
+      mount | grep ext4
+   ```
+
+   `/dev/sdX` のようなこのエントリの名前をコピーします (X は他の文字を表します)。  次の例では、 **X** の値は **b** です。
+
+   ```powershell
+      sudo resize2fs /dev/sdb <sizeInMegabytes>M
+   ```
+
+   > [!NOTE]
+   > **resize2fs** のインストールが必要になる場合があります。  その場合は、`sudo apt install resize2fs` というコマンドを使用してこれをインストールできます。
+
+   出力は次のようになります。
+
+   ```bash
+      resize2fs 1.44.1 (24-Mar-2018)
+      Filesystem at /dev/sdb is mounted on /; on-line resizing required
+      old_desc_blocks = 32, new_desc_blocks = 38
+      The filesystem on /dev/sdb is now 78643200 (4k) blocks long.
+      ```
 
 > [!NOTE]
 > 通常、Windows ツールまたはエディターを使用して、AppData フォルダー内にある WSL 関連ファイルを変更、移動、またはアクセスしないでください。 そうすると、Linux ディストリビューションが破損する可能性があります。

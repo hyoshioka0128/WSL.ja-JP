@@ -5,12 +5,12 @@ keywords: BashOnWindows, bash, wsl, windows, linux 用 windows サブシステ�
 ms.date: 09/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 74a5960609e058b2f2da6160ecd04dc48f666a69
-ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
+ms.openlocfilehash: cf349615dc40f1912fdb4dff3f5593627fa246e6
+ms.sourcegitcommit: dee2bf22c0c9f5725122a155d2876fcb2b7427d0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91413114"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92211776"
 ---
 # <a name="windows-subsystem-for-linux-installation-guide-for-windows-10"></a>Windows 10 用 Windows Subsystem for Linux のインストール ガイド
 
@@ -28,7 +28,7 @@ Windows 上に Linux ディストリビューションをインストールす�
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 ```
 
-ここで、手順 2 に進み、WSL 2 に更新することをお勧めしますが、WSL 1 のみをインストールする場合は、マシンを再起動して、「[手順 6 - 選択した Linux ディストリビューションをインストールする](./install-win10.md#step-6---install-your-linux-distribution-of-choice)」に進むことができます。 WSL 2 に更新するには、マシンの再起動を待ってから、次の手順に進みます。
+ここで、手順 2 に進み、WSL 2 に更新することをお勧めしますが、WSL 1 のみをインストールする場合は、マシンを **再起動** して、「[手順 6 - 選択した Linux ディストリビューションをインストールする](./install-win10.md#step-6---install-your-linux-distribution-of-choice)」に進むことができます。 WSL 2 に更新するには、マシンの **再起動を待ってから** 、次の手順に進みます。
 
 ## <a name="step-2---update-to-wsl-2"></a>手順 2 - WSL 2 に更新する
 
@@ -36,18 +36,18 @@ WSL 2 に更新するには、Windows 10 を実行している必要がありま
 
 ### <a name="requirements"></a>必要条件
 
-- x64 システムの場合:**バージョン 1903** 以降、**ビルド 18362** 以上。
-- ARM64 システムの場合:**バージョン 2004** 以降、**ビルド 19041** 以上。
+- x64 システムの場合: **バージョン 1903** 以降、 **ビルド 18362** 以上。
+- ARM64 システムの場合: **バージョン 2004** 以降、 **ビルド 19041** 以上。
 - 18362 より前のビルドは WSL 2 をサポートしていません。 [Windows 更新アシスタント](https://www.microsoft.com/software-download/windows10)を使用して、お使いのバージョンの Windows を更新します。
 
-バージョンとビルド番号を確認するには、**Windows ロゴ キー + R キー**を押して、「**winver**」と入力し、 **[OK]** を選択します。 (または、Windows コマンド プロンプトで `ver` コマンドを入力します)。 [設定] メニューで、[最新の Windows バージョンに更新](ms-settings:windowsupdate)します。
+バージョンとビルド番号を確認するには、 **Windows ロゴ キー + R キー** を押して、「 **winver** 」と入力し、 **[OK]** を選択します。 (または、Windows コマンド プロンプトで `ver` コマンドを入力します)。 [設定] メニューで、[最新の Windows バージョンに更新](ms-settings:windowsupdate)します。
 
 > [!NOTE]
 > Windows 10 バージョン 1903 または 1909 を実行している場合は、Windows メニューから [設定] を開き、[更新とセキュリティ] に移動して、[更新プログラムのチェック] を選択します。 ビルド番号は、18362.1049+ または 18363.1049+ で、マイナー ビルド番号は .1049 より大きい必要があります。 詳細については、「[Windows 10 バージョン 1903 および 1909 で WSL 2 のサポート開始](https://devblogs.microsoft.com/commandline/wsl-2-support-is-coming-to-windows-10-versions-1903-and-1909/)」を参照してください。 また、[トラブルシューティング手順](./troubleshooting.md#im-on-windows-10-version-1903-and-i-still-do-not-see-options-for-wsl-2)も参照してください。
 
 ## <a name="step-3---enable-virtual-machine-feature"></a>手順 3: 仮想マシンの機能を有効にする
 
-WSL 2 をインストールする前に、"**仮想マシン プラットフォーム**" オプション機能を有効にする必要があります。
+WSL 2 をインストールする前に、" **仮想マシン プラットフォーム** " オプション機能を有効にする必要があります。
 
 管理者として PowerShell を開き、以下を実行します。
 
@@ -55,7 +55,7 @@ WSL 2 をインストールする前に、"**仮想マシン プラットフォ�
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
 
-お使いのマシンを**再起動**して WSL のインストールを完了し、WSL 2 に更新します。
+お使いのマシンを **再起動** して WSL のインストールを完了し、WSL 2 に更新します。
 
 ## <a name="step-4---download-the-linux-kernel-update-package"></a>手順 4 - Linux カーネル更新プログラム パッケージをダウンロードする
 
@@ -74,7 +74,7 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 
 ## <a name="step-5---set-wsl-2-as-your-default-version"></a>手順 5 - WSL 2 を既定のバージョンとして設定する
 
-管理者として PowerShell を開いて次のコマンドを実行し、新しい Linux ディストリビューションをインストールする際の既定のバージョンとして WSL 2 を設定します。
+PowerShell を開いて次のコマンドを実行し、新しい Linux ディストリビューションをインストールする際の既定のバージョンとして WSL 2 を設定します。
 
 ```powershell
 wsl --set-default-version 2
@@ -160,7 +160,7 @@ wsl --set-default-version 2
 
 - **エラー 0x80070003 が発生してインストールに失敗しました**
   - Windows Subsystem for Linux はシステム ドライブ (通常、これは `C:` ドライブ) でのみ実行されます。 ディストリビューションがシステム ドライブに格納されていることを確認します。  
-  - **[設定]** -> **[ストレージ]** -> **[その他のストレージ設定: 新しいコンテンツの保存先を変更する]** 
+  - **[設定]** -> ** システム --> **[記憶域]** -> **その他のストレージ設定: [新しいコンテンツの保存先を変更する]** 
     を開きます。![C: ドライブにアプリをインストールするためのシステム設定の画像](media/AppStorage.png)
 
 - **WslRegisterDistribution failed with error 0x8007019e (エラー0x8007019e で WslRegisterDistribution が失敗しました)**
