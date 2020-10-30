@@ -5,12 +5,12 @@ keywords: wsl、windows、windowssubsystem、gnu、linux、bash、disk、ext4、
 ms.date: 06/08/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c67b0f34dcde925bb91979e9153049fdd474db3
-ms.sourcegitcommit: dee2bf22c0c9f5725122a155d2876fcb2b7427d0
+ms.openlocfilehash: 9ee71d7f76a9fd0e6b20293ef30b0808d56c43a1
+ms.sourcegitcommit: cfb6c254322b8eb9c2c26e19ce970d4c046bc352
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92211736"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035728"
 ---
 # <a name="get-started-mounting-a-linux-disk-in-wsl-2-preview"></a>WSL 2 (プレビュー) で Linux ディスクのマウントを開始する
 
@@ -19,6 +19,7 @@ Windows でサポートされていない Linux ディスクフォーマット�
 このチュートリアルでは、WSL2 にアタッチするディスクとパーティションを識別する手順、それらをマウントする方法、およびそれらへのアクセス方法について説明します。
 
 > [!NOTE]
+> この機能にアクセスするには、Windows 10 ビルド20211以降である必要があります。 [Windows Insider プログラム](https://insider.windows.com/)に参加して、最新のプレビュービルドを取得することができます。
 > WSL 2 にディスクを接続するには、管理者アクセス権が必要です。
 
 ## <a name="identify-the-disk"></a>ディスクを識別する
