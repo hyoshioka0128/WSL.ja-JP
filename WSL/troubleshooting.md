@@ -2,15 +2,15 @@
 title: Windows Subsystem for Linux のトラブルシューティング
 description: Windows Subsystem for Linux で Linux を実行しているときに発生する一般的なエラーと問題について詳しく説明します。
 keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, ubuntu
-ms.date: 01/20/2020
+ms.date: 09/28/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: c3becde51cf16b95f96222a08a2fe7249cd936c1
-ms.sourcegitcommit: dee2bf22c0c9f5725122a155d2876fcb2b7427d0
+ms.openlocfilehash: f7fdc6243e6cd5156bfae23fd7a1d61514449cf5
+ms.sourcegitcommit: 609850fadd20687636b8486264e87af47c538111
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92211756"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92444795"
 ---
 # <a name="troubleshooting-windows-subsystem-for-linux"></a>Windows Subsystem for Linux のトラブルシューティング
 
@@ -117,7 +117,7 @@ Debian での正しい方法は、上記の行を削除することです。
 
 詳細については、問題 [5296](https://github.com/microsoft/WSL/issues/5296) と問題 [5779](https://github.com/microsoft/WSL/issues/5779) を参照してください。
 
-### <a name="please-enable-the-virtual-machine-platform-windows-feature-and-ensure-virtualization-is-enabled-in-the-bios"></a>仮想マシン プラットフォームの Windows 機能を有効にし、BIOS で仮想化が有効になっていることを確認してください
+### <a name="error-0x80370102-the-virtual-machine-could-not-be-started-because-a-required-feature-is-not-installed"></a>"Error:0x80370102 The virtual machine could not be started because a required feature is not installed." (エラー: 0x80370102 必要な機能がインストールされていないため、仮想マシンを起動できませんでした。)
 
 仮想マシン プラットフォームの Windows 機能を有効にし、BIOS で仮想化が有効になっていることを確認してください。
 
@@ -361,3 +361,14 @@ options = metadata,uid=1000,gid=1000,umask=0022
 ```
 
 このコマンドを追加すると、メタデータが組み込まれ、WSL から見た Windows ファイルに対するファイルのアクセス許可が変更されることにご注意ください。 詳細については、[ファイル システムのアクセス許可](./file-permissions.md)を参照してください。
+
+### <a name="running-windows-commands-fails-inside-a-distribution"></a>ディストリビューション内で Windows コマンドを実行できない
+
+[Microsoft Store で入手できる](install-win10.md#step-6---install-your-linux-distribution-of-choice)一部のディストリビューションにはまだ完全な互換性がなく、すぐに[ターミナル](https://en.wikipedia.org/wiki/Linux_console)で Windows コマンドを実行することができません。 `powershell.exe /c start .` や他の Windows コマンドを実行して、エラー `-bash: powershell.exe: command not found` が発生した場合は、次の手順に従って解決できます。
+
+1. WSL ディストリビューション内で `echo $PATH` を実行します。  
+   `/mnt/c/Windows/system32` が含まれていない場合は、何かによって標準の PATH 変数が再定義されています。
+2. `cat /etc/profile` を使用してプロファイル設定を確認します。  
+   PATH 変数の割り当てが含まれている場合は、ファイルを編集し、 **#** 文字を使って PATH の割り当てブロックをコメントアウトします。
+3. wsl.conf が存在するかどうかをチェックし (`cat /etc/wsl.conf`)、`appendWindowsPath=false` が含まれていないことを確認します。含まれていた場合はコメントアウトします。
+4. cmd、PowerShell のどちらかで、`wsl -t ` に続けてディストリビューション名を入力するか、`wsl --shutdown` を実行して、ディストリビューションを再起動します。

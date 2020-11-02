@@ -1,17 +1,17 @@
 ---
 title: WSL 2 と WSL 1 の比較
-description: Linux 用 Windows サブシステムのバージョン 1 とバージョン 2 を比較します。 WSL 2 の新機能について説明します。これには、実際の Linux カーネル、速度の向上、システム コールの完全な互換性が含まれます。 複数のオペレーティング ファイル システムをまたいでファイルを格納している場合は、WSL 1 の方が適しています。 WSL 2 の仮想ハード ディスク (VHD) のサイズは拡張できます。
-keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, gnu, linux, ubuntu, debian, suse, windows 10, UX の変更, WSL 2, linux カーネル, ネットワーク アプリケーション, localhost, IPv6, 仮想ハード ディスク, VHD, VHD の制限, VHD エラー
-ms.date: 09/15/2020
+description: Linux 用 Windows サブシステムのバージョン 1 とバージョン 2 を比較します。 WSL 2 の新機能について説明します。これには、実際の Linux カーネル、速度の向上、システム コールの完全な互換性が含まれます。 複数のオペレーティング ファイル システムをまたいでファイルを格納している場合は、WSL 1 の方が適しています。 WSL 2 の仮想ハードウェア ディスク (VHD) のサイズは拡張できます。
+keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, gnu, linux, ubuntu, debian, suse, windows 10, UX の変更, WSL 2, linux カーネル, ネットワーク アプリケーション, localhost, IPv6, 仮想ハードウェア ディスク, VHD, VHD の制限, VHD エラー
+ms.date: 09/28/2020
 ms.topic: conceptual
 ms.localizationpriority: high
 ms.custom: contperfq1
-ms.openlocfilehash: ce68a19da519ddae5dd562c75c9ba2bac3659190
-ms.sourcegitcommit: dee2bf22c0c9f5725122a155d2876fcb2b7427d0
+ms.openlocfilehash: 93fdbf87bf588a8b23aa917ea0cab05020e0ea3e
+ms.sourcegitcommit: 609850fadd20687636b8486264e87af47c538111
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92211766"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92444871"
 ---
 # <a name="comparing-wsl-1-and-wsl-2"></a>WSL 1 と WSL 2 の比較
 
@@ -49,7 +49,12 @@ Linux 用 Windows サブシステムを WSL 1 から WSL 2 に更新する際の
 - Linux ファイル システムのルート ディレクトリを使用します: `\\wsl$\Ubuntu-18.04\home\<user name>\Project`
 - Windows ファイル システムのルート ディレクトリではありません: `C:\Users\<user name>\Project`
 
-Linux ルート ファイル システムには、エクスプローラーなどの Windows アプリやツールを使用してアクセスできます。 Linux ディストリビューション (Ubuntu など) を開いてみてください。また、次のコマンドを入力して、Linux ホーム ディレクトリにいることを確認してください: `cd ~`。 次に、以下を入力して、エクスプローラーで Linux ファイル システムを開きます " *(末尾のピリオドを忘れないでください)* ": `explorer.exe .`
+現在実行中のすべてのディストリビューション (`wsl -l`) には、ネットワーク接続経由でアクセスできます。 アクセスするには、コマンド \[WIN+R\] (キーボード ショートカット) を実行するか、エクスプローラーのアドレス バーに「`\\wsl$`」と入力してそれぞれのディストリビューション名を検索し、そのルート ファイル システムにアクセスします。
+
+また、WSL の Linux [ターミナル](https://en.wikipedia.org/wiki/Linux_console)内で Windows コマンドを使用することもできます。 Linux ディストリビューション (Ubuntu など) を開いてみてください。コマンド `cd ~` を入力して、Linux ホーム ディレクトリにいることを確認してください。 次に、以下を入力して、エクスプローラーで Linux ファイル システムを開きます " *(末尾のピリオドを忘れないでください)* ": `powershell.exe /c start .`
+
+> [!IMPORTANT]
+> エラー **-bash: powershell.exe: command not found** が発生した場合は、[WSL トラブルシューティング ページ](troubleshooting.md#running-windows-commands-fails-inside-a-distribution)を参照して解決してください。
 
 WSL 2 は、Windows 10 (バージョン 1903、ビルド 18362 以上) でのみ使用できます。 Windows のバージョンを確認するには **Windows ロゴ キー + R** キーを押します。次に「 **winver** 」と入力し、 **[OK]** を選択します (または、Windows コマンド プロンプトで `ver` コマンドを入力します)。 [最新の Windows バージョンに更新する](ms-settings:windowsupdate)必要がある場合があります。 18362 より前のビルドでは、WSL はまったくサポートされていません。
 
