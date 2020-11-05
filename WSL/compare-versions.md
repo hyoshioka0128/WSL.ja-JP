@@ -6,12 +6,12 @@ ms.date: 09/28/2020
 ms.topic: conceptual
 ms.localizationpriority: high
 ms.custom: contperfq1
-ms.openlocfilehash: 93fdbf87bf588a8b23aa917ea0cab05020e0ea3e
-ms.sourcegitcommit: 609850fadd20687636b8486264e87af47c538111
+ms.openlocfilehash: be0cd21b65705e455f29bfd1666ce74078a21baa
+ms.sourcegitcommit: cfb6c254322b8eb9c2c26e19ce970d4c046bc352
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92444871"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035738"
 ---
 # <a name="comparing-wsl-1-and-wsl-2"></a>WSL 1 と WSL 2 の比較
 
@@ -54,7 +54,7 @@ Linux 用 Windows サブシステムを WSL 1 から WSL 2 に更新する際の
 また、WSL の Linux [ターミナル](https://en.wikipedia.org/wiki/Linux_console)内で Windows コマンドを使用することもできます。 Linux ディストリビューション (Ubuntu など) を開いてみてください。コマンド `cd ~` を入力して、Linux ホーム ディレクトリにいることを確認してください。 次に、以下を入力して、エクスプローラーで Linux ファイル システムを開きます " *(末尾のピリオドを忘れないでください)* ": `powershell.exe /c start .`
 
 > [!IMPORTANT]
-> エラー **-bash: powershell.exe: command not found** が発生した場合は、[WSL トラブルシューティング ページ](troubleshooting.md#running-windows-commands-fails-inside-a-distribution)を参照して解決してください。
+> エラー **-bash: powershell.exe: command not found** が発生した場合は、 [WSL トラブルシューティング ページ](troubleshooting.md#running-windows-commands-fails-inside-a-distribution)を参照して解決してください。
 
 WSL 2 は、Windows 10 (バージョン 1903、ビルド 18362 以上) でのみ使用できます。 Windows のバージョンを確認するには **Windows ロゴ キー + R** キーを押します。次に「 **winver** 」と入力し、 **[OK]** を選択します (または、Windows コマンド プロンプトで `ver` コマンドを入力します)。 [最新の Windows バージョンに更新する](ms-settings:windowsupdate)必要がある場合があります。 18362 より前のビルドでは、WSL はまったくサポートされていません。
 
@@ -133,9 +133,10 @@ Linux ディストリビューションが動作する仮想マシンの IP ア�
 ### <a name="accessing-windows-networking-apps-from-linux-host-ip"></a>Linux からの Windows ネットワーク アプリへのアクセス (ホスト IP)
 
 Linux ディストリビューション (つまり、Ubuntu) から Windows 上で実行されているネットワーク アプリ (たとえば、Node.js または SQL Server で実行されるアプリ) にアクセスする場合は、ホスト マシンの IP アドレスを使用する必要があります。 これは一般的なシナリオではありませんが、次の手順に従ってこれを実現できます。
-    - Linux ディストリビューションから次のコマンドを実行して、ホスト マシンの IP アドレスを取得します: `cat /etc/resolv.conf`
-    - 次の語句の後に IP アドレスをコピーします: `nameserver`。
-    - コピーした IP アドレスを使用して、Windows サーバーに接続します。
+
+1. Linux ディストリビューションから次のコマンドを実行して、ホスト マシンの IP アドレスを取得します: `cat /etc/resolv.conf`
+2. 次の語句の後に IP アドレスをコピーします: `nameserver`。
+3. コピーした IP アドレスを使用して、Windows サーバーに接続します。
 
 次の図は、これを実行するために、curl を介して Windows で実行されている Node.js サーバーに接続する例です。
 
