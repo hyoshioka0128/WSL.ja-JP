@@ -5,12 +5,12 @@ keywords: wsl、windows、windowssubsystem、gnu、linux、bash、disk、ext4、
 ms.date: 06/08/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ee71d7f76a9fd0e6b20293ef30b0808d56c43a1
-ms.sourcegitcommit: cfb6c254322b8eb9c2c26e19ce970d4c046bc352
+ms.openlocfilehash: 5d996586baf5e22cc557c27c6f54b2cb1a91dc4b
+ms.sourcegitcommit: cc81ebc749cf84dd58e9f57ee4cc72b5c72be1fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93035728"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93352655"
 ---
 # <a name="get-started-mounting-a-linux-disk-in-wsl-2-preview"></a>WSL 2 (プレビュー) で Linux ディスクのマウントを開始する
 
@@ -169,6 +169,18 @@ wsl --unmount [DiskPath]
 
 > [!NOTE]
 > 1つのディスクのマウント解除に失敗した場合は、を実行して WSL 2 を強制的に終了させることができ `wsl --shutdown` ます。これにより、ディスクが切断されます。
+
+## <a name="mount-a-vhd-in-wsl"></a>WSL に VHD をマウントする
+
+また、を使用して、仮想ハードディスクファイル (VHD) を WSL にマウントすることもでき `wsl --mount` ます。 これを行うには、まず Windows のコマンドを使用して、Windows に VHD をマウントする必要があり [`Mount-VHD`](https://docs.microsoft.com/powershell/module/hyper-v/mount-vhd) ます。 このコマンドは、管理者特権を持つウィンドウで実行してください。 次の例では、このコマンドを使用し、ディスクパスも出力します。 
+
+```powershell
+Write-Output "\.\\PhysicalDrive$((Mount-VHD -Path .\ext4.vhdx -PassThru | Get-Disk).Number)"
+```
+
+上記の出力を使用して、この VHD のディスクパスを取得し、前のセクションの手順に従って WSL にマウントすることができます。
+
+この手法を使用して、他の WSL ディストリビューションの仮想ハードディスクをマウントして操作することもできます。各 WSL 2 ディストリビューションは、という名前の仮想ハードディスクファイルを使用して保存されるためです `ext4.vhdx` 。 既定では、WSL 2 ディストリビューションの Vhd は次のパスに格納されます。 `C:\Users\[user]\AppData\Local\Packages\[distro]\LocalState\[distroPackageName]` これらのシステムファイルにアクセスする場合は注意してください。これはパワーユーザーワークフローです。
 
 ## <a name="limitations"></a>制限事項
 

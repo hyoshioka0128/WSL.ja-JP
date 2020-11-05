@@ -4,12 +4,12 @@ description: Windows Subsystem for Linux で実行されている複数の Linux
 keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, windowssubsystem, ubuntu, wsl.conf, wslconfig
 ms.date: 05/12/2020
 ms.topic: article
-ms.openlocfilehash: 73544d4d8c8eda462194f213a0f093b21ab6d90e
-ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
+ms.openlocfilehash: 2a26795821162e91cb87825483426cd58aab8ac6
+ms.sourcegitcommit: cc81ebc749cf84dd58e9f57ee4cc72b5c72be1fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91413323"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93352665"
 ---
 # <a name="wsl-commands-and-launch-configurations"></a>WSL コマンドと起動構成
 
@@ -280,14 +280,15 @@ Windows ドライブ (DrvFs) にさまざまなマウント オプションを�
 |umask | すべてのファイルとディレクトリに対して除外するアクセス許可の 8 進数のマスク | 000
 |fmask | すべてのファイルに対して除外するアクセス許可の 8 進数のマスク | 000
 |dmask | すべてのディレクトリに対して除外するアクセス許可の 8 進数のマスク | 000
+|metadata | Linux システムのアクセス許可をサポートするためにメタデータを Windows ファイルに追加するかどうか | enabled
 
-**注:** アクセス許可のマスクは、ファイルまたはディレクトリに適用される前に論理 OR 演算によって配置されます。 
+**注:** アクセス許可マスクは、ファイルまたはディレクトリに適用される前に論理 OR 演算によって配置されます。 
 
 #### <a name="network"></a>ネットワーク
 
 セクションのラベル: `[network]`
 
-| key | value | 既定 | 注|
+| key | value | default | notes|
 |:----|:----|:----|:----|
 | generateHosts | boolean | `true` | `true` にすると、`/etc/hosts` を生成するように WSL を設定します。 `hosts` ファイルには、IP アドレスに対応するホスト名の静的マップが含まれています。 |
 | generateResolvConf | boolean | `true` | `true` にすると、`/etc/resolv.conf` を生成するように WSL を設定します。 `resolv.conf` には、指定されたホスト名をその IP アドレスに解決できる DNS リストが含まれています。 | 
@@ -298,7 +299,7 @@ Windows ドライブ (DrvFs) にさまざまなマウント オプションを�
 
 次のオプションは、Insider Build 17713 以降で使用できます。
 
-| key | value | 既定 | 注|
+| key | value | default | notes|
 |:----|:----|:----|:----|
 | enabled | boolean | `true` | このキーの設定により、WSL で Windows プロセスの起動をサポートするかどうかが決まります。 |
 | appendWindowsPath | boolean | `true` | このキーの設定により、WSL が Windows パス要素を $PATH 環境変数に追加するかどうかが決まります。 |
@@ -340,7 +341,7 @@ processors=2 # Makes the WSL 2 VM use two virtual processors
 |:----|:----|:----|:----|
 | kernel | string | Microsoft が構築したカーネルの受信トレイ | カスタム Linux カーネルへの絶対 Windows パス。 |
 | メモリ | size | Windows または 8 GB のメモリ合計の 50% (どちらか少ない方)20175より前のビルドの場合: Windows 上の合計メモリの80% | WSL 2 VM に割り当てるメモリの量。 |
-| 状況 | 数値 | Windows 上の同じプロセッサ数 | WSL 2 VM に割り当てるプロセッサの数。 |
+| 状況 | number | Windows 上の同じプロセッサ数 | WSL 2 VM に割り当てるプロセッサの数。 |
 | localhostForwarding | boolean | `true` | WSL 2 VM のワイルドカードまたは localhost にバインドされたポートが localhost: port を介してホストから接続可能である必要があるかどうかを指定するブール値。 |
 | カーネルコマンドライン | string | 空白 | 追加のカーネルコマンドライン引数。 |
 | swap | size | Windows 上のメモリサイズの25% が最も近い GB に切り上げられます | WSL 2 VM に追加するスワップ領域の大きさ。スワップファイルがない場合は0です。 |
