@@ -2,15 +2,15 @@
 title: WSL 2 (プレビュー) で Linux ディスクのマウントを開始する
 description: WSL 2 でディスクマウントを設定する方法と、そのアクセス方法について説明します。
 keywords: wsl、windows、windowssubsystem、gnu、linux、bash、disk、ext4、filesystem、mount
-ms.date: 06/08/2020
+ms.date: 11/04/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d996586baf5e22cc557c27c6f54b2cb1a91dc4b
-ms.sourcegitcommit: cc81ebc749cf84dd58e9f57ee4cc72b5c72be1fd
+ms.openlocfilehash: 828f796839ff272261e98e88ca54a1af76471958
+ms.sourcegitcommit: 70ce8f7472167b6d8d760d0c54dbaab67904f2a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93352655"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93413687"
 ---
 # <a name="get-started-mounting-a-linux-disk-in-wsl-2-preview"></a>WSL 2 (プレビュー) で Linux ディスクのマウントを開始する
 
@@ -103,7 +103,7 @@ wsl --unmount <DiskPath>
 
 ## <a name="command-line-reference"></a>コマンド ライン リファレンス
 
-### <a name="mouting-a-specific-filesystem"></a>特定のファイルシステムの場合
+### <a name="mounting-a-specific-filesystem"></a>特定のファイルシステムのマウント
 
 既定では、WSL 2 は ext4 としてデバイスをマウントしようとします。 別のファイルシステムを指定するには、次のように実行します。
 
@@ -120,7 +120,7 @@ wsl --mount <Diskpath> -t vfat
 > [!NOTE]
 > WSL2 で使用可能なファイルシステムを一覧表示するには、次のように実行します。 `cat /proc/filesystems`
 
-### <a name="mouting-a-specific-partition"></a>特定のパーティションを指定する
+### <a name="mounting-a-specific-partition"></a>特定のパーティションのマウント
 
 既定では、WSL 2 はディスク全体をマウントしようとします。 特定のパーティションをマウントするには、次のように実行します。
 
