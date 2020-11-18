@@ -5,12 +5,12 @@ keywords: wsl、windows、windowssubsystem、gnu、linux、bash、disk、ext4、
 ms.date: 11/04/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 828f796839ff272261e98e88ca54a1af76471958
-ms.sourcegitcommit: 70ce8f7472167b6d8d760d0c54dbaab67904f2a4
+ms.openlocfilehash: eed435c70cc429f7b787af187da9181b6f03eb8b
+ms.sourcegitcommit: 05e20f93e07518a9fbc8a66bad9b566618637cac
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93413687"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94846250"
 ---
 # <a name="get-started-mounting-a-linux-disk-in-wsl-2-preview"></a>WSL 2 (プレビュー) で Linux ディスクのマウントを開始する
 
@@ -175,7 +175,7 @@ wsl --unmount [DiskPath]
 また、を使用して、仮想ハードディスクファイル (VHD) を WSL にマウントすることもでき `wsl --mount` ます。 これを行うには、まず Windows のコマンドを使用して、Windows に VHD をマウントする必要があり [`Mount-VHD`](https://docs.microsoft.com/powershell/module/hyper-v/mount-vhd) ます。 このコマンドは、管理者特権を持つウィンドウで実行してください。 次の例では、このコマンドを使用し、ディスクパスも出力します。 
 
 ```powershell
-Write-Output "\.\\PhysicalDrive$((Mount-VHD -Path .\ext4.vhdx -PassThru | Get-Disk).Number)"
+Write-Output "\\.\PhysicalDrive$((Mount-VHD -Path .\ext4.vhdx -PassThru | Get-Disk).Number)"
 ```
 
 上記の出力を使用して、この VHD のディスクパスを取得し、前のセクションの手順に従って WSL にマウントすることができます。
