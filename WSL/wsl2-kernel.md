@@ -5,12 +5,12 @@ keywords: wsl, windows, linux カーネル, linux 用 windows サブシステム
 ms.date: 03/12/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 7bf2ef606d0bd23083f323117348aeea87c52b10
-ms.sourcegitcommit: 609850fadd20687636b8486264e87af47c538111
+ms.openlocfilehash: 4ca1bde2f8dc36c85b0c998c01f7f77eafe5f695
+ms.sourcegitcommit: fef5def707ccec57d6f0c5e9c89680754ea06411
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92444808"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95416649"
 ---
 # <a name="updating-the-wsl-2-linux-kernel"></a>WSL 2 Linux カーネルの更新
 
@@ -47,8 +47,9 @@ MSI カーネルをインストールするには、WSL が必要であり、最
 
 このメッセージが表示される理由として、次の 3 つが考えられます。
 
-1. WSL 2 をサポートしていない古いバージョンの Windows を使用しています。 [WSL 2 の要件](https://docs.microsoft.com/windows/wsl/install-win10#update-to-wsl-2)を確認し、WSL 2 を使用するようにアップグレードしてください。 
-2. `Windows Subsystem for Linux` が有効になっていません。 [Linux 用 Windows サブシステムのインストール ガイド](https://docs.microsoft.com/windows/wsl/install-win10)に従ってください。
+1. WSL 2 をサポートしていない古いバージョンの Windows を使用しています。 [WSL 2 の要件](./install-win10.md#step-2---update-to-wsl-2)を確認し、WSL を使用するようにアップグレードしてください。 
+2. 
+2. `Windows Subsystem for Linux` が有効になっていません。 [Linux 用 Windows サブシステムのインストール ガイド](./install-win10.md#step-1---enable-the-windows-subsystem-for-linux)に従ってください。
 3. `Windows Subsystem for Linux` を有効にした後は再起動が必要になります。コンピューターを再起動して、もう一度やり直してください。
 
 ### `WSL 2 requires an update to its kernel component. For information please visit https://aka.ms/wsl2kernel`

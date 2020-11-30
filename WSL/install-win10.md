@@ -5,18 +5,32 @@ keywords: BashOnWindows, bash, wsl, windows, linux 用 windows サブシステ�
 ms.date: 09/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: cf349615dc40f1912fdb4dff3f5593627fa246e6
-ms.sourcegitcommit: dee2bf22c0c9f5725122a155d2876fcb2b7427d0
+ms.openlocfilehash: 4e2ec7fdac4f4a0c9106edeedbaea80e4dc09165
+ms.sourcegitcommit: fef5def707ccec57d6f0c5e9c89680754ea06411
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92211776"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95416659"
 ---
 # <a name="windows-subsystem-for-linux-installation-guide-for-windows-10"></a>Windows 10 用 Windows Subsystem for Linux のインストール ガイド
 
 ## <a name="install-windows-subsystem-for-linux"></a>Linux 用 Windows サブシステムをインストールする
 
 Linux 用 Windows サブシステムには 2 つの異なるバージョンがあり、インストール プロセス中にどちらかを選択します。 全体的なパフォーマンスは WSL 2 の方が優れているため、これを使用することをお勧めします。 システムが WSL 2 をサポートしていない場合、またはクロスシステム ファイル ストレージを必要とする特定の状況がある場合は、WSL 1 を使い続けることができます。 詳細については、「[WSL 2 と WSL 1 の比較](./compare-versions.md)」を参照してください。
+
+> [!NOTE]
+> 新しい `wsl --install` コマンドを使用し、次の手順 1 - 6 をスキップするには、[Windows Insider Program](https://insider.windows.com/getting-started) に参加し、Windows 10 のプレビュー ビルド (OS ビルド 20262 以降) をインストールする必要があります。 
+>
+> プレビュー ビルドがインストールされたら、管理者特権でコマンド プロンプト ウィンドウを開き、`wsl --install` を実行できます。 これにより、オプションの WSL および仮想マシン プラットフォームのコンポーネントが自動的に有効になり、最新の Linux カーネルがダウンロードおよびインストールされ、既定で WSL 2 が設定され、Ubuntu がダウンロードされます (これは `wsl --install -d Debian` で変更できます。たとえば、使用可能な Linux ディストリビューションの一覧を表示するには、「`wsl --list --online`」と入力します)。 コマンドが完了すると、再起動するように求められます。 再起動後、Linux ディストリビューション (既定では Ubuntu) によりインストールが完了し、作業を開始するための Linux コマンド ラインが開きます。 次に、「[手順 7 - 新しいディストリビューションを設定する](./install-win10.md#step-7---set-up-a-new-distribution)」に進むことができます。
+
+### <a name="install-steps"></a>インストール手順
+
+- 管理者特権でコマンド ウィンドウを開きます。
+- `wsl.exe --install` を実行します。
+- コマンドで指示されたら、必要に応じてコンピューターを再起動します。
+- 再起動するとインストールが完了し、WSL の使用を開始する準備が整います。
+
+これにより、Ubuntu ディストリビューションがインストールされます。 また、引数を渡すことによって他のディストリビューションをインストールすることもできます。たとえば、`wsl --install -d Debian` により Debian がインストールされます。 `wsl --list --online` を実行すると、使用可能なディストリビューションの一覧が表示されます。 
 
 ## <a name="step-1---enable-the-windows-subsystem-for-linux"></a>手順 1 - Linux 用 Windows サブシステムを有効にする
 
@@ -28,7 +42,7 @@ Windows 上に Linux ディストリビューションをインストールす�
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 ```
 
-ここで、手順 2 に進み、WSL 2 に更新することをお勧めしますが、WSL 1 のみをインストールする場合は、マシンを **再起動** して、「[手順 6 - 選択した Linux ディストリビューションをインストールする](./install-win10.md#step-6---install-your-linux-distribution-of-choice)」に進むことができます。 WSL 2 に更新するには、マシンの **再起動を待ってから** 、次の手順に進みます。
+ここで、手順 2 に進み、WSL 2 に更新することをお勧めしますが、WSL 1 のみをインストールする場合は、マシンを **再起動** して、「[手順 6 - 選択した Linux ディストリビューションをインストールする](./install-win10.md#step-6---install-your-linux-distribution-of-choice)」に進むことができます。 WSL 2 に更新するには、マシンの **再起動を待ってから**、次の手順に進みます。
 
 ## <a name="step-2---update-to-wsl-2"></a>手順 2 - WSL 2 に更新する
 
@@ -36,18 +50,18 @@ WSL 2 に更新するには、Windows 10 を実行している必要がありま
 
 ### <a name="requirements"></a>必要条件
 
-- x64 システムの場合: **バージョン 1903** 以降、 **ビルド 18362** 以上。
-- ARM64 システムの場合: **バージョン 2004** 以降、 **ビルド 19041** 以上。
+- x64 システムの場合:**バージョン 1903** 以降、**ビルド 18362** 以上。
+- ARM64 システムの場合:**バージョン 2004** 以降、**ビルド 19041** 以上。
 - 18362 より前のビルドは WSL 2 をサポートしていません。 [Windows 更新アシスタント](https://www.microsoft.com/software-download/windows10)を使用して、お使いのバージョンの Windows を更新します。
 
-バージョンとビルド番号を確認するには、 **Windows ロゴ キー + R キー** を押して、「 **winver** 」と入力し、 **[OK]** を選択します。 (または、Windows コマンド プロンプトで `ver` コマンドを入力します)。 [設定] メニューで、[最新の Windows バージョンに更新](ms-settings:windowsupdate)します。
+バージョンとビルド番号を確認するには、**Windows ロゴ キー + R キー** を押して、「**winver**」と入力し、 **[OK]** を選択します。 (または、Windows コマンド プロンプトで `ver` コマンドを入力します)。 [設定] メニューで、[最新の Windows バージョンに更新](ms-settings:windowsupdate)します。
 
 > [!NOTE]
 > Windows 10 バージョン 1903 または 1909 を実行している場合は、Windows メニューから [設定] を開き、[更新とセキュリティ] に移動して、[更新プログラムのチェック] を選択します。 ビルド番号は、18362.1049+ または 18363.1049+ で、マイナー ビルド番号は .1049 より大きい必要があります。 詳細については、「[Windows 10 バージョン 1903 および 1909 で WSL 2 のサポート開始](https://devblogs.microsoft.com/commandline/wsl-2-support-is-coming-to-windows-10-versions-1903-and-1909/)」を参照してください。 また、[トラブルシューティング手順](./troubleshooting.md#im-on-windows-10-version-1903-and-i-still-do-not-see-options-for-wsl-2)も参照してください。
 
 ## <a name="step-3---enable-virtual-machine-feature"></a>手順 3: 仮想マシンの機能を有効にする
 
-WSL 2 をインストールする前に、" **仮想マシン プラットフォーム** " オプション機能を有効にする必要があります。
+WSL 2 をインストールする前に、"**仮想マシン プラットフォーム**" オプション機能を有効にする必要があります。
 
 管理者として PowerShell を開き、以下を実行します。
 

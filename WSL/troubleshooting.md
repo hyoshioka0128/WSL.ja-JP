@@ -5,12 +5,12 @@ keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, ubuntu
 ms.date: 09/28/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: f7fdc6243e6cd5156bfae23fd7a1d61514449cf5
-ms.sourcegitcommit: 609850fadd20687636b8486264e87af47c538111
+ms.openlocfilehash: bb9beb75d09c4ca51ae4764d2e4cc6125a9de923
+ms.sourcegitcommit: 59aff996af4bbac5698573d58bbed6537cfb47ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92444795"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94933287"
 ---
 # <a name="troubleshooting-windows-subsystem-for-linux"></a>Windows Subsystem for Linux のトラブルシューティング
 
@@ -372,3 +372,7 @@ options = metadata,uid=1000,gid=1000,umask=0022
    PATH 変数の割り当てが含まれている場合は、ファイルを編集し、 **#** 文字を使って PATH の割り当てブロックをコメントアウトします。
 3. wsl.conf が存在するかどうかをチェックし (`cat /etc/wsl.conf`)、`appendWindowsPath=false` が含まれていないことを確認します。含まれていた場合はコメントアウトします。
 4. cmd、PowerShell のどちらかで、`wsl -t ` に続けてディストリビューション名を入力するか、`wsl --shutdown` を実行して、ディストリビューションを再起動します。
+
+### <a name="unable-to-boot-after-installing-wsl-2"></a>WSL 2 のインストール後に起動できない
+
+WSL 2 をインストールした後に起動できない問題が発生しています。 Microsoft がこれらの問題を完全に診断したところ、[バッファー サイズの変更](https://github.com/microsoft/WSL/issues/4784#issuecomment-639219363)または[適切なドライバーのインストール](https://github.com/microsoft/WSL/issues/4784#issuecomment-675702244)によってこの問題に対処できることがユーザーにより報告されました。 この問題の最新の更新プログラムについては、こちらの [Github イシュー](https://github.com/microsoft/WSL/issues/4784)を参照してください。 
