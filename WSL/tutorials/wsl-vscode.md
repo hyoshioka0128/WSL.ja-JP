@@ -5,12 +5,12 @@ keywords: wsl、windows、windowssubsystem、gnu、linux、bash、vs code、remo
 ms.date: 05/28/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b39b34644040354df44bf62ec7b878e3f5d667e6
-ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
+ms.openlocfilehash: 528c2b040136518f9c7d04d8572cd0f08bb68385
+ms.sourcegitcommit: d5d3dd8b91e93d46653f9512bceafd8b5340255f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91413343"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96443761"
 ---
 # <a name="get-started-using-visual-studio-code-with-windows-subsystem-for-linux"></a>Windows Subsystem for Linux で Visual Studio Code の使用を開始する
 
@@ -62,7 +62,7 @@ WSL ディストリビューションからプロジェクトを開くには、�
 
 ### <a name="from-vs-code"></a>VS Code から
 
-コマンドパレットを表示するには、ショートカット: VS Code を使用して、VS Code リモートオプションにアクセスすることもできます。 `CTRL+SHIFT+P` 入力すると、[ `VSCODE-REMOTE` VS Code のリモートオプションがすべて表示されます。これにより、リモートセッションでフォルダーを再度開き、開く配布を指定することができます。
+コマンドパレットを表示するには、ショートカット: VS Code を使用して、VS Code リモートオプションにアクセスすることもできます。 `CTRL+SHIFT+P` その後に「」と入力すると `Remote-WSL` VS Code リモートオプションの一覧が表示され、リモートセッションでフォルダーを開き、開く配布を指定することができます。
 
 ![VS Code のコマンドパレット](../media/vscode-remote-command-palette.png)
 
