@@ -5,12 +5,12 @@ keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, ubuntu
 ms.date: 09/28/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: bb9beb75d09c4ca51ae4764d2e4cc6125a9de923
-ms.sourcegitcommit: 59aff996af4bbac5698573d58bbed6537cfb47ef
+ms.openlocfilehash: f4040cbe9faf5d55324b56974dd5677052224dd1
+ms.sourcegitcommit: d5d3dd8b91e93d46653f9512bceafd8b5340255f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94933287"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96443750"
 ---
 # <a name="troubleshooting-windows-subsystem-for-linux"></a>Windows Subsystem for Linux のトラブルシューティング
 
@@ -297,7 +297,7 @@ SSH サーバーに接続しようとしましたが、次のエラーで失敗�
    sudo service ssh status
    ```
 
-   次のチュートリアルに従っていることも確認します。 https://help.ubuntu.com/lts/serverguide/openssh-server.html.en
+   次のチュートリアルに従っていることも確認します。 https://ubuntu.com/server/docs/service-openssh
 
 2. sshd サービスを停止し、デバッグ モードで sshd を開始します。
 

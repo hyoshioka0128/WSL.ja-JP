@@ -5,12 +5,12 @@ keywords: BashOnWindows, bash, wsl, windows, linux 用 windows サブシステ�
 ms.date: 09/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 4e2ec7fdac4f4a0c9106edeedbaea80e4dc09165
-ms.sourcegitcommit: fef5def707ccec57d6f0c5e9c89680754ea06411
+ms.openlocfilehash: 248afa4695cdfdf34dd44dd0692d2cba42c32a0b
+ms.sourcegitcommit: 291c6767954e3d5034ea0099e5c1e1f1ea5b577d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95416659"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96470494"
 ---
 # <a name="windows-subsystem-for-linux-installation-guide-for-windows-10"></a>Windows 10 用 Windows Subsystem for Linux のインストール ガイド
 
@@ -74,10 +74,10 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 ## <a name="step-4---download-the-linux-kernel-update-package"></a>手順 4 - Linux カーネル更新プログラム パッケージをダウンロードする
 
 1. 最新のパッケージをダウンロードします。
-    - [x64 マシン用 WSL2 Linux カーネル更新プログラム パッケージ](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
+    - [x64 マシン用 WSL2 Linux カーネル更新プログラム パッケージ](http://aka.ms/wsl2kernelmsix64)
 
     > [!NOTE]
-    > ARM64 マシンを使用している場合は、代わりに [ARM64 パッケージ](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_arm64.msi)をダウンロードしてください。 使用しているマシンの種類がわからない場合は、コマンド プロンプトまたは PowerShell を開き、「`systeminfo | find "System Type"`」と入力します。
+    > ARM64 マシンを使用している場合は、代わりに [ARM64 パッケージ](http://aka.ms/wsl2kernelmsiarm64)をダウンロードしてください。 使用しているマシンの種類がわからない場合は、コマンド プロンプトまたは PowerShell を開き、「`systeminfo | find "System Type"`」と入力します。
 
 2. 前の手順でダウンロードした更新プログラム パッケージを実行します。 (ダブルクリックして実行します。管理者特権のアクセス許可を求めるメッセージが表示されます。[はい] を選択して、このインストールを承認します。)
 
