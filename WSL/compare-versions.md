@@ -5,13 +5,13 @@ keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, gnu, linux, ubunt
 ms.date: 09/28/2020
 ms.topic: conceptual
 ms.localizationpriority: high
-ms.custom: contperfq1
-ms.openlocfilehash: be0cd21b65705e455f29bfd1666ce74078a21baa
-ms.sourcegitcommit: cfb6c254322b8eb9c2c26e19ce970d4c046bc352
+ms.custom: contperf-fy21q1
+ms.openlocfilehash: ff2c9bc08b4fdfe8862f7d65fc5861fa242efef7
+ms.sourcegitcommit: c92245ab2b763d6a357210a9b4470a0cafd786a6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93035738"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96857599"
 ---
 # <a name="comparing-wsl-1-and-wsl-2"></a>WSL 1 と WSL 2 の比較
 
@@ -54,9 +54,9 @@ Linux 用 Windows サブシステムを WSL 1 から WSL 2 に更新する際の
 また、WSL の Linux [ターミナル](https://en.wikipedia.org/wiki/Linux_console)内で Windows コマンドを使用することもできます。 Linux ディストリビューション (Ubuntu など) を開いてみてください。コマンド `cd ~` を入力して、Linux ホーム ディレクトリにいることを確認してください。 次に、以下を入力して、エクスプローラーで Linux ファイル システムを開きます " *(末尾のピリオドを忘れないでください)* ": `powershell.exe /c start .`
 
 > [!IMPORTANT]
-> エラー **-bash: powershell.exe: command not found** が発生した場合は、 [WSL トラブルシューティング ページ](troubleshooting.md#running-windows-commands-fails-inside-a-distribution)を参照して解決してください。
+> エラー **-bash: powershell.exe: command not found** が発生した場合は、[WSL トラブルシューティング ページ](troubleshooting.md#running-windows-commands-fails-inside-a-distribution)を参照して解決してください。
 
-WSL 2 は、Windows 10 (バージョン 1903、ビルド 18362 以上) でのみ使用できます。 Windows のバージョンを確認するには **Windows ロゴ キー + R** キーを押します。次に「 **winver** 」と入力し、 **[OK]** を選択します (または、Windows コマンド プロンプトで `ver` コマンドを入力します)。 [最新の Windows バージョンに更新する](ms-settings:windowsupdate)必要がある場合があります。 18362 より前のビルドでは、WSL はまったくサポートされていません。
+WSL 2 は、Windows 10 (バージョン 1903、ビルド 18362 以上) でのみ使用できます。 Windows のバージョンを確認するには **Windows ロゴ キー + R** キーを押します。次に「**winver**」と入力し、 **[OK]** を選択します (または、Windows コマンド プロンプトで `ver` コマンドを入力します)。 [最新の Windows バージョンに更新する](ms-settings:windowsupdate)必要がある場合があります。 18362 より前のビルドでは、WSL はまったくサポートされていません。
 
 > [!NOTE]
 > WSL 2 は [VMware 15.5.5+](https://blogs.vmware.com/workstation/2020/05/vmware-workstation-now-supports-hyper-v-mode.html) と [VirtualBox 6+](https://www.virtualbox.org/wiki/Changelog-6.0) で動作します。 詳細については、[WSL 2 に関するよくあるご質問](./wsl2-faq.md#will-i-be-able-to-run-wsl-2-and-other-3rd-party-virtualization-tools-such-as-vmware-or-virtualbox)を参照してください。
@@ -192,7 +192,7 @@ WSL 2 VHD では、ext4 ファイル システムが使用されます。 この
       DISKPART> detail vdisk
       ```
 
-   - **detail** コマンドの出力を確認します。  出力には **[仮想サイズ]** の値が含まれます。  これは現在の最大値です。  この値を MB (メガバイト) に変換します。  サイズ変更した後の新しい値は、この値より大きくなければなりません。  たとえば、 **detail** の出力に **[仮想サイズ:256 GB]** と示されている場合、 **256000** より大きい値を指定する必要があります。  新しいサイズを MB (メガバイト) 単位にしたら、 **diskpart** で次のコマンドを入力します。
+   - **detail** コマンドの出力を確認します。  出力には **[仮想サイズ]** の値が含まれます。  これは現在の最大値です。  この値を MB (メガバイト) に変換します。  サイズ変更した後の新しい値は、この値より大きくなければなりません。  たとえば、**detail** の出力に **[仮想サイズ:256 GB]** と示されている場合、**256000** より大きい値を指定する必要があります。  新しいサイズを MB (メガバイト) 単位にしたら、**diskpart** で次のコマンドを入力します。
 
       ```powershell
       DISKPART> expand vdisk maximum=<sizeInMegaBytes>
@@ -216,7 +216,7 @@ WSL 2 VHD では、ext4 ファイル システムが使用されます。 この
       mount | grep ext4
    ```
 
-   `/dev/sdX` のようなこのエントリの名前をコピーします (X は他の文字を表します)。  次の例では、 **X** の値は **b** です。
+   `/dev/sdX` のようなこのエントリの名前をコピーします (X は他の文字を表します)。  次の例では、**X** の値は **b** です。
 
    ```powershell
       sudo resize2fs /dev/sdb <sizeInMegabytes>M
