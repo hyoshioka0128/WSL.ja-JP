@@ -5,32 +5,60 @@ keywords: BashOnWindows, bash, wsl, windows, linux 用 windows サブシステ�
 ms.date: 09/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 248afa4695cdfdf34dd44dd0692d2cba42c32a0b
-ms.sourcegitcommit: 291c6767954e3d5034ea0099e5c1e1f1ea5b577d
+ms.openlocfilehash: f5cf426ee50bde3c21929add0682e17b707288f9
+ms.sourcegitcommit: 52eb0d4f669954a61e199f9222062d2a519378f5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96470494"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96760870"
 ---
 # <a name="windows-subsystem-for-linux-installation-guide-for-windows-10"></a>Windows 10 用 Windows Subsystem for Linux のインストール ガイド
 
-## <a name="install-windows-subsystem-for-linux"></a>Linux 用 Windows サブシステムをインストールする
+Linux 用 Windows サブシステム (WSL) をインストールするには、次の 2 つのオプションを使用できます。
 
-Linux 用 Windows サブシステムには 2 つの異なるバージョンがあり、インストール プロセス中にどちらかを選択します。 全体的なパフォーマンスは WSL 2 の方が優れているため、これを使用することをお勧めします。 システムが WSL 2 をサポートしていない場合、またはクロスシステム ファイル ストレージを必要とする特定の状況がある場合は、WSL 1 を使い続けることができます。 詳細については、「[WSL 2 と WSL 1 の比較](./compare-versions.md)」を参照してください。
+- **[簡略化されたインストール](#simplified-installation-for-windows-insiders)** " *(プレビュー リリース)* ": `wsl --install`
 
-> [!NOTE]
-> 新しい `wsl --install` コマンドを使用し、次の手順 1 - 6 をスキップするには、[Windows Insider Program](https://insider.windows.com/getting-started) に参加し、Windows 10 のプレビュー ビルド (OS ビルド 20262 以降) をインストールする必要があります。 
->
-> プレビュー ビルドがインストールされたら、管理者特権でコマンド プロンプト ウィンドウを開き、`wsl --install` を実行できます。 これにより、オプションの WSL および仮想マシン プラットフォームのコンポーネントが自動的に有効になり、最新の Linux カーネルがダウンロードおよびインストールされ、既定で WSL 2 が設定され、Ubuntu がダウンロードされます (これは `wsl --install -d Debian` で変更できます。たとえば、使用可能な Linux ディストリビューションの一覧を表示するには、「`wsl --list --online`」と入力します)。 コマンドが完了すると、再起動するように求められます。 再起動後、Linux ディストリビューション (既定では Ubuntu) によりインストールが完了し、作業を開始するための Linux コマンド ラインが開きます。 次に、「[手順 7 - 新しいディストリビューションを設定する](./install-win10.md#step-7---set-up-a-new-distribution)」に進むことができます。
+    簡略化されたインストール コマンド `wsl --install` を使用するには、[Windows Insider Program](https://insider.windows.com/getting-started) に参加し、Windows 10 のプレビュー ビルド(OS ビルド 20262 以降) をインストールする必要がありますが、手動インストールの手順に従う必要がなくなります。 必要な操作は、管理者特権でコマンド ウィンドウを開いて `wsl --install` を実行するだけです。再起動後、WSL を使用する準備が整います。
 
-### <a name="install-steps"></a>インストール手順
+- **[手動インストール](#manual-installation-steps)** :以下に示す 6 つの手順に従います。
 
-- 管理者特権でコマンド ウィンドウを開きます。
-- `wsl.exe --install` を実行します。
-- コマンドで指示されたら、必要に応じてコンピューターを再起動します。
-- 再起動するとインストールが完了し、WSL の使用を開始する準備が整います。
+    WSL の手動インストール手順を以下に示します。これを使用して、任意のバージョンの Windows 10 に Linux をインストールできます。
 
-これにより、Ubuntu ディストリビューションがインストールされます。 また、引数を渡すことによって他のディストリビューションをインストールすることもできます。たとえば、`wsl --install -d Debian` により Debian がインストールされます。 `wsl --list --online` を実行すると、使用可能なディストリビューションの一覧が表示されます。 
+## <a name="simplified-installation-for-windows-insiders"></a>Windows Insider 用の簡略化されたインストール
+
+Linux 用 Windows サブシステムのインストール プロセスは、最新の Windows Insider の Windows 10 プレビュー ビルドで大幅に改善され、以下の手動の手順が 1 つのコマンドに置き換えられています。
+
+簡略化されたインストール コマンド `wsl --install` を使用するには、以下を行う必要があります。
+
+- [Windows Insider Program](https://insider.windows.com/getting-started) に参加する
+- Windows 10 のプレビュー ビルド (OS ビルド 20262 以降) をインストールする。
+- 管理者特権でコマンド ライン ウィンドウを開く
+
+これらの要件を満たしたら、次のように WSL をインストールします。
+
+- 管理者モードで開いたコマンド ラインに次のコマンドを入力します: `wsl.exe --install`
+- マシンを再起動します
+
+新しくインストールした Linux ディストリビューションを初めて起動すると、コンソール ウィンドウが開き、ファイルが圧縮解除されて PC 上に保存されるまで待機するように求められます。 今後のすべての起動には、1 秒もかかりません。
+
+次に、[新しい Linux ディストリビューションのユーザー アカウントとパスワードを作成する](./user-support.md)必要があります。
+
+**お疲れさまでした。これで、Windows オペレーティング システムと完全に統合された Linux ディストリビューションのインストールと設定が正常に完了しました。**
+
+--install コマンドでは、次のアクションが実行されます。
+
+- オプションの WSL および仮想マシン プラットフォームのコンポーネントを有効にする
+- 最新の Linux カーネルをダウンロードしてインストールする
+- WSL 2 を既定値として設定する
+- Linux ディストリビューションをダウンロードしてインストールする " *(再起動が必要になる場合があります)* "
+
+既定では、インストールされる Linux ディストリビューションは Ubuntu になります。 これは `wsl --install -d <Distribution Name>` を使用して変更できます。 " *(`<Distribution Name>` を目的のディストリビューションの名前に置き換えます。)* "`wsl --install -d <Distribution Name>` コマンドを使用して、最初のインストール後に追加の Linux ディストリビューションをマシンに追加することができます。
+
+使用可能な Linux ディストリビューションの一覧を表示するには、「`wsl --list --online`」と入力します。
+
+## <a name="manual-installation-steps"></a>手動インストールの手順
+
+Windows Insider ビルドを使用していない場合は、以下の手順に従って、WSL に必要な機能を手動で有効にする必要があります。
 
 ## <a name="step-1---enable-the-windows-subsystem-for-linux"></a>手順 1 - Linux 用 Windows サブシステムを有効にする
 
@@ -74,10 +102,10 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 ## <a name="step-4---download-the-linux-kernel-update-package"></a>手順 4 - Linux カーネル更新プログラム パッケージをダウンロードする
 
 1. 最新のパッケージをダウンロードします。
-    - [x64 マシン用 WSL2 Linux カーネル更新プログラム パッケージ](http://aka.ms/wsl2kernelmsix64)
+    - [x64 マシン用 WSL2 Linux カーネル更新プログラム パッケージ](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
 
     > [!NOTE]
-    > ARM64 マシンを使用している場合は、代わりに [ARM64 パッケージ](http://aka.ms/wsl2kernelmsiarm64)をダウンロードしてください。 使用しているマシンの種類がわからない場合は、コマンド プロンプトまたは PowerShell を開き、「`systeminfo | find "System Type"`」と入力します。
+    > ARM64 マシンを使用している場合は、代わりに [ARM64 パッケージ](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_arm64.msi)をダウンロードしてください。 使用しているマシンの種類がわからない場合は、コマンド プロンプトまたは PowerShell を開き、「`systeminfo | find "System Type"`」と入力します。
 
 2. 前の手順でダウンロードした更新プログラム パッケージを実行します。 (ダブルクリックして実行します。管理者特権のアクセス許可を求めるメッセージが表示されます。[はい] を選択して、このインストールを承認します。)
 
@@ -125,8 +153,6 @@ wsl --set-default-version 2
 2. ディストリビューションのページで、[入手] を選択します。
 
     ![Microsoft Store での Linux ディストリビューション](media/UbuntuStore.png)
-
-## <a name="step-7---set-up-a-new-distribution"></a>手順 7 - 新しいディストリビューションを設定する
 
 新しくインストールした Linux ディストリビューションを初めて起動すると、コンソール ウィンドウが開き、ファイルが圧縮解除されて PC に格納されるまで 1、2 分待つように求められます。 今後のすべての起動には、1 秒もかかりません。
 
