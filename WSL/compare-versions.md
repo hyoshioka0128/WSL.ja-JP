@@ -6,12 +6,12 @@ ms.date: 09/28/2020
 ms.topic: conceptual
 ms.localizationpriority: high
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: ff2c9bc08b4fdfe8862f7d65fc5861fa242efef7
-ms.sourcegitcommit: c92245ab2b763d6a357210a9b4470a0cafd786a6
+ms.openlocfilehash: 2de208a42d557aa3eca86aae2a86200611ce48bc
+ms.sourcegitcommit: f5b14630947ee9cf3438e9ba502bfbe85ed72cd1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96857599"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97957683"
 ---
 # <a name="comparing-wsl-1-and-wsl-2"></a>WSL 1 と WSL 2 の比較
 
@@ -65,8 +65,8 @@ WSL 2 は、Windows 10 (バージョン 1903、ビルド 18362 以上) でのみ
 
 WSL 2 では、基盤となるアーキテクチャの大きな見直しが行われ、新機能を有効にするために仮想化テクノロジと Linux カーネルが使用されています。 この更新の主な目標は、ファイル システムのパフォーマンスを向上させることと、システム コールの完全な互換性を追加することです。
 
-- [WSL 2 のシステム要件](./install-win10.md#step-2---update-to-wsl-2)
-- [WSL 1 から WSL 2 に更新する](./install-win10.md#step-2---update-to-wsl-2)
+- [WSL 2 のシステム要件](./install-win10.md#step-2--check-requirements-for-running-wsl-2)
+- [WSL 1 から WSL 2 に更新する](./install-win10.md#set-your-distribution-version-to-wsl-1-or-wsl-2)
 - [WSL 2 に関してよく寄せられる質問](./wsl2-faq.md)
 
 ### <a name="wsl-2-architecture"></a>WSL 2 のアーキテクチャ
