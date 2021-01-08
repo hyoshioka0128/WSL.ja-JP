@@ -5,12 +5,12 @@ keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, gnu, linux
 ms.topic: article
 ms.date: 09/15/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 6bfa3a67418e2b5c164f3506d0ee9180df828377
-ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
+ms.openlocfilehash: 1a0e5ec95105af75470ca68b9fa3bad43f6c669c
+ms.sourcegitcommit: f5b14630947ee9cf3438e9ba502bfbe85ed72cd1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91413203"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97957673"
 ---
 # <a name="windows-subsystem-for-linux-documentation"></a>Windows Subsystem for Linux に関するドキュメント
 
@@ -29,7 +29,8 @@ Linux 用 Windows サブシステムを使用すると、開発者は、従来�
 ## <a name="get-started"></a>開始
 
 * [WSL1 をインストールする](install-win10.md)
-* [WSL2 に更新する](install-win10.md#step-2---update-to-wsl-2)
+* [WSL2 の要件を確認する](./install-win10.md#step-2--check-requirements-for-running-wsl-2)
+* [WSL 1 から WSL 2 に更新する](./install-win10.md#set-your-distribution-version-to-wsl-1-or-wsl-2)
 * [Windows Server に Linux をインストールする](install-on-server.md)
 * [新しい Linux ディストリビューション用のユーザー アカウントとパスワードを作成する](user-support.md)
 

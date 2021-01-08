@@ -5,12 +5,12 @@ keywords: wsl, linux 用 windows subsystem, 手動インストール, 手動で�
 ms.date: 09/15/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1894f0bfcb9ede7b05870c99912f30f6d0b7286e
-ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
+ms.openlocfilehash: b94c7eb2f9e70a79f47853dac44badde58667315
+ms.sourcegitcommit: f5b14630947ee9cf3438e9ba502bfbe85ed72cd1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91413252"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97957663"
 ---
 # <a name="manually-download-windows-subsystem-for-linux-distro-packages"></a>Linux 用 Windows サブシステム ディストリビューション パッケージを手動でダウンロードする
 
@@ -20,7 +20,7 @@ Microsoft Store 経由で WSL Linux ディストリビューションをイン�
 
 > 注: **Cmd、PowerShell、Linux および WSL ディストリビューションなどのコマンドライン シェル環境は、Windows 10 S モード上の実行が許可されていません**。 この制限は、S モードで提供される整合性と安全性の目標を確保するために存在します。詳細については、[この投稿](https://blogs.msdn.microsoft.com/commandline/2017/05/18/will-linux-distros-run-on-windows-10-s/)を参照してください。
 
-## <a name="downloading-distros"></a>ディストリビューションのダウンロード
+## <a name="downloading-distributions"></a>ディストリビューションのダウンロード
 
 Microsoft Store アプリを使用できない場合は、以下のリンクをクリックして Linux ディストリビューションをダウンロードして手動でインストールできます。
 * [Ubuntu 20.04](https://aka.ms/wslubuntu2004)
@@ -37,9 +37,11 @@ Microsoft Store アプリを使用できない場合は、以下のリンクを�
 これにより、選択したフォルダーに `<distro>.appx` パッケージがダウンロードされます。 [インストール手順](#installing-your-distro)に従って、ダウンロードしたディストリビューションをインストールします。
 
 ## <a name="downloading-distros-via-the-command-line"></a>コマンド ラインからのディストリビューションのダウンロード
+
 必要に応じて、コマンド ラインから好みのディストリビューションをダウンロードすることもできます。
 
  ### <a name="download-using-powershell"></a>PowerShell を使用してダウンロードする
+
  PowerShell を使用してディストリビューションをダウンロードするには、[Invoke-WebRequest](/powershell/module/microsoft.powershell.utility/invoke-webrequest) コマンドレットを使用します。 Ubuntu 16.04 をダウンロードする手順の例を次に示します。
 
 ```powershell
@@ -61,6 +63,7 @@ curl.exe -L -o ubuntu-1604.appx https://aka.ms/wsl-ubuntu-1604
 > 注: Cmd シェルや `.bat` / `.cmd` スクリプトを使用してダウンロード手順を呼び出したりスクリプトで実行したりする必要がある場合は、`curl` を使用することをお勧めします。
 
 ## <a name="installing-your-distro"></a>ディストリビューションのインストール
+
 Windows 10 を使用している場合、PowerShell を使用してディストリビューションをインストールできます。 上記の手順でダウンロードしたディストリビューションを含むフォルダーに移動して、そのディレクトリで次のコマンドを実行します。この `app_name` は、ディストリビューションの .appx ファイルの名前です。  
 ```Powershell
 Add-AppxPackage .\app_name.appx
@@ -68,4 +71,4 @@ Add-AppxPackage .\app_name.appx
 
 Windows サーバーを使用している場合、インストール手順については、[Windows Server](install-on-server.md) のドキュメント ページを参照してください。
 
-ディストリビューションがインストールされたら、通常の手順に従って [WSL 2 に更新](./install-win10.md#step-2---update-to-wsl-2)するか、[新しいユーザー アカウントとパスワードを作成](./user-support.md)します。
+ディストリビューションがインストールされたら、通常の手順に従って [WSL 1 を WSL 2 に更新](./install-win10.md#set-your-distribution-version-to-wsl-1-or-wsl-2)するか、[新しいユーザー アカウントとパスワードを作成](./user-support.md)します。
