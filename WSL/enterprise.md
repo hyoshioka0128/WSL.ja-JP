@@ -1,66 +1,64 @@
 ---
-title: エンタープライズ向け Windows Subsystem for Linux
-description: エンタープライズ環境で Linux 用 Windows サブシステムを最適に使用する方法に関するリソースと手順。
+title: エンタープライズ向けの WSL
+description: エンタープライズ環境で WSL を最適に使用する方法に関するリソースと手順。
 keywords: BashOnWindows, bash, wsl, windows, linux 用 windows サブシステム, windowssubsystem, ubuntu, debian, suse, windows 10, エンタープライズ, デプロイ, オフライン, パッケージング, ストア, ディストリビューション, インストール, インストール
-ms.date: 05/15/2020
+ms.date: 12/14/2020
 ms.topic: article
-ms.localizationpriority: high
-ms.openlocfilehash: ac0025257ae70547c5b20d89535510a8b8bb006c
-ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
+ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
+ms.custom: seodec18
+ms.openlocfilehash: a210268fb460a793fec2047c6d6678f92869ea16
+ms.sourcegitcommit: 0523e6a2ca99f5f3b188d526afed3ce6ad7e3abb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91413103"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98766861"
 ---
-# <a name="set-up-windows-subsystem-for-linux-for-your-enterprise-company"></a>エンタープライズ企業向けに Linux 用 Windows サブシステムを設定する
+# <a name="windows-subsystem-for-linux-for-enterprise"></a>エンタープライズ向け Windows Subsystem for Linux
 
-ビジネス向け Microsoft Store では、自社に WSL をデプロイすることを検討している企業に対してさまざまなソリューションを提供しています。 [ビジネスおよび教育機関向け Microsoft Store のドキュメント](/microsoft-store/)は、Store のエクスペリエンスに関する一般的な情報を見つけるための優れたリソースです。
+管理者またはマネージャーという立場で、すべての開発者に対して、同じ承認済みソフトウェアを使用することを必須にする場合があります。 このような一貫性があると、適切に定義された作業環境を作成するために役立ちます。 Linux 用 Windows サブシステムを使用すると、カスタムの WSL イメージをあるマシンから次のマシンにインポートおよびエクスポートできるので、この一貫性に役立ちます。 詳細については、以下のガイドを参照してください。
 
-WSL のデプロイを開始する準備の方法を調べている企業のお客様は、次の手順に従ってください。
+* [カスタムの WSL イメージを作成する](#creating-a-custom-wsl-image)
+* [WSL イメージの配布](#distributing-your-wsl-image)
+* [Linux のディストリビューションとパッケージの更新およびパッチ](#update-and-patch-linux-distributions-and-packages)
+* [エンタープライズのセキュリティと制御のオプション](#enterprise-security-and-control-options)
 
-* [ビジネス向け Microsoft Store にサインアップして開始します](/microsoft-store/sign-up-microsoft-store-for-business-overview)
-* [対象の製品とサービスを管理します (たとえば、どのユーザーがプライベート ストア内のどのアプリにアクセスできるか)](/microsoft-store/manage-apps-microsoft-store-for-business-overview)。 ここでは、WSL ディストリビューションをストアに追加したり、それらをインストールできるユーザーを制御したりできます
-* [任意の配布方法を使用して、ソフトウェアを会社にデプロイします](/microsoft-store/distribute-apps-to-your-employees-microsoft-store-for-business)
-* このドキュメント リンクを使用して WSL をインストールできることを会社の従業員に伝えます: [Linux 用 Windows サブシステムのインストール](./install-win10.md)
+## <a name="creating-a-custom-wsl-image"></a>カスタムの WSL イメージを作成する
 
-## <a name="how-to-distribute-a-linux-distribution-on-windows-offline"></a>Windows 上で Linux ディストリビューションをオフラインで配布する方法
+一般に "イメージ" と呼ばれるものは、簡単に説明すると、ファイルに保存されたソフトウェアとそのコンポーネントのスナップショットです。 Linux 用 Windows サブシステムの場合、イメージは、サブシステム、そのディストリビューション、そのディストリビューションにインストールされているすべてのソフトウェアとパッケージで構成されます。
 
-社内のコンピューターから Microsoft Store またはビジネス向け Microsoft Store にアクセスできない場合は、次の手順に従って、オフライン ライセンスが与えられた Linux ディストリビューションのインストーラーをダウンロードできます。
+WSL イメージの作成を開始するには、まず [Linux 用 Windows サブシステムをインストールします](./install-win10.md)。
 
-### <a name="set-up-an-azure-active-directory-account"></a>Azure Active Directory アカウントを設定する
+インストールしたら、ビジネス向け Microsoft Store を使用して適切な Linux ディストリビューションをダウンロードし、インストールします。 [ビジネス向け Microsoft Store](https://docs.microsoft.com/microsoft-store/sign-up-microsoft-store-for-business.) を使用してアカウントを作成する
 
-Microsoft Store アプリのインストーラーを入手するには、[Azure AD アカウントにサインアップ](/azure/active-directory/fundamentals/sign-up-organization?WT.mc_id=windows-c9-niner)する必要があり、組織のグローバル管理者である必要があります。 既にアカウントがある場合は、この手順を省略できます。
+### <a name="exporting-your-wsl-image"></a>WSL イメージのエクスポート
 
-### <a name="set-up-wsl-using-your-microsoft-store-for-business-account"></a>ビジネス向け Microsoft Store アカウントを使用して WSL を設定する
+カスタムの WSL イメージをエクスポートするには、wsl --export `<Distro> <FileName>` を実行します。これにより、イメージは tar ファイルにラップされ、他のマシンに配布できるようになります。
 
-アカウントを登録する手順については、以下を参照してください: https://docs.microsoft.com/microsoft-store/sign-up-microsoft-store-for-business
+## <a name="distributing-your-wsl-image"></a>WSL イメージの配布
 
-1. ビジネス向け Store にサインインし、ホームページに移動します: https://www.microsoft.com/business-store
+共有デバイスまたはストレージ デバイスから WSL イメージを配布するには、wsl --import `<Distro> <InstallLocation> <FileName>` を実行します。これにより、指定した tar ファイルが新しい配布としてインポートされます。
 
-    ![ビジネス向け MS Store のホーム ページ](media/offlineinstallscreens/1-screen.png)
+## <a name="update-and-patch-linux-distributions-and-packages"></a>Linux のディストリビューションとパッケージの更新およびパッチ
 
-2. [管理] > [設定] に移動し、[Show offline apps]\(オフライン アプリを表示\) を有効にします。
+Linux ユーザー領域の監視と管理には、Linux 構成マネージャー ツールを使用することを強くお勧めします。 選択できる Linux 構成マネージャーは多数あります。 WSL 2 に Puppet をインストールする方法については、この[ブログ投稿](http://www.craigloewen.com/blog/2019/12/04/running-puppet-quickly-in-wsl2/)を参照してください。
 
-    ![ビジネス向け MS Store の [設定] ページ](media/offlineinstallscreens/2-screen.png)
+## <a name="enterprise-security-and-control-options"></a>エンタープライズのセキュリティと制御のオプション
 
-3. [Shop for my group]\(自分のグループ用に購入\) を選択して、メイン ページに戻ります。
+現在、WSL には、エンタープライズ シナリオでのユーザー エクスペリエンスの変更について限られた制御メカニズムが用意されています。 エンタープライズ機能は現在も開発中ですが、サポートされている機能とサポートされていない機能の領域を次に示します。 この一覧に含まれていない新機能をリクエストするには、[GitHub リポジトリ](https://github.com/microsoft/WSL/issues?q=is%3Aissue+is%3Aopen+enterprise)で問題を報告してください。
 
-    ![ビジネス向け MS Store のホーム ページ](media/offlineinstallscreens/1-screen.png)
+### <a name="supported"></a>サポートされています
 
-4. 目的のディストリビューションを検索し、選択します。
+* `wsl --import` と `wsl --export` を使用して承認済みのイメージを内部で共有する
+* [WSL Distro Launcher リポジトリ](https://github.com/microsoft/WSL-DistroLauncher)を使用して自社向けに独自の WSL ディストリビューションを作成する
 
-    ![ビジネス向け MS Store の検索がアクティブなホーム ページ](media/offlineinstallscreens/3-screen.png)
+まだサポートされていませんが、調査中である機能の一覧を次に示します。
 
-5. [ライセンスの種類] ドロップダウン メニューで [オフライン] ライセンスを選択し、[Get the app]\(アプリを入手\) を選択します (一部の Linux ディストリビューションでは、オフライン ライセンスが提供されない場合があります)。
+### <a name="unsupported"></a>サポートされていない
 
-    ![ビジネス向け MS Store の Ubuntu でオフラインを選択](media/offlineinstallscreens/4-screen.png)
-
-6. [管理] ボタンを選択して、アプリの製品ページに移動します。
-
-    ![ビジネス向け MS Store の Ubuntu で管理を選択](media/offlineinstallscreens/5-screen.png)
-
-7. 対象のアーキテクチャを選択し、オフラインで使用するためにパッケージをダウンロードします。
-
-    ![ビジネス向け MS Store の Ubuntu でアーキテクチャを選択](media/offlineinstallscreens/6-screen.png)
-
-このインストーラーは、WSL をインストールする任意のコンピューターに配布できます。
+* WSL 内のユーザーとホスト マシン上の Windows ユーザーとの同期
+* Windows ツールを使用した Linux ディストリビューションとパッケージの更新とパッチの管理
+* Windows Update を使用して WSL ディストリビューションのコンテンツも更新する
+* 自社内のユーザーがアクセスできるディストリビューションの制御
+* WSL 内での必須サービス (ログまたは監視) の実行
+* SCCM や Intune などの Windows 構成マネージャー ツールを使用した Linux インスタンスの監視
+* McAfee のサポート
