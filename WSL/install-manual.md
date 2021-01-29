@@ -5,12 +5,12 @@ keywords: wsl, linux 用 windows subsystem, 手動インストール, 手動で�
 ms.date: 09/15/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b94c7eb2f9e70a79f47853dac44badde58667315
-ms.sourcegitcommit: f5b14630947ee9cf3438e9ba502bfbe85ed72cd1
+ms.openlocfilehash: 8f6cb0714d5a688f40690ba68b58b642bab765c2
+ms.sourcegitcommit: fe75d8d799434fb4ff05532baa7906cd6b625bda
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97957663"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811330"
 ---
 # <a name="manually-download-windows-subsystem-for-linux-distro-packages"></a>Linux 用 Windows サブシステム ディストリビューション パッケージを手動でダウンロードする
 
@@ -69,6 +69,6 @@ Windows 10 を使用している場合、PowerShell を使用してディスト�
 Add-AppxPackage .\app_name.appx
 ```
 
-Windows サーバーを使用している場合、インストール手順については、[Windows Server](install-on-server.md) のドキュメント ページを参照してください。
+Windows サーバーを使用している場合、または上記のコマンドを実行しているときに問題が発生した場合は、[Windows Server](install-on-server.md) のドキュメント ページにある代替のインストール手順を参照して、`.appx` ファイルを zip ファイルに変更してインストールしてください。
 
 ディストリビューションがインストールされたら、通常の手順に従って [WSL 1 を WSL 2 に更新](./install-win10.md#set-your-distribution-version-to-wsl-1-or-wsl-2)するか、[新しいユーザー アカウントとパスワードを作成](./user-support.md)します。

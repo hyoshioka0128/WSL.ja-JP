@@ -6,22 +6,26 @@ author: benhillis
 ms.date: 05/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: c158cffde1c6f680f833b9f7e84f2d494ba64b78
-ms.sourcegitcommit: e2d586925b314ce4517773b9c78736450a9f75d9
+ms.openlocfilehash: ab6f26a4f9393c78cfa98367016efcf94afb1084
+ms.sourcegitcommit: c0478193f16efd4f8221016301ef7a1fd67713e0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97977127"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98671965"
 ---
 # <a name="release-notes-for-windows-subsystem-for-linux"></a>Windows Subsystem for Linux のリリース ノート
 
 ## <a name="build-21286"></a>ビルド 21286
 ビルド 21286 の一般的な Windows 情報については、[Windows ブログ](https://blogs.windows.com/windows-insider/2021/01/06/announcing-windows-10-insider-preview-build-21286/)を参照してください。
 
-* /etc/wsl.conf にスタートアップ コマンドを有効にする boot.command オプションを追加しました。
 * コマンドの現在の作業ディレクトリを設定する wsl.exe --cd コマンドが導入されます。
 * NTSTATUS から Linux エラー コードへのマッピングが改善されます。 [GH 6063]
 * wsl.exe --mount のエラー報告が改善されます。
+* /etc/wsl.conf にスタートアップ コマンドを有効にするオプションを追加しました:
+```
+[boot]
+command=<string>
+```
 
 ## <a name="build-20226"></a>ビルド 20226
 ビルド 20226 の一般的な Windows 情報については、[Windows ブログ](https://blogs.windows.com/windows-insider/2020/09/10/announcing-windows-10-insider-preview-build-20226/)を参照してください。

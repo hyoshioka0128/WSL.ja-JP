@@ -5,19 +5,19 @@ keywords: リリース ノート, wsl, windows, Linux 用 Windows サブシス�
 ms.date: 06/09/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 07488d61ad1c01f85c1d78789274aa3afbc9e1d8
-ms.sourcegitcommit: e2d586925b314ce4517773b9c78736450a9f75d9
+ms.openlocfilehash: 977b64b9b963d28c0291166cf2bad799bad4a6fe
+ms.sourcegitcommit: c0478193f16efd4f8221016301ef7a1fd67713e0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97977107"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98671953"
 ---
 # <a name="release-notes-for-windows-subsystem-for-linux-kernel"></a>Linux 用 Windows サブシステム カーネルのリリース ノート
 
 WSL 2 ディストリビューションのサポートが追加されました。ここでは、[完全な Linux カーネルが使用されます](https://devblogs.microsoft.com/commandline/shipping-a-linux-kernel-with-windows/)。 この Linux カーネルはオープン ソースであり、そのソースコードは [WSL2-Linux-Kernel](https://github.com/microsoft/WSL2-Linux-Kernel) リポジトリから入手できます。 この Linux カーネルは Microsoft Update を介してコンピューターに配信され、Windows イメージの一部として提供される Linux 用 Windows サブシステムの個別のリリース スケジュールに従います。
 
 ## <a name="5472"></a>5.4.72
-*リリース日*:プレリリース - 2020 年 11 月 10 日
+*リリース日*:2021 年 1 月 21 日
 
 [公式の GitHub リリース リンク](https://github.com/microsoft/WSL2-Linux-Kernel/releases/tag/linux-msft-5.4.72)
 
@@ -47,14 +47,14 @@ WSL 2 ディストリビューションのサポートが追加されました�
 * GPU コンピューティングに対するサポートの追加
 
 ## <a name="419104-microsoft-standard"></a>4.19.104-microsoft-standard
-*リリース日*:2020 年 6 月 9 日 
+*リリース日*:2020 年 6 月 9 日
 
 [公式の GitHub リリース リンク](https://github.com/microsoft/WSL2-Linux-Kernel/releases/tag/4.19.104-microsoft-standard)。
 
 * 4\.19.104 の WSL config を更新
 
 ## <a name="41984-microsoft-standard"></a>4.19.84-microsoft-standard
-*リリース日*:2019 年 11 月 12 日 
+*リリース日*:2019 年 12 月 11 日
 
 [公式の GitHub リリース リンク](https://github.com/microsoft/WSL2-Linux-Kernel/releases/tag/4.19.84-microsoft-standard)。
 

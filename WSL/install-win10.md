@@ -5,12 +5,12 @@ keywords: BashOnWindows, bash, wsl, windows, linux 用 windows サブシステ�
 ms.date: 09/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: cbfd1f1aab99bc1965e569c4e818bd1663aa2878
-ms.sourcegitcommit: f5b14630947ee9cf3438e9ba502bfbe85ed72cd1
+ms.openlocfilehash: 3c7506f8f0144b11d4e91be3bf0667e6a28d7205
+ms.sourcegitcommit: e413f079790509b9c5e73efc189de186df350322
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97957693"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98692113"
 ---
 # <a name="windows-subsystem-for-linux-installation-guide-for-windows-10"></a>Windows 10 用 Windows Subsystem for Linux のインストール ガイド
 
@@ -87,7 +87,7 @@ WSL 2 に更新するには、Windows 10 を実行している必要がありま
 
 ## <a name="step-3---enable-virtual-machine-feature"></a>手順 3: 仮想マシンの機能を有効にする
 
-WSL 2 をインストールする前に、"**仮想マシン プラットフォーム**" オプション機能を有効にする必要があります。
+WSL 2 をインストールする前に、"**仮想マシン プラットフォーム**" オプション機能を有効にする必要があります。 この機能を使用するには、コンピューターに[仮想化機能](https://docs.microsoft.com/windows/wsl/troubleshooting#error-0x80370102-the-virtual-machine-could-not-be-started-because-a-required-feature-is-not-installed)が必要です。
 
 管理者として PowerShell を開き、以下を実行します。
 
