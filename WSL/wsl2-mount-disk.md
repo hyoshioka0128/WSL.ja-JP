@@ -5,12 +5,12 @@ keywords: wsl、windows、windowssubsystem、gnu、linux、bash、disk、ext4、
 ms.date: 11/04/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 165ae828b7fe83cae70a477d6143999da4265e3f
-ms.sourcegitcommit: 8b22f057a2f39c86bbede43fd65e8001c99548da
+ms.openlocfilehash: 8c6fb5e2a4996f5ec59ac72ac08fb9408e117321
+ms.sourcegitcommit: 17d5ea1fe571274c224202544f61035971d6e0e1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94870543"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100551007"
 ---
 # <a name="get-started-mounting-a-linux-disk-in-wsl-2-preview"></a>WSL 2 (プレビュー) で Linux ディスクのマウントを開始する
 
@@ -172,7 +172,7 @@ wsl --unmount [DiskPath]
 
 ## <a name="mount-a-vhd-in-wsl"></a>WSL に VHD をマウントする
 
-また、を使用して、仮想ハードディスクファイル (VHD) を WSL にマウントすることもでき `wsl --mount` ます。 これを行うには、まず Windows のコマンドを使用して、Windows に VHD をマウントする必要があり [`Mount-VHD`](https://docs.microsoft.com/powershell/module/hyper-v/mount-vhd) ます。 このコマンドは、管理者特権を持つウィンドウで実行してください。 次に、このコマンドを使用して、ディスクパスも出力する例を示します。 は `<pathToVHD>` 実際の VHD パスに置き換えてください。 
+また、を使用して、仮想ハードディスクファイル (VHD) を WSL にマウントすることもでき `wsl --mount` ます。 これを行うには、まず Windows のコマンドを使用して、Windows に VHD をマウントする必要があり [`Mount-VHD`](/powershell/module/hyper-v/mount-vhd) ます。 このコマンドは、管理者特権を持つウィンドウで実行してください。 次に、このコマンドを使用して、ディスクパスも出力する例を示します。 は `<pathToVHD>` 実際の VHD パスに置き換えてください。 
 
 ```powershell
 Write-Output "\\.\PhysicalDrive$((Mount-VHD -Path <pathToVHD> -PassThru | Get-Disk).Number)"
@@ -186,6 +186,6 @@ Write-Output "\\.\PhysicalDrive$((Mount-VHD -Path <pathToVHD> -PassThru | Get-Di
 
 - 現時点では、ディスク全体のみを WSL 2 に接続できます。つまり、パーティションのみをアタッチすることはできません。 具体的にでは、このデバイスは Windows からデタッチできないため、を使用して `wsl --mount` ブートデバイスのパーティションを読み取ることはできません。
 
-- USB フラッシュドライブは現時点ではサポートされていないため、WSL 2 へのアタッチに失敗します。 ただし、USB ディスクはサポートされています。
+- 現時点では、USB フラッシュドライブと SD カードはサポートされていないため、WSL 2 へのアタッチに失敗します。 ただし、USB ディスクはサポートされています。
 
 - によってマウントできるのは、カーネルでネイティブでサポートされているファイルシステムだけ `wsl --mount` です。 これは、を呼び出すことによって、インストールされているファイルシステムドライバー (たとえば、ntfs 3g など) を使用できないことを意味 `wsl --mount` します。
