@@ -6,12 +6,12 @@ ms.date: 12/14/2020
 ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.custom: seodec18
-ms.openlocfilehash: a210268fb460a793fec2047c6d6678f92869ea16
-ms.sourcegitcommit: 0523e6a2ca99f5f3b188d526afed3ce6ad7e3abb
+ms.openlocfilehash: 8c5e1c84767423a2d415709d184c9e96a5a3de47
+ms.sourcegitcommit: 17d5ea1fe571274c224202544f61035971d6e0e1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98766861"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100551015"
 ---
 # <a name="windows-subsystem-for-linux-for-enterprise"></a>エンタープライズ向け Windows Subsystem for Linux
 
@@ -53,7 +53,9 @@ Linux ユーザー領域の監視と管理には、Linux 構成マネージャ�
 
 まだサポートされていませんが、調査中である機能の一覧を次に示します。
 
-### <a name="unsupported"></a>サポートされていない
+### <a name="currently-unsupported"></a>現在はサポートされていません
+
+WSL 内で現在サポートされていない、一般的な機能の一覧を次に示します。 Microsoft ではこれらの要求を把握しており、追加方法を調査しています。 
 
 * WSL 内のユーザーとホスト マシン上の Windows ユーザーとの同期
 * Windows ツールを使用した Linux ディストリビューションとパッケージの更新とパッチの管理
