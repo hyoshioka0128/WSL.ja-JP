@@ -1,16 +1,16 @@
 ---
 title: Windows Subsystem for Linux (WSL) を Windows 10 にインストールする
-description: Ubuntu、Debian、SUSE、Kali、Fedora、Pengwin、Alpine などの Linux ディストリビューションを、Bash ターミナルを使用して、Windows 10 マシンにインストールする方法について説明します。
+description: Windows 10 への WSL のインストール ガイド。Bash ターミナルを使用し、Ubuntu、Debian、SUSE、Kali、Fedora、Pengwin、Alpine などを含みます。
 keywords: BashOnWindows, bash, wsl, windows, linux 用 windows サブシステム, windowssubsystem, ubuntu, debian, suse, windows 10, インストール, 有効にする, WSL2, バージョン 2
 ms.date: 09/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 3c7506f8f0144b11d4e91be3bf0667e6a28d7205
-ms.sourcegitcommit: e413f079790509b9c5e73efc189de186df350322
+ms.openlocfilehash: 58375484d57e7cb65a807e7156a5dcdf166dac2e
+ms.sourcegitcommit: 17d5ea1fe571274c224202544f61035971d6e0e1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98692113"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100551029"
 ---
 # <a name="windows-subsystem-for-linux-installation-guide-for-windows-10"></a>Windows 10 用 Windows Subsystem for Linux のインストール ガイド
 
@@ -23,6 +23,9 @@ Linux 用 Windows サブシステム (WSL) をインストールするには、�
 - **[手動インストール](#manual-installation-steps)** :以下に示す 6 つの手順に従います。
 
     WSL の手動インストール手順を以下に示します。これを使用して、任意のバージョンの Windows 10 に Linux をインストールできます。
+
+> [!NOTE]
+> インストール プロセス中に問題が発生した場合は、このページの下部にある「[インストールのトラブルシューティング](#troubleshooting-installation)」セクションを確認してください。
 
 ## <a name="simplified-installation-for-windows-insiders"></a>Windows Insider 用の簡略化されたインストール
 
