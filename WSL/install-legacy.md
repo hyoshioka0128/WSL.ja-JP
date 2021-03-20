@@ -6,12 +6,12 @@ ms.date: 07/24/2018
 ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.custom: seodec18
-ms.openlocfilehash: 416bed3ed3a0470da2eb5e6beb75e73eb6836200
-ms.sourcegitcommit: 0b5a9f8982dfff07fc8df32d74d97293654f8e12
+ms.openlocfilehash: a7b917bc507328788d0e8962efa14d88e868e338
+ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71269771"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104725759"
 ---
 # <a name="guide-to-install-or-uninstall-windows-subsystem-for-linux-on-windows-10-anniversary-update-and-creators-update"></a>Windows 10 記念日更新プログラムおよび作成者の更新プログラムで Windows Subsystem for Linux をインストールまたはアンインストールするためのガイド 
 
@@ -19,7 +19,7 @@ Windows 10 の作成者の更新プログラムまたはそれ以降を実行し
 
 <strong><em><span style="color: #f28014">次の手順は、Windows 10 周年更新プログラムまたは Windows 10 の作成者更新プログラムを実行しているユーザーを対象としています。</span></em></strong>
 
-Windows 10 秋の更新プログラム (バージョン 1709) より前のバージョンでは、WSL はベータ機能としてリリースされ、"Bash on Ubuntu on Windows" (または Bash) が最初に実行されたときに1つの Ubuntu インスタンスをインストールしました。
+Windows 10 の更新プログラム (バージョン 1709) より前のバージョンでは、WSL はベータ機能としてリリースされ、"Bash on Ubuntu on Windows" (または Bash.exe) が最初に実行されたときに1つの Ubuntu インスタンスをインストールしました。
 
 > 以前の Windows 10 リリースでは WSL を使用できますが、このベータ版の "レガシディストリビューション" は廃止されたと見なされるようになりました。 使用可能な Windows 10 の最新バージョンを実行することを強くお勧めします。 新しい Windows 10 のリリースには、WSL 単独で数百の修正と改善が加えられており、WSL でより多くの Linux ツールとアプリが正常に実行できるようになりました。
 
@@ -27,14 +27,14 @@ Windows 10 秋の更新プログラム (バージョン 1709) より前のバー
 
 1. 開発者モードを有効にして、Windows 10 の記念日更新または作成者の更新で WSL を実行するには、開発者モードを有効にする必要があります。
 
-    **開発者のための**[**設定** -> **更新とセキュリティ** -> を開く]
+      ->    ->  **開発者のための**[設定] [更新とセキュリティ]
 
     [開発者モード] オプションボタンを選択します。  
     ![開発者モードを有効にする](media/updateAndSecurity.png)
 
     > 開発者モードを有効にするための要件は、 [Windows 10 の作成者の更新プログラムで削除](https://blogs.msdn.microsoft.com/commandline/2017/06/08/developer-mode-no-longer-required-for-windows-subsystem-for-linux/)されました
 
-1. コマンド プロンプトを開きます。  「`bash`」と入力し、enter キーを押します。
+1. コマンド プロンプトを開きます。  「 `bash` 」と入力し、enter キーを押します。
 
     Windows で Bash on Ubuntu を初めて実行すると、正規のライセンスに同意するように求められます。 承諾すると、WSL は Ubuntu インスタンスをコンピューターにダウンロードしてインストールします。また、[Windows の Bash on Ubuntu] ショートカットが [スタート] メニューに追加されます。
 
@@ -43,7 +43,7 @@ Windows 10 秋の更新プログラム (バージョン 1709) より前のバー
     Windows で Bash on Ubuntu を初めて実行するときに、UNIX ユーザー名とパスワードの作成を求められます。 [新しいディストリビューションインスタンスの指示](initialize-distro.md)に従って、インストールを完了します。
 
 1. 次のいずれかの方法で新しい Ubuntu シェルを起動します。
-    * コマンドプロンプトからの `bash` の実行
+    * `bash`コマンドプロンプトからの実行
     * [スタート] メニューの [Bash on Ubuntu on Windows] のショートカット
 
     
@@ -56,12 +56,12 @@ WSL をインストールした以前の Windows 10 リリースから Windows 1
 wsl --unregister Legacy
 ```
 
-Windows バージョン1903以降を使用していない場合は、代わりに `wslconfig /u Legacy` または `lxrun /uninstall /full` を実行する必要がある場合があります。 
+Windows バージョン1903以降を使用していない場合は、代わりにまたはを実行する必要があり `wslconfig /u Legacy` `lxrun /uninstall /full` ます。 
 
 ### <a name="manually-deleting-the-legacy-distro"></a>レガシディストリビューションを手動で削除する
-必要に応じて、レガシインスタンスを手動で削除できます。 これは、`lxrun.exe`を使用したレガシディストリビューションのアンインストールで問題が発生した場合、または `lxrun.exe`で出荷されていない Windows 10 Spring 2018 Update (またはそれ以降) を実行している場合に必要になることがあります。
+必要に応じて、レガシインスタンスを手動で削除できます。 これは、を使用してレガシディストリビューションをアンインストールするときに問題が発生した場合 `lxrun.exe` 、またはに付属していない Windows 10 Spring 2018 Update (またはそれ以降) を実行している場合に必要になることがあり `lxrun.exe` ます。
 
-従来の WSL ディストリビューションを強制的に削除するには、Windows のエクスプローラーまたはコマンドラインを使用して、`%localappdata%\lxss\` フォルダー (およびそのすべてのサブコンテンツ) を削除します。
+従来の WSL ディストリビューションを強制的に削除するには、 `%localappdata%\lxss\` Windows のエクスプローラーまたはコマンドラインを使用して、フォルダー (およびそのすべてのサブコンテンツ) を削除します。
 
 PowerShell の使用
 ```powershell

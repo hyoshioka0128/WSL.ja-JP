@@ -5,16 +5,16 @@ keywords: wsl、windows、windowssubsystem、gnu、linux、bash、vs code、remo
 ms.date: 05/28/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 528c2b040136518f9c7d04d8572cd0f08bb68385
-ms.sourcegitcommit: d5d3dd8b91e93d46653f9512bceafd8b5340255f
+ms.openlocfilehash: f9ef5c71f6a1e384239313e1e93e2736685c3c82
+ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96443761"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104725979"
 ---
 # <a name="get-started-using-visual-studio-code-with-windows-subsystem-for-linux"></a>Windows Subsystem for Linux で Visual Studio Code の使用を開始する
 
-Visual Studio Code をリモート WSL 拡張機能と共に使用すると、WSL を完全な開発環境として VS Code から直接使用できます。 次のようにすることができます。
+Visual Studio Code をリモート WSL 拡張機能と共に使用すると、WSL を完全な開発環境として VS Code から直接使用できます。 次の操作を行うことができます。
 
 * Linux ベースの環境での開発
 * Linux 固有のツールチェーンとユーティリティを使用する

@@ -4,12 +4,12 @@ description: Windows Subsystem for Linux のカスタム Linux ディストリ�
 keywords: BashOnWindows、bash、wsl、windows、windows サブシステム、ディストリビューション、カスタム
 ms.date: 09/15/2020
 ms.topic: article
-ms.openlocfilehash: 2882cccac6c34cd52529dbf7e42c8d35907d8241
-ms.sourcegitcommit: 69fc9d3ca22cf3f07622db4cdf80c8ec751fe620
+ms.openlocfilehash: 5bffcf45255271a7f6461dfa0d1e17b1a6a69d7d
+ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90818704"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104725789"
 ---
 # <a name="creating-a-custom-linux-distribution-for-wsl"></a>WSL 用のカスタム Linux ディストリビューションの作成
 
@@ -20,7 +20,7 @@ ms.locfileid: "90818704"
 - Linux ディストリビューションの管理パックは、WSL で実行される appx として Linux ディストリビューションをパッケージ化して送信します。
 - 開発者が開発用コンピューターにサイドロードできるカスタム Linux ディストリビューションを作成する
 
-## <a name="background"></a>背景
+## <a name="background"></a>バックグラウンド
 
 Microsoft Store を通じて、WSL 用の Linux ディストリビューションを UWP アプリケーションとして配布します。 これらのアプリケーションは、WSL-Windows カーネル内にあるサブシステムで実行できます。 この配信メカニズムには、 [前のブログ記事](https://blogs.msdn.microsoft.com/commandline/2017/07/10/ubuntu-now-available-from-the-windows-store/)で説明したように多くの利点があります。
 

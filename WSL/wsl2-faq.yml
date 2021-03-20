@@ -1,0 +1,65 @@
+### YamlMime:FAQ
+metadata:
+  title: WSL 2 についてよく寄せられる質問
+  description: "\"仮想マシンで WSL 2 を実行できますか?\" などの、Linux 用 Windows サブシステム 2 についてよく寄せられる質問 (FAQ) への回答をご確認いただけます。"
+  keywords: BashOnWindows, bash, wsl, wsl2, windows, windows subsystem for linux, windowssubsystem, ubuntu, debian, suse, windows 10, install
+  ms.date: 05/30/2019
+  ms.topic: article
+  ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
+  ms.custom: seodec18
+  ms.localizationpriority: high
+  ms.openlocfilehash: d812230c46dc9efb1a18f73d1eeb92813b76a39e
+  ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
+  ms.translationtype: MT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 03/20/2021
+  ms.locfileid: "104729315"
+title: WSL 2 に関する FAQ
+summary: Linux 用 Windows サブシステム 2 についてよく寄せられる質問 (FAQ) の一覧を次に示します。
+sections:
+- name: 無視
+  questions:
+  - question: >
+      WSL 2 に Hyper-V は使用されていますか? Windows 10 Home では使用できるようになりますか?
+    answer: >
+      WSL 2 は、WSL を現在使用できるすべての SKU (Windows 10 Home を含む) 上で使用できます。
+
+
+      最新バージョンの WSL では、仮想化を有効にするために、Hyper-V アーキテクチャが使用されます。 このアーキテクチャは、"仮想マシン プラットフォーム" のオプション コンポーネントで使用できます。 このオプションのコンポーネントは、すべての SKU 上で使用できます。 WSL 2 は間もなくリリースされるため、このエクスペリエンスの詳細をすぐにご確認いただけます。
+  - question: >
+      WSL 1 はどうなりますか? 廃止されますか?
+    answer: >
+      現在、WSL 1 を廃止する予定はありません。 WSL 1 と WSL 2 のディストリビューションを並行して実行し、任意のディストリビューションをいつでもアップグレードおよびダウングレードできます。 WSL 2 を新しいアーキテクチャとして追加すると、WSL チームにとって、WSL を利用して Windows で Linux 環境を実行する機能を提供するための優れたプラットフォームになります。
+  - question: >
+      WSL 2 と、VMware や VirtualBox などの他のサード パーティの仮想化ツールを実行できますか?
+    answer: >
+      一部のサード パーティ アプリケーションは、Hyper-V が使用されている場合は機能しません。つまり、VMware や VirtualBox など、WSL 2 が有効な場合は実行できません。 しかし、VirtualBox と VMware の両方から、Hyper-v と WSL2 をサポートするバージョンが最近リリースされました。 [VirtualBox の変更点についてはこちら](https://www.virtualbox.org/wiki/Changelog-6.0)から、[VMware の変更点についてはこちら](https://blogs.vmware.com/workstation/2020/01/vmware-workstation-tech-preview-20h1.html)から、詳細を参照してください。 トラブルシューティングの問題については、[GitHub の WSL リポジトリにある VirtualBox の問題に関するディスカッション](https://github.com/MicrosoftDocs/WSL/issues?q=is%3Aissue+virtualbox+sort%3Acomments-desc)をご覧ください。
+
+
+      Microsoft は、Hyper-V のサードパーティ統合をサポートするソリューションに一貫して取り組んでいます。 たとえば、[Hypervisor Platform](https://docs.microsoft.com/en-us/virtualization/api/) という一連の API を公開しています。サードパーティの仮想化プロバイダーはこれを使用してソフトウェアに Hyper-V との互換性を持たせることができます。 これにより、アプリケーションでは、[Google Android Emulator](https://devblogs.microsoft.com/visualstudio/hyper-v-android-emulator-support/) や、Hyper-V と互換性のある VirtualBox 6 以降など、のエミュレーションに Hyper-V アーキテクチャを使用できます。
+  - question: >
+      WSL 2 の GPU にはアクセスできますか? ハードウェア サポートを強化する予定はありますか?
+    answer: >
+      WSL 2 ディストリビューション内の GPU にアクセスするためのサポートがリリースされました。 これは、ビッグ データ セットが関係している場合に、機械学習、人工知能、データ サイエンスのシナリオで WSL をより簡単に使用できるようになったことを意味します。 [GPU サポートの概要](./tutorials/gpu-compute.md)に関するチュートリアルをご確認ください。 現時点では、WSL 2 にはシリアル サポートや USB デバイス サポートは含まれていません。 Microsoft では、これらの機能を追加するための最適な方法を調査しています。
+  - question: >
+      WSL 2 ではネットワーク アプリケーションを使用できるようになりますか?
+    answer: "はい。一般的にネットワーク アプリケーションにはシステム コールとの完全な互換性があるため、より高速に、より優れた機能で動作します。 ただし、新しいアーキテクチャには仮想化されたネットワーク コンポーネントが使用されます。 つまり、初期のプレビュー ビルドでは、WSL 2 は仮想マシンと同様に動作します。たとえば、WSL 2 には、ホスト コンピューターとは異なる IP アドレスが割り当てられます。 Microsoft では、WSL 2 のエクスペリエンスが WSL 1 と同じになるように取り組んでいます。これには、ネットワーク ストーリーの改善も含まれます。 \n"
+  - question: >
+      仮想マシンで WSL 2 を実行できますか?
+    answer: >
+      はい。 仮想マシンで入れ子になった仮想化が有効なことを確認する必要があります。 これを親 Hyper-V ホストで有効にするには、管理者特権を使用して PowerShell ウィンドウで次のコマンドを実行します。
+
+
+      `Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true`
+
+
+      "&lt;VMName&gt;" は、実際の仮想マシンの名前に置き換えてください。
+  - question: >
+      WSL 2 で wsl.conf を使用できますか?
+    answer: >-
+      WSL 2 では、WSL 1 に使用されているものと同じ wsl.conf ファイルがサポートされています。 つまり、Windows ドライブの自動マウント、相互運用の有効化または無効化、Windows ドライブのマウント先ディレクトリの変更など、WSL 1 ディストリビューションで設定した構成オプションは、すべて WSL 2 内で機能します。 WSL の構成オプションの詳細については、[ディストリビューションの管理](./wsl-config.md)に関するページを参照してください。
+
+       [1]: https://www.virtualbox.org/wiki/Changelog-6.0
+       [2]: https://docs.microsoft.com/virtualization/api/
+       [3]: https://devblogs.microsoft.com/visualstudio/hyper-v-android-emulator-support/
+       [4]: https://blogs.vmware.com/workstation/2020/01/vmware-workstation-tech-preview-20h1.html

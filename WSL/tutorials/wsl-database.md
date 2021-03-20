@@ -5,23 +5,23 @@ keywords: wsl、windows、windowssubsystem、MySQL MongoDB、PostgreSQL、SQLite
 ms.date: 07/07/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b7e4f7477741a931c4ee71e07736bac115443ac9
-ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
+ms.openlocfilehash: e84863619faf682ae0c25b15fe70f7aa86cce579
+ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91413303"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104725989"
 ---
 # <a name="get-started-with-databases-on-windows-subsystem-for-linux"></a>Windows Subsystem for Linux でデータベースを使ってみる
 
 このステップバイステップガイドでは、WSL 内のプロジェクトをデータベースに接続する方法について説明します。 MySQL、PostgreSQL、MongoDB、Redis、Microsoft SQL Server、または SQLite の使用を開始します。
 
-## <a name="prerequisites"></a>[前提条件]
+## <a name="prerequisites"></a>前提条件
 
 - [バージョン 2004](ms-settings:windowsupdate)、**ビルド 19041** 以上に更新された Windows 10 を実行している。
 - [Wsl が有効になり、インストールされ、wsl 2 に更新されました](../install-win10.md)。
 - [Linux ディストリビューションがインストールされている](../install-win10.md#step-6---install-your-linux-distribution-of-choice) (例については Ubuntu 18.04)。
-- Ubuntu 18.04 のディストリビューションが [WSL 2 モードで実行](../install-win10.md#set-your-distribution-version-to-wsl-1-or-wsl-2)されていることを確認します。 (WSL では、v1 モードと v2 モードの両方でディストリビューションを実行できます)。これを確認するには、PowerShell を開き、次のように入力します。 `wsl -l -v`
+- Ubuntu 18.04 のディストリビューションが [WSL 2 モードで実行](../install-win10.md#set-your-distribution-version-to-wsl-1-or-wsl-2)されていることを確認します。 (WSL は、v1 または v2 モードの両方でディストリビューションを実行できます。)これは PowerShell を開き、「`wsl -l -v`」と入力することによって確認できます。
 
 ## <a name="differences-between-database-systems"></a>データベースシステム間の相違点
 

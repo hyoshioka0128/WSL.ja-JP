@@ -4,12 +4,12 @@ description: Windows Subsystem for Linux を使用して Linux ユーザーア�
 ms.date: 01/20/2020
 ms.topic: article
 ROBOTS: NOINDEX
-ms.openlocfilehash: 33a42c8f3bd518fa45df2874a6c59b76cd8ec80a
-ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
+ms.openlocfilehash: 069ce59a5e5b8b1466b0c127ebe37445afc13ae3
+ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91413363"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104725949"
 ---
 # <a name="wsl-user-account-updates-on-previous-windows-versions"></a>以前のバージョンの Windows での WSL ユーザーアカウントの更新
 

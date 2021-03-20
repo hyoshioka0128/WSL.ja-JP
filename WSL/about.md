@@ -6,12 +6,12 @@ ms.date: 07/21/2020
 ms.topic: article
 ms.assetid: 3cefe0db-7616-4848-a2b6-9296746a178b
 ms.localizationpriority: high
-ms.openlocfilehash: 0c6fa3d0c5483a7ffd1fb95f13ca62666a7c1e72
-ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
+ms.openlocfilehash: ba96d2c74a8bbfc74601da372e2091f2e6826463
+ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91413083"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104725809"
 ---
 # <a name="what-is-the-windows-subsystem-for-linux"></a>Linux 用 Windows サブシステムとは
 
@@ -38,7 +38,7 @@ Linux 用 Windows サブシステムを使用すると、開発者は、従来�
 
 ## <a name="what-is-wsl-2"></a>WSL 2 とは
 
-WSL 2 は、Linux 用 Windows サブシステムが Windows 上で ELF64 Linux バイナリを実行できるようにする、Linux 用 Windows サブシステム アーキテクチャの新しいバージョンです。 その主な目標は、**ファイル システムのパフォーマンスを向上させること**と、**システム コールの完全な互換性**を追加することです。
+WSL 2 は、Linux 用 Windows サブシステムが Windows 上で ELF64 Linux バイナリを実行できるようにする、Linux 用 Windows サブシステム アーキテクチャの新しいバージョンです。 その主な目標は、**ファイル システムのパフォーマンスを向上させること** と、**システム コールの完全な互換性** を追加することです。
 
 この新しいアーキテクチャによって、こうした Linux バイナリと、Windows やお使いのコンピューターのハードウェアとの対話方法は変わりますが、ユーザー エクスペリエンスは WSL 1 (現在幅広く利用されているバージョン) と同じです。
 
@@ -56,9 +56,9 @@ WSL 2 は、Linux 用 Windows サブシステムが Windows 上で ELF64 Linux �
 
 * [新しい Linux ディストリビューションのユーザー アカウントとパスワードを作成する](./user-support.md)
 
-* [よく寄せられる質問を読む](./faq.md)
+* [よく寄せられる質問を読む](./faq.yml)
 
-* [WSL 2 に関してよく寄せられる質問を読む](./wsl2-faq.md)
+* [WSL 2 に関してよく寄せられる質問を読む](./wsl2-faq.yml)
 
 * [トラブルシューティング](./troubleshooting.md)
 

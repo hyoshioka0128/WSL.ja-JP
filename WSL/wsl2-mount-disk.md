@@ -5,12 +5,12 @@ keywords: wsl、windows、windowssubsystem、gnu、linux、bash、disk、ext4、
 ms.date: 11/04/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c6fb5e2a4996f5ec59ac72ac08fb9408e117321
-ms.sourcegitcommit: 17d5ea1fe571274c224202544f61035971d6e0e1
+ms.openlocfilehash: 179f5c6449a4b8137743ab14e29e36ebb61032fa
+ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100551007"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104725889"
 ---
 # <a name="get-started-mounting-a-linux-disk-in-wsl-2-preview"></a>WSL 2 (プレビュー) で Linux ディスクのマウントを開始する
 

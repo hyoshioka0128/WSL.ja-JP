@@ -5,12 +5,12 @@ keywords: wsl、windows、windows サブシステム、gpu コンピューティ
 ms.date: 06/17/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bc20f2d3f1da646ba01dcdc00de8eca6c3825ec8
-ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
+ms.openlocfilehash: 5e9b4ff209ce8262137ffcc58c8dc0f0753485c5
+ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91413313"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104725589"
 ---
 # <a name="gpu-accelerated-machine-learning-training-in-the-windows-subsystem-for-linux"></a>Windows Subsystem for Linux での GPU アクセラレータによる機械学習トレーニング
 

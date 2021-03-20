@@ -6,12 +6,12 @@ ms.date: 12/14/2020
 ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.custom: seodec18
-ms.openlocfilehash: 8c5e1c84767423a2d415709d184c9e96a5a3de47
-ms.sourcegitcommit: 17d5ea1fe571274c224202544f61035971d6e0e1
+ms.openlocfilehash: 24f795fcd0c8bda80dd0672555ea6f75b41f346e
+ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100551015"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104725739"
 ---
 # <a name="windows-subsystem-for-linux-for-enterprise"></a>エンタープライズ向け Windows Subsystem for Linux
 
@@ -28,7 +28,7 @@ ms.locfileid: "100551015"
 
 WSL イメージの作成を開始するには、まず [Linux 用 Windows サブシステムをインストールします](./install-win10.md)。
 
-インストールしたら、ビジネス向け Microsoft Store を使用して適切な Linux ディストリビューションをダウンロードし、インストールします。 [ビジネス向け Microsoft Store](https://docs.microsoft.com/microsoft-store/sign-up-microsoft-store-for-business.) を使用してアカウントを作成する
+インストールしたら、ビジネス向け Microsoft Store を使用して適切な Linux ディストリビューションをダウンロードし、インストールします。 [ビジネス向け Microsoft Store](/microsoft-store/sign-up-microsoft-store-for-business.) を使用してアカウントを作成する
 
 ### <a name="exporting-your-wsl-image"></a>WSL イメージのエクスポート
 
