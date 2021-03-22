@@ -5,12 +5,12 @@ keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, gnu, linux
 ms.topic: article
 ms.date: 09/15/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 1a0e5ec95105af75470ca68b9fa3bad43f6c669c
-ms.sourcegitcommit: f5b14630947ee9cf3438e9ba502bfbe85ed72cd1
+ms.openlocfilehash: a810a5189f6c3b6b37671bf0dfeaa8dd52debeec
+ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97957673"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104725699"
 ---
 # <a name="windows-subsystem-for-linux-documentation"></a>Windows Subsystem for Linux に関するドキュメント
 
@@ -24,12 +24,12 @@ Linux 用 Windows サブシステムを使用すると、開発者は、従来�
 * [Linux 用 Windows サブシステムとは](about.md)
 * [WSL 2 の新機能](compare-versions.md#whats-new-in-wsl-2)
 * [WSL 2 と WSL 1 を比較する](compare-versions.md)
-* [よく寄せられる質問を読む](faq.md)
+* [よく寄せられる質問を読む](faq.yml)
 
 ## <a name="get-started"></a>開始
 
 * [WSL1 をインストールする](install-win10.md)
-* [WSL2 の要件を確認する](./install-win10.md#step-2--check-requirements-for-running-wsl-2)
+* [WSL2 の要件を確認する](./install-win10.md#step-2---check-requirements-for-running-wsl-2)
 * [WSL 1 から WSL 2 に更新する](./install-win10.md#set-your-distribution-version-to-wsl-1-or-wsl-2)
 * [Windows Server に Linux をインストールする](install-on-server.md)
 * [新しい Linux ディストリビューション用のユーザー アカウントとパスワードを作成する](user-support.md)
