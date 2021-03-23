@@ -5,12 +5,12 @@ keywords: wsl、windows、windowssubsystem、gnu、linux、bash、disk、ext4、
 ms.date: 11/04/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 179f5c6449a4b8137743ab14e29e36ebb61032fa
-ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
+ms.openlocfilehash: 14dee9d841d311a24e5b5ca7f2365f773363347d
+ms.sourcegitcommit: 1259d470fb5970180573809bafc211eb49dde8a3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104725889"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104795915"
 ---
 # <a name="get-started-mounting-a-linux-disk-in-wsl-2-preview"></a>WSL 2 (プレビュー) で Linux ディスクのマウントを開始する
 
@@ -22,7 +22,11 @@ Windows でサポートされていない Linux ディスクフォーマット�
 > この機能にアクセスするには、Windows 10 ビルド20211以降である必要があります。 [Windows Insider プログラム](https://insider.windows.com/)に参加して、最新のプレビュービルドを取得することができます。
 > WSL 2 にディスクを接続するには、管理者アクセス権が必要です。
 
-## <a name="identify-the-disk"></a>ディスクを識別する
+## <a name="mounting-an-unpartitioned-disk"></a>未使用のディスクのマウント
+
+この最も単純なケースでは、パーティションがないディスクがある場合は、コマンドを使用して直接マウントでき `wsl --mount` ます。 まず、ディスクを識別する必要があります。
+
+### <a name="identify-the-disk"></a>ディスクを識別する
 
 Windows で使用可能なディスクを一覧表示するには、次のように実行します。
 
@@ -32,7 +36,31 @@ wmic diskdrive list brief
 
 ディスクパスは、' DeviceID ' 列で使用できます。 通常、の `\\.\PHYSICALDRIVE*` 形式で指定します。
 
-## <a name="list-and-select-the-partitions-to-mount-in-wsl-2"></a>WSL 2 でマウントするパーティションを一覧表示して選択します
+### <a name="mount-the-disk"></a>ディスクのマウント
+
+次に、Powershell で、上で検出されたディスクパスを使用してディスクをマウントできます。 
+
+```powershell
+wsl --mount <DiskPath>
+```
+
+![WSL でドライブをマウントする](./media/wslmountsimple.png)
+
+## <a name="mounting-a-partitioned-disk"></a>パーティション分割されたディスクのマウント
+
+ディスクに含まれているファイル形式が不明な場合、またはパーティションにどのようなパーティションがあるかわからない場合は、次の手順に従ってマウントします。 
+
+### <a name="identify-the-disk"></a>ディスクを識別する
+
+Windows で使用可能なディスクを一覧表示するには、次のように実行します。
+
+```powershell
+wmic diskdrive list brief
+```
+
+ディスクパスは、' DeviceID ' 列で使用できます。 通常はの `\\.\PHYSICALDRIVE*` 形式
+
+### <a name="list-and-select-the-partitions-to-mount-in-wsl-2"></a>WSL 2 でマウントするパーティションを一覧表示して選択します
 
 ディスクが識別されたら、次のように実行します。
 
@@ -44,7 +72,7 @@ wsl --mount <DiskPath> --bare
 
 アタッチされたら、WSL 2 内で次のコマンドを実行してパーティションを一覧表示できます。
 
-```powershell
+```bash
 lsblk
 ```
 
@@ -54,7 +82,7 @@ Linux 内部では、ブロックデバイスはとして識別され  `/dev/<De
 
 出力例:
 
-```powershell
+```bash
 NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 sdb      8:16   0    1G  0 disk
 ├─sdb2   8:18   0   50M  0 part
@@ -64,7 +92,7 @@ sdc      8:32   0  256G  0 disk /
 sda      8:0    0  256G  0 disk
 ```
 
-## <a name="identifying-the-filesystem-type"></a>ファイルシステムの種類の識別
+### <a name="identifying-the-filesystem-type"></a>ファイルシステムの種類の識別
 
 ディスクまたはパーティションのファイルシステムの種類がわからない場合は、次のコマンドを使用できます。
 
@@ -74,7 +102,7 @@ blkid <BlockDevice>
 
 これにより、検出されたファイルシステムの種類 (形式の下) が出力され `TYPE="<Filesystem>"` ます。
 
-## <a name="mount-the-selected-partitions"></a>選択したパーティションをマウントします
+### <a name="mount-the-selected-partitions"></a>選択したパーティションをマウントします
 
 マウントするパーティションを特定したら、各パーティションで次のコマンドを実行します。 
 
@@ -87,7 +115,7 @@ wsl --mount <DiskPath> --partition <PartitionNumber> --type <Filesystem>
 > 
 > 省略した場合、既定のファイルシステムの種類は "ext4" になります。
 
-## <a name="access-the-disk-content"></a>ディスクコンテンツにアクセスする
+### <a name="access-the-disk-content"></a>ディスクコンテンツにアクセスする
 
 マウントされると、構成値が指すパスでディスクにアクセスできるように `automount.root` なります。 既定値は `/mnt/wsl` です。
 
@@ -100,6 +128,20 @@ WSL 2 からディスクのマウントを解除して切断する場合は、�
 ```powershell
 wsl --unmount <DiskPath>
 ```
+
+## <a name="mount-a-vhd-in-wsl"></a>WSL に VHD をマウントする
+
+また、を使用して、仮想ハードディスクファイル (VHD) を WSL にマウントすることもでき `wsl --mount` ます。 これを行うには、まず Windows のコマンドを使用して、Windows に VHD をマウントする必要があり [`Mount-VHD`](/powershell/module/hyper-v/mount-vhd) ます。 このコマンドは、必ず管理者特権で実行してください。 次に、このコマンドを使用して、ディスクパスも出力する例を示します。 は `<pathToVHD>` 実際の VHD パスに置き換えてください。 
+
+```powershell
+Write-Output "\\.\PhysicalDrive$((Mount-VHD -Path <pathToVHD> -PassThru | Get-Disk).Number)"
+```
+
+上記の出力を使用して、この VHD のディスクパスを取得し、前のセクションの手順に従って WSL にマウントすることができます。
+
+この手法を使用して、他の WSL ディストリビューションの仮想ハードディスクをマウントして操作することもできます。各 WSL 2 ディストリビューションは、という名前の仮想ハードディスクファイルを使用して保存されるためです `ext4.vhdx` 。 既定では、WSL 2 ディストリビューションの Vhd は次のパスに格納されます。 `C:\Users\[user]\AppData\Local\Packages\[distro]\LocalState\[distroPackageName]` これらのシステムファイルにアクセスする場合は注意してください。これはパワーユーザーワークフローです。 `wsl --shutdown`ディスクが使用されていないことを確認するために、このディスクと対話する前にを実行してください。 
+
+![WSL VHD をマウントしています](./media/wslmountvhd.png)
 
 ## <a name="command-line-reference"></a>コマンド ライン リファレンス
 
@@ -169,18 +211,6 @@ wsl --unmount [DiskPath]
 
 > [!NOTE]
 > 1つのディスクのマウント解除に失敗した場合は、を実行して WSL 2 を強制的に終了させることができ `wsl --shutdown` ます。これにより、ディスクが切断されます。
-
-## <a name="mount-a-vhd-in-wsl"></a>WSL に VHD をマウントする
-
-また、を使用して、仮想ハードディスクファイル (VHD) を WSL にマウントすることもでき `wsl --mount` ます。 これを行うには、まず Windows のコマンドを使用して、Windows に VHD をマウントする必要があり [`Mount-VHD`](/powershell/module/hyper-v/mount-vhd) ます。 このコマンドは、管理者特権を持つウィンドウで実行してください。 次に、このコマンドを使用して、ディスクパスも出力する例を示します。 は `<pathToVHD>` 実際の VHD パスに置き換えてください。 
-
-```powershell
-Write-Output "\\.\PhysicalDrive$((Mount-VHD -Path <pathToVHD> -PassThru | Get-Disk).Number)"
-```
-
-上記の出力を使用して、この VHD のディスクパスを取得し、前のセクションの手順に従って WSL にマウントすることができます。
-
-この手法を使用して、他の WSL ディストリビューションの仮想ハードディスクをマウントして操作することもできます。各 WSL 2 ディストリビューションは、という名前の仮想ハードディスクファイルを使用して保存されるためです `ext4.vhdx` 。 既定では、WSL 2 ディストリビューションの Vhd は次のパスに格納されます。 `C:\Users\[user]\AppData\Local\Packages\[distro]\LocalState\[distroPackageName]` これらのシステムファイルにアクセスする場合は注意してください。これはパワーユーザーワークフローです。
 
 ## <a name="limitations"></a>制限事項
 
