@@ -36,19 +36,21 @@
       href: file-permissions.md
     - name: お客様の会社のために WSL を設定する
       href: enterprise.md
-    - name: カスタム ディストリビューションのビルド
+    - name: Linux ディストリビューションをインポートする
+      href: use-custom-distro.md
+    - name: カスタム ディストリビューションを作成する
       href: build-custom-distro.md
     - name: WSL 2 でのディスクのマウント (プレビュー)
       href: wsl2-mount-disk.md
     - name: コマンド ライン リファレンス
       href: reference.md
 - name: よく寄せられる質問
-  href: faq.md
+  href: faq.yml
 - name: WSL 2 についての FAQ
-  href: wsl2-faq.md
+  href: wsl2-faq.yml
 - name: トラブルシューティング
   href: troubleshooting.md
-- name: リリース ノート
+- name: のリリース ノート
   items:
     - name: 一般のリリース ノート
       href: release-notes.md
