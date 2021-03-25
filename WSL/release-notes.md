@@ -6,12 +6,12 @@ author: benhillis
 ms.date: 05/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: ab6f26a4f9393c78cfa98367016efcf94afb1084
-ms.sourcegitcommit: c0478193f16efd4f8221016301ef7a1fd67713e0
+ms.openlocfilehash: 63803da81504d6ea24ff62b995e224a1a71668cb
+ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98671965"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104725689"
 ---
 # <a name="release-notes-for-windows-subsystem-for-linux"></a>Windows Subsystem for Linux のリリース ノート
 
@@ -28,7 +28,7 @@ command=<string>
 ```
 
 ## <a name="build-20226"></a>ビルド 20226
-ビルド 20226 の一般的な Windows 情報については、[Windows ブログ](https://blogs.windows.com/windows-insider/2020/09/10/announcing-windows-10-insider-preview-build-20226/)を参照してください。
+ビルド 20226 の一般的な Windows 情報については、[Windows ブログ](https://blogs.windows.com/windows-insider/2020/09/30/announcing-windows-10-insider-preview-build-20226/)を参照してください。
 
 * LxssManager サービスのクラッシュを修正します。 [GH 5902]
 

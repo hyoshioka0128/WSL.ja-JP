@@ -5,12 +5,12 @@ keywords: BashOnWindows, bash, wsl, windows, linux 用 windows サブシステ�
 ms.date: 09/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 58375484d57e7cb65a807e7156a5dcdf166dac2e
-ms.sourcegitcommit: 17d5ea1fe571274c224202544f61035971d6e0e1
+ms.openlocfilehash: ccb1e9c4ba25befc642bfbb41d66ac175503b331
+ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100551029"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104725769"
 ---
 # <a name="windows-subsystem-for-linux-installation-guide-for-windows-10"></a>Windows 10 用 Windows Subsystem for Linux のインストール ガイド
 
@@ -90,7 +90,7 @@ WSL 2 に更新するには、Windows 10 を実行している必要がありま
 
 ## <a name="step-3---enable-virtual-machine-feature"></a>手順 3: 仮想マシンの機能を有効にする
 
-WSL 2 をインストールする前に、"**仮想マシン プラットフォーム**" オプション機能を有効にする必要があります。 この機能を使用するには、コンピューターに[仮想化機能](https://docs.microsoft.com/windows/wsl/troubleshooting#error-0x80370102-the-virtual-machine-could-not-be-started-because-a-required-feature-is-not-installed)が必要です。
+WSL 2 をインストールする前に、"**仮想マシン プラットフォーム**" オプション機能を有効にする必要があります。 この機能を使用するには、コンピューターに[仮想化機能](./troubleshooting.md#error-0x80370102-the-virtual-machine-could-not-be-started-because-a-required-feature-is-not-installed)が必要です。
 
 管理者として PowerShell を開き、以下を実行します。
 

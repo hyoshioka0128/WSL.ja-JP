@@ -5,12 +5,12 @@ keywords: BashOnWindows, bash, wsl, windows, Linux 用 Windows サブシステ�
 ms.date: 05/12/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 501bbf78c2d9f59dad945af9c30571317240b79f
-ms.sourcegitcommit: fb79750bd71d6ebaed5203b3de71ba85a67227b1
+ms.openlocfilehash: ffa0d16bc0c0b1367dec94e7d2a1ae5d2a74415b
+ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88866146"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104725709"
 ---
 # <a name="windows-server-installation-guide"></a>Windows Server インストール ガイド
 

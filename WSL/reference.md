@@ -5,12 +5,12 @@ keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, window
 ms.date: 09/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 6f98cb7b238e4b38c1a931a0e77e419efbcc319d
-ms.sourcegitcommit: ba3399a5ffeffd23551315acd04ea6848d30693b
+ms.openlocfilehash: 8e7f722cfe57ab0229ed7baff9091cc811232274
+ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90719170"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104725749"
 ---
 # <a name="command-reference-for-windows-subsystem-for-linux"></a>Windows Subsystem for Linux のコマンド リファレンス
 

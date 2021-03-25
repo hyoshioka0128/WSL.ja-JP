@@ -5,12 +5,12 @@ keywords: wsl, linux 用 windows subsystem, 手動インストール, 手動で�
 ms.date: 09/15/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f6cb0714d5a688f40690ba68b58b642bab765c2
-ms.sourcegitcommit: fe75d8d799434fb4ff05532baa7906cd6b625bda
+ms.openlocfilehash: d035aa07df915bba6ec3a05736257d219ec0a26f
+ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98811330"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104725729"
 ---
 # <a name="manually-download-windows-subsystem-for-linux-distro-packages"></a>Linux 用 Windows サブシステム ディストリビューション パッケージを手動でダウンロードする
 

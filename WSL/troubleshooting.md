@@ -5,12 +5,12 @@ keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, ubuntu
 ms.date: 09/28/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: f4040cbe9faf5d55324b56974dd5677052224dd1
-ms.sourcegitcommit: d5d3dd8b91e93d46653f9512bceafd8b5340255f
+ms.openlocfilehash: ecbea5245714f3659ecf28885b8837f98d413bea
+ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96443750"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104726009"
 ---
 # <a name="troubleshooting-windows-subsystem-for-linux"></a>Windows Subsystem for Linux のトラブルシューティング
 
@@ -123,7 +123,7 @@ Debian での正しい方法は、上記の行を削除することです。
 
 1. [Hyper-V のシステム要件](/windows-server/virtualization/hyper-v/system-requirements-for-hyper-v-on-windows#:~:text=on%20Windows%20Server.-,General%20requirements,the%20processor%20must%20have%20SLAT.)を確認
 
-2. マシンが VM の場合は、[入れ子になった仮想化](./wsl2-faq.md#can-i-run-wsl-2-in-a-virtual-machine)を手動で有効にしてください。 管理者で Powershell を起動し、次を実行します。
+2. マシンが VM の場合は、[入れ子になった仮想化](./wsl2-faq.yml#can-i-run-wsl-2-in-a-virtual-machine-)を手動で有効にしてください。 管理者で Powershell を起動し、次を実行します。
 
     ```powershell
     Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true

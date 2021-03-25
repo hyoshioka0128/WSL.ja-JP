@@ -4,12 +4,12 @@ description: Windows Subsystem for Linux で実行されている Linux ディ�
 ms.date: 05/12/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 8e3568e4ca94f9b381b7827a237c2b637b97ae57
-ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
+ms.openlocfilehash: 3b6a6eab43d7d6534a0151b54c7db0071c8e5c77
+ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91413073"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104725829"
 ---
 # <a name="windows-interoperability-with-linux"></a>Linux との Windows の相互運用性
 
