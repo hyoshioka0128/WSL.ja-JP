@@ -6,12 +6,12 @@ ms.date: 09/28/2020
 ms.topic: conceptual
 ms.localizationpriority: high
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: 7b5b292ddd5ac148b0db479bdf95cb175e322927
-ms.sourcegitcommit: 17d5ea1fe571274c224202544f61035971d6e0e1
+ms.openlocfilehash: e2ee83319f2c73403c507c9631d10dedf321f8dc
+ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100551019"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104725779"
 ---
 # <a name="comparing-wsl-1-and-wsl-2"></a>WSL 1 と WSL 2 の比較
 
@@ -31,7 +31,7 @@ Linux 用 Windows サブシステムを WSL 1 から WSL 2 に更新する際の
 --- | --- | ---
  Windows と Linux の統合| ✅|✅
  高速の起動時間| ✅ | ✅
- 小さなリソース フット プリント| ✅ |✅
+ 従来の仮想マシンと比較して小さなリソース フット プリント| ✅ |✅
  現在のバージョンの VMware および VirtualBox での実行| ✅ | ✅
  マネージド VM| ❌ | ✅
  完全な Linux カーネル| ❌ |✅
@@ -59,15 +59,15 @@ Linux 用 Windows サブシステムを WSL 1 から WSL 2 に更新する際の
 WSL 2 は、Windows 10 (バージョン 1903、ビルド 18362 以上) でのみ使用できます。 Windows のバージョンを確認するには **Windows ロゴ キー + R** キーを押します。次に「**winver**」と入力し、 **[OK]** を選択します (または、Windows コマンド プロンプトで `ver` コマンドを入力します)。 [最新の Windows バージョンに更新する](ms-settings:windowsupdate)必要がある場合があります。 18362 より前のビルドでは、WSL はまったくサポートされていません。
 
 > [!NOTE]
-> WSL 2 は [VMware 15.5.5+](https://blogs.vmware.com/workstation/2020/05/vmware-workstation-now-supports-hyper-v-mode.html) と [VirtualBox 6+](https://www.virtualbox.org/wiki/Changelog-6.0) で動作します。 詳細については、[WSL 2 に関するよくあるご質問](./wsl2-faq.md#will-i-be-able-to-run-wsl-2-and-other-3rd-party-virtualization-tools-such-as-vmware-or-virtualbox)を参照してください。
+> WSL 2 は [VMware 15.5.5+](https://blogs.vmware.com/workstation/2020/05/vmware-workstation-now-supports-hyper-v-mode.html) と [VirtualBox 6+](https://www.virtualbox.org/wiki/Changelog-6.0) で動作します。 詳細については、[WSL 2 に関するよくあるご質問](./wsl2-faq.yml#will-i-be-able-to-run-wsl-2-and-other-3rd-party-virtualization-tools-such-as-vmware--or-virtualbox-)を参照してください。
 
 ## <a name="whats-new-in-wsl-2"></a>WSL 2 の新機能
 
 WSL 2 では、基盤となるアーキテクチャの大きな見直しが行われ、新機能を有効にするために仮想化テクノロジと Linux カーネルが使用されています。 この更新の主な目標は、ファイル システムのパフォーマンスを向上させることと、システム コールの完全な互換性を追加することです。
 
-- [WSL 2 のシステム要件](./install-win10.md#step-2--check-requirements-for-running-wsl-2)
+- [WSL 2 のシステム要件](./install-win10.md#step-2---check-requirements-for-running-wsl-2)
 - [WSL 1 から WSL 2 に更新する](./install-win10.md#set-your-distribution-version-to-wsl-1-or-wsl-2)
-- [WSL 2 に関してよく寄せられる質問](./wsl2-faq.md)
+- [WSL 2 に関してよく寄せられる質問](./wsl2-faq.yml)
 
 ### <a name="wsl-2-architecture"></a>WSL 2 のアーキテクチャ
 
@@ -95,10 +95,6 @@ Linux バイナリでは、システム コールを使用して、ファイル�
 
 - Linux カーネルに対する更新プログラムがすぐに使用可能になります (WSL チームが更新プログラムを実装して変更を追加するまで待つ必要はありません)。
 
-### <a name="wsl-2-uses-a-smaller-amount-of-memory-on-startup"></a>WSL 2 は起動時のメモリ使用量が少ない
-
-WSL 2 では、メモリ フットプリントが小さな実際の Linux カーネル上で軽量のユーティリティ VM を使用します。 このユーティリティは、仮想アドレスが使用されるメモリを起動時に割り当てます。 これは、WSL 1 で必要とされていたよりも少ない割合の合計メモリで起動するように構成されています。
-
 ## <a name="exceptions-for-using-wsl-1-rather-than-wsl-2"></a>例外的に WSL 2 ではなく WSL 1 を使用する場合
 
 WSL2 ではより高速なパフォーマンスと 100% のシステム コールの互換性が提供されるため、WSL 2 を使用することをお勧めします。 ただし、WSL 1 を使用する方が好ましいシナリオもいくつかあります。 次の場合は、WSL 1 の使用を検討してください。
@@ -107,6 +103,8 @@ WSL2 ではより高速なパフォーマンスと 100% のシステム コー�
   - WSL Linux ディストリビューションを使用して Windows ファイル システム上のプロジェクト ファイルにアクセスする予定で、これらのファイルを Linux ファイル システムに格納できない場合は、WSL 1 を使用することにより、OS ファイル システム間でより高速なパフォーマンスを実現できます。
 - 同じファイルに対して Windows と Linux の両方のツールを使用したクロスコンパイルを必要とするプロジェクト。
   - Windows オペレーティング システムと Linux オペレーティング システムの間のファイル パフォーマンスは WSL 1 の方が WSL 2 よりも高速です。そのため、Windows アプリケーションを使用して Linux ファイルにアクセスする場合、現時点では WSL 1 を使用する方がより高速なパフォーマンスを得られます。
+- 厳密なメモリ要件がある
+  - WSL 2 のメモリ使用量は、使用時に拡張および縮小されます。 プロセスによってメモリが解放されると、それは自動的に Windows に返されます。 ただし現在、WSL 2 では、WSL インスタンスがシャットダウンされるまで、メモリ内のキャッシュ ページが解放されて Windows に戻されることはありません。 WSL セッションが長時間実行されている場合、または非常に大量のファイルにアクセスする場合、このキャッシュによって Windows 上のメモリが占有される可能性があります。 [WSL の Github リポジトリ イシュー 4166](https://github.com/microsoft/WSL/issues/4166) で、このエクスペリエンスを改善するための作業を追跡しています。
 
 > [!NOTE]
 > VS Code [Remote WSL 拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)を試すことを検討してください。Linux コマンド ライン ツールを使用してプロジェクト ファイルを Linux ファイル システム上に格納できるだけでなく、Windows 上で VS Code を使用して、インターネット ブラウザーでプロジェクトを作成、編集、デバッグ、実行できるようになります。Linux ファイル システムと Windows ファイル システムをまたぐ処理に伴うパフォーマンスの低下は発生しません。 [詳しくはこちらをご覧ください](tutorials/wsl-vscode.md)。

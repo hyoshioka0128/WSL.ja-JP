@@ -5,16 +5,21 @@ keywords: リリース ノート, wsl, windows, Linux 用 Windows サブシス�
 ms.date: 06/09/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 977b64b9b963d28c0291166cf2bad799bad4a6fe
-ms.sourcegitcommit: c0478193f16efd4f8221016301ef7a1fd67713e0
+ms.openlocfilehash: 941ecf751f2889130529fb09b42af2f229353c53
+ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98671953"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104725819"
 ---
 # <a name="release-notes-for-windows-subsystem-for-linux-kernel"></a>Linux 用 Windows サブシステム カーネルのリリース ノート
 
 WSL 2 ディストリビューションのサポートが追加されました。ここでは、[完全な Linux カーネルが使用されます](https://devblogs.microsoft.com/commandline/shipping-a-linux-kernel-with-windows/)。 この Linux カーネルはオープン ソースであり、そのソースコードは [WSL2-Linux-Kernel](https://github.com/microsoft/WSL2-Linux-Kernel) リポジトリから入手できます。 この Linux カーネルは Microsoft Update を介してコンピューターに配信され、Windows イメージの一部として提供される Linux 用 Windows サブシステムの個別のリリース スケジュールに従います。
+
+## <a name="5491"></a>5.4.91
+"*リリース日*": プレリリース 2021 年 2 月 22 日
+
+[公式の GitHub リリース リンク](https://github.com/microsoft/WSL2-Linux-Kernel/releases/tag/linux-msft-5.4.91)
 
 ## <a name="5472"></a>5.4.72
 *リリース日*:2021 年 1 月 21 日
