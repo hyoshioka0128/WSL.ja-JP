@@ -2,14 +2,14 @@
 title: Linux ディストリビューションの管理
 description: Windows Subsystem for Linux で実行されている複数の Linux ディストリビューションの一覧表示と構成に関するリファレンス。
 keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, windowssubsystem, ubuntu, wsl.conf, wslconfig
-ms.date: 05/12/2020
+ms.date: 03/26/2021
 ms.topic: article
-ms.openlocfilehash: 95c5926daf2cd3e92b5ebcb41443bfdce36189ec
-ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
+ms.openlocfilehash: 6a18fe22740f01536e46df206f3d2cf7dc6b54d4
+ms.sourcegitcommit: 18ce6b800db6bca7643de0c2bea02fb383761bcd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104725969"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105994110"
 ---
 # <a name="wsl-commands-and-launch-configurations"></a>WSL コマンドと起動構成
 
@@ -226,9 +226,7 @@ WSL で利用可能な Linux ディストリビューションを一覧表示し
 
 > **Windows ビルド17093以降で使用可能**
 
-`wsl.conf` を使用して、サブシステムを起動するたびに適用される、WSL の特定の機能を自動的に構成します。
-
-現時点では、これには自動マウント オプションとネットワーク構成が含まれています。
+を使用してサブシステムを起動するたびに適用される WSL の機能を自動的に構成 `wsl.conf` します。 これには自動マウント オプションとネットワーク構成が含まれます。
 
 `wsl.conf` は、`/etc/wsl.conf` 内の各 Linux ディストリビューションにあります。 そのファイルがそこになければ、自分で作成できます。 WSL は、ファイルの存在を検出し、その内容を読み取ります。 ファイルが見つからないか、形式が正しくない (つまり、不適切なマークアップ形式である) 場合、WSL は通常どおりに起動を続けます。
 
@@ -247,6 +245,8 @@ mountFsTab = false
 generateHosts = true
 generateResolvConf = true
 ```
+
+同じディストリビューションに対して複数の Linux シェルを起動する場合は、Linux サブシステムが実行を停止するまで待機する必要があります。これには、ディストリビューションシェルの最後のインスタンスを閉じてから約8秒かかることがあります。 配布を起動した場合 (Ubuntu) で、wsl の conf ファイルを変更し、配布を終了してから再起動します。 Wsl の conf ファイルへの変更がすぐに有効になることを想定しています。 現在のところ、サブシステムが実行されている可能性があります。 変更を取得するのに十分な時間を確保するために、再起動する前にサブシステムが停止するまで最大8秒間待機する必要があります。 PowerShell とコマンドを使用して、Linux ディストリビューション (シェル) がまだ実行されているかどうかを確認でき `wsl --list --running` ます。 ディストリビューションが実行されていない場合は、"実行中のディストリビューションがありません" という応答が返されます。 これで、ディストリビューションを再起動して、適用された wsl の更新プログラムを確認できます。
 
 ### <a name="configuration-options"></a>構成オプション
 
@@ -340,11 +340,11 @@ processors=2 # Makes the WSL 2 VM use two virtual processors
 | key | value | default | notes|
 |:----|:----|:----|:----|
 | kernel | string | Microsoft が構築したカーネルの受信トレイ | カスタム Linux カーネルへの絶対 Windows パス。 |
-| メモリ | size | Windows または 8 GB のメモリ合計の 50% (どちらか少ない方)20175より前のビルドの場合: Windows 上の合計メモリの80% | WSL 2 VM に割り当てるメモリの量。 |
-| 状況 | 数値 | Windows 上の同じプロセッサ数 | WSL 2 VM に割り当てるプロセッサの数。 |
+| メモリ | サイズ | Windows または 8 GB のメモリ合計の 50% (どちらか少ない方)20175より前のビルドの場合: Windows 上の合計メモリの80% | WSL 2 VM に割り当てるメモリの量。 |
+| 状況 | number | Windows 上の同じプロセッサ数 | WSL 2 VM に割り当てるプロセッサの数。 |
 | localhostForwarding | boolean | `true` | WSL 2 VM のワイルドカードまたは localhost にバインドされたポートが localhost: port を介してホストから接続可能である必要があるかどうかを指定するブール値。 |
 | カーネルコマンドライン | string | 空白 | 追加のカーネルコマンドライン引数。 |
-| swap | size | Windows 上のメモリサイズの25% が最も近い GB に切り上げられます | WSL 2 VM に追加するスワップ領域の大きさ。スワップファイルがない場合は0です。 |
+| swap | サイズ | Windows 上のメモリサイズの25% が最も近い GB に切り上げられます | WSL 2 VM に追加するスワップ領域の大きさ。スワップファイルがない場合は0です。 |
 | スワップ | string | %USERPROFILE%\AppData\Local\Temp\swap.vhdx | スワップバーチャルハードディスクへの絶対 Windows パス。 |
 
 * メモ: この値は Windows ビルド19041では true であり、Insider プログラムの Windows ビルドでは異なる場合があります。
