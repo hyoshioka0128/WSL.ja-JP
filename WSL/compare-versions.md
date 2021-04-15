@@ -6,12 +6,12 @@ ms.date: 09/28/2020
 ms.topic: conceptual
 ms.localizationpriority: high
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: e2ee83319f2c73403c507c9631d10dedf321f8dc
-ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
+ms.openlocfilehash: cce3077384c857607cc81a0d4af604331fa22a14
+ms.sourcegitcommit: 18ce6b800db6bca7643de0c2bea02fb383761bcd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104725779"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105994126"
 ---
 # <a name="comparing-wsl-1-and-wsl-2"></a>WSL 1 と WSL 2 の比較
 
@@ -174,51 +174,65 @@ WSL 2 VHD では、ext4 ファイル システムが使用されます。 この
 
 1. 次のコマンドを使用して、すべての WSL インスタンスを終了します: `wsl --shutdown`
 
-2. ディストリビューションのインストール パッケージ名 ("PackageFamilyName") を見つけます
+2. ディストリビューションのインストール パッケージ名 ("PackageFamilyName") を見つけるには:
     - PowerShell を使用して、次のコマンドを入力します ("distro" はディストリビューション名です):
     - `Get-AppxPackage -Name "*<distro>*" | Select PackageFamilyName`
+    - 例: `Get-AppxPackage -Name "*Ubuntu*" | Select PackageFamilyName`
 
-3. WSL 2 のインストールで使用される VHD ファイルの `fullpath` を特定します。これが `pathToVHD` になります。
-     - `%LOCALAPPDATA%\Packages\<PackageFamilyName>\LocalState\<disk>.vhdx`
+    ![Get-AppxPackage コマンド ラインのスクリーンショット](./media/get-appxpackage.png)
+
+3. 生成された `PackageFamilyName` を使用して、WSL 2 のインストールで使用される VHD ファイルの `fullpath` を特定します。これが `pathToVHD` になります。 完全なパスを見つけるには:
+   - [スタート] メニューで「%LOCALAPPDATA%」と入力し、%LOCALAPPDATA% ファイル フォルダーを選択して開きます。
+   - 次に、"Packages" フォルダーを開き、ディストリビューションの `PackageFamilyName` を検索します。 そのフォルダー (つまり、CanonicalGroupLimited.Ubuntu20.04onWindows_79xxxxx) を開きます。
+   - `PackageFamilyName` フォルダー内で "LocalState" フォルダーを開き、`<disk>.vhdx` ファイルを見つけます。
+   - そのファイルへのパスをコピーします。次のようになるはずです: `%LOCALAPPDATA%\Packages\<PackageFamilyName>\LocalState\<disk>.vhdx`
+   - たとえば、Ubuntu 20.04 の `<pathToVHD>` は次のようになるはずです: `%LOCALAPPDATA%\Packages\CanonicalGroupLimited.Ubuntu20.04onWindows_79xxxx\LocalState\ext4.vhdx`。
 
 4. 次のコマンドを実行して、WSL 2 VHD のサイズを変更します。
    - 管理者特権で Windows コマンド プロンプトを開き、次のように入力します。
 
-      ```powershell
+      ```cmd
       diskpart
+      ```
+
+      ```cmd
       DISKPART> Select vdisk file="<pathToVHD>"
+      ```
+
+      ```cmd
       DISKPART> detail vdisk
       ```
 
-   - **detail** コマンドの出力を確認します。  出力には **[仮想サイズ]** の値が含まれます。  これは現在の最大値です。  この値を MB (メガバイト) に変換します。  サイズ変更した後の新しい値は、この値より大きくなければなりません。  たとえば、**detail** の出力に **[仮想サイズ:256 GB]** と示されている場合、**256000** より大きい値を指定する必要があります。  新しいサイズを MB (メガバイト) 単位にしたら、**diskpart** で次のコマンドを入力します。
+   - **detail** コマンドの出力を確認します。  出力には **[仮想サイズ]** の値が含まれます。 これは現在の最大値です。 この値を MB (メガバイト) に変換します。 たとえば、**detail** の出力に **[仮想サイズ: 256 GB]** と示されている場合は、**256000** に変換します。
+   - 入力する新しい値は、この元の値より大きくする必要があります。 たとえば、上記の仮想サイズを 2 倍にするには、**512000** という値を入力できます。 新しいサイズとして設定する数値 (メガバイト単位) を決定したら、Windows コマンド プロンプトの **diskpart** プロンプトで次のコマンドを入力します。
 
-      ```powershell
+      ```cmd
       DISKPART> expand vdisk maximum=<sizeInMegaBytes>
       ```
 
    - **diskpart** を終了します。
 
-      ```powershell
+      ```cmd
       DISKPART> exit
       ```
 
 5. WSL ディストリビューション (たとえば、Ubuntu) を起動します。
 
-6. Linux ディストリビューションのコマンド ラインから次のコマンドを実行して、ファイル システムのサイズを拡張できることを WSL に認識させます。
+6. WSL ディストリビューションのコマンド ラインから次のコマンドを実行して、ファイル システムのサイズを拡張できることを WSL に認識させます。
 
-   > [!NOTE]
-   > 最初の **mount** コマンドへの応答として、 **/dev: none already mounted on /dev** というメッセージが表示されることがあります。  このメッセージは無視しても問題ありません。
-
-   ```powershell
+   ```bash
       sudo mount -t devtmpfs none /dev
       mount | grep ext4
    ```
 
-   `/dev/sdX` のようなこのエントリの名前をコピーします (X は他の文字を表します)。  次の例では、**X** の値は **b** です。
+   - 最初の **mount** コマンドへの応答として、"/dev: none already mounted on /dev" というメッセージが表示されることがあります。 このメッセージは無視しても問題ありません。
+   - `/dev/sdX` のようなこのエントリの名前をコピーします (X は他の文字を表します)。  次の例では、**X** の値は **b** です。
 
-   ```powershell
+   ```bash
       sudo resize2fs /dev/sdb <sizeInMegabytes>M
    ```
+
+   - 上記の例を使用して、vhd サイズを **512000** に変更したので、コマンドは `sudo resize2fs /dev/sbd 512000M` のようになります。
 
    > [!NOTE]
    > **resize2fs** のインストールが必要になる場合があります。  その場合は、`sudo apt install resize2fs` というコマンドを使用してこれをインストールできます。
@@ -226,11 +240,11 @@ WSL 2 VHD では、ext4 ファイル システムが使用されます。 この
    出力は次のようになります。
 
    ```bash
-      resize2fs 1.44.1 (24-Mar-2018)
+      resize2fs 1.44.1 (24-Mar-2021)
       Filesystem at /dev/sdb is mounted on /; on-line resizing required
       old_desc_blocks = 32, new_desc_blocks = 38
       The filesystem on /dev/sdb is now 78643200 (4k) blocks long.
       ```
 
-> [!NOTE]
-> 通常、Windows ツールまたはエディターを使用して、AppData フォルダー内にある WSL 関連ファイルを変更、移動、またはアクセスしないでください。 そうすると、Linux ディストリビューションが破損する可能性があります。
+> [!IMPORTANT]
+> Windows ツールまたはエディターを使用して、AppData フォルダー内にある WSL 関連ファイルを変更、移動、またはアクセスしないことをお勧めします。 そうすると、Linux ディストリビューションが破損する可能性があります。 Windows から Linux ファイルにアクセスする場合は、パス `\\wsl$\<distroName>\` を使用することで実現できます。 WSL ディストリビューションを開き、「`explorer.exe .`」と入力してそのフォルダーを表示します。 詳細については、次のブログ投稿を参照してください: 「[Windows から Linux ファイルにアクセスする](https://devblogs.microsoft.com/commandline/whats-new-for-wsl-in-windows-10-version-1903/#accessing-linux-files-from-windows)」。
