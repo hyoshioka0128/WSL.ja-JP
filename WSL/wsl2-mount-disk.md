@@ -1,26 +1,28 @@
 ---
-title: WSL 2 (プレビュー) で Linux ディスクのマウントを開始する
+title: WSL 2 で Linux ディスクのマウントを開始する
 description: WSL 2 でディスクマウントを設定する方法と、そのアクセス方法について説明します。
 keywords: wsl、windows、windowssubsystem、gnu、linux、bash、disk、ext4、filesystem、mount
-ms.date: 11/04/2020
+ms.date: 04/08/2021
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 14dee9d841d311a24e5b5ca7f2365f773363347d
-ms.sourcegitcommit: 1259d470fb5970180573809bafc211eb49dde8a3
+ms.openlocfilehash: c7bd4502d383867d6794b6e0b377592fe9f1acc5
+ms.sourcegitcommit: 7f4a813fdcbfca65412ecb2311f0b5c8b546fef8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104795915"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107493284"
 ---
 # <a name="get-started-mounting-a-linux-disk-in-wsl-2-preview"></a>WSL 2 (プレビュー) で Linux ディスクのマウントを開始する
 
-Windows でサポートされていない Linux ディスクフォーマットにアクセスする場合は、WSL 2 を使用してディスクをマウントし、そのコンテンツにアクセスすることができます。
-
-このチュートリアルでは、WSL2 にアタッチするディスクとパーティションを識別する手順、それらをマウントする方法、およびそれらへのアクセス方法について説明します。
+Windows でサポートされていない Linux ディスクフォーマットにアクセスする場合は、WSL 2 を使用してディスクをマウントし、そのコンテンツにアクセスすることができます。 このチュートリアルでは、WSL2 にアタッチするディスクとパーティションを識別する手順、それらをマウントする方法、およびそれらへのアクセス方法について説明します。
 
 > [!NOTE]
-> この機能にアクセスするには、Windows 10 ビルド20211以降である必要があります。 [Windows Insider プログラム](https://insider.windows.com/)に参加して、最新のプレビュービルドを取得することができます。
 > WSL 2 にディスクを接続するには、管理者アクセス権が必要です。
+> WSL 2 コマンドは、 `mount` 現在使用されているディスク (またはディスクに属しているパーティション) のマウントをサポートしていません。 `wsl --mount` パーティションのみが要求された場合でも、は常にディスク全体をアタッチします。 Windows インストールディスクをマウントすることはできません。
+
+## <a name="prerequisites"></a>前提条件
+
+この機能にアクセスするには、Windows 10 ビルド20211以降である必要があります。 [Windows Insider プログラム](https://insider.windows.com/)に参加して、最新のプレビュービルドを取得することができます。
 
 ## <a name="mounting-an-unpartitioned-disk"></a>未使用のディスクのマウント
 

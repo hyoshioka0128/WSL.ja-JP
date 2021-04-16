@@ -1,16 +1,16 @@
 ---
-title: Windows Subsystem for Linux の GPU アクセラレータ Machine Learning トレーニング
-description: 詳細については、NVIDIA CUDA、DirectML、PyTorch の WSL 2 サポートに関するページを参照してください。
+title: WSL での GPU 高速化による ML トレーニング
+description: 詳細については、NVIDIA CUDA、DirectML、PyTorch の WSL 2 サポートに関するページを参照してください。 Machine Learning トレーニングを実行するときの GPU アクセラレーションのための Windows Subsystem for Linux サポートについては、「」を参照してください。
 keywords: wsl、windows、windows サブシステム、gpu コンピューティング、gpu アクセラレーション、NVIDIA、CUDA、DirectML、、PyTorch、NVIDIA CUDA preview、GPU ドライバー、NVIDIA Container Toolkit、Docker
-ms.date: 06/17/2020
+ms.date: 04/07/2021
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e9b4ff209ce8262137ffcc58c8dc0f0753485c5
-ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
+ms.openlocfilehash: 0123c4fc93e3c3a017302a2044068287ec29fe9b
+ms.sourcegitcommit: 7f4a813fdcbfca65412ecb2311f0b5c8b546fef8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104725589"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107493484"
 ---
 # <a name="gpu-accelerated-machine-learning-training-in-the-windows-subsystem-for-linux"></a>Windows Subsystem for Linux での GPU アクセラレータによる機械学習トレーニング
 

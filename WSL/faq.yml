@@ -1,18 +1,18 @@
 ### YamlMime:FAQ
 metadata:
-  title: よく寄せられる質問 (FAQ)
+  title: Windows Subsystem for Linux に関する FAQ
   description: "\"WSL で何ができますか\" などの、Linux 用 Windows サブシステムについてよく寄せられる質問 (FAQ) への回答をご確認いただけます。"
   keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, faq
   ms.date: 09/15/2020
   ms.topic: article
   ms.assetid: 129101ed-b88a-43c2-b6a2-cd2c4ff6fee1
   ms.localizationpriority: high
-  ms.openlocfilehash: b51b2c314483cb44af38233e5bb80d07e8cfe83a
-  ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
+  ms.openlocfilehash: 8f4ab1aea6accc1f221e664dd882603edf54185d
+  ms.sourcegitcommit: 7f4a813fdcbfca65412ecb2311f0b5c8b546fef8
   ms.translationtype: MT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 03/20/2021
-  ms.locfileid: "104729309"
+  ms.lasthandoff: 04/14/2021
+  ms.locfileid: "107493324"
 title: Windows Subsystem for Linux に関してよく寄せられる質問
 summary: ''
 sections:
@@ -31,7 +31,7 @@ sections:
       これは、主に開発者、特に web 開発者、オープンソースプロジェクトでの作業、または Linux サーバー環境へのデプロイのためのツールです。 WSL は、Bash、一般的な Linux ツール (、など) `sed` `awk` と linux 最初のフレームワーク (Ruby、Python など) を使用していても、Windows の生産性向上ツールを利用している人を対象としています。
   - question: >
       WSL で何ができますか。
-    answer: "WSL を使用すると、任意の配布方法 (Ubuntu、Debian、OpenSUSE、Kali、Alpine など) を使用して、Bash シェルで Linux を実行できます。 Bash を使用すると、コマンド ライン Linux ツールおよびアプリを実行できます。 たとえば、「`lsb_release -a`」と入力して Enter キーを押すと、現在実行中の Linux ディストリビューションの詳細が表示されます。\n\n![ディストリビューションの詳細のスクリーンショット](media/distro.png)\n\nLinux Bash シェル内からローカル コンピューターのファイル システムにアクセスすることもできます。ローカル ドライブは `/mnt` フォルダーの下にマウントされます。 たとえば、 `C:` ドライブは `/mnt/c` の下にマウントされます。  \n\n![マウントされた C ドライブのスクリーンショット](media/ls.png)\n"
+    answer: "WSL を使用すると、任意の配布方法 (Ubuntu、Debian、OpenSUSE、Kali、Alpine など) を使用して、Bash シェルで Linux を実行できます。 Bash を使用すると、コマンド ライン Linux ツールおよびアプリを実行できます。 たとえば、「`lsb_release -a`」と入力して Enter キーを押すと、現在実行中の Linux ディストリビューションの詳細が表示されます。\n\n![ディストリビューションの詳細のスクリーンショット](media/distro.png)\n\nLinux Bash シェル内からローカルコンピューターのファイルシステムにアクセスすることもできます。ローカルドライブはフォルダーの下にマウントさ `/mnt` れています。 たとえば、 `C:` ドライブは `/mnt/c` の下にマウントされます。  \n\n![マウントされた C ドライブのスクリーンショット](media/ls.png)\n"
   - question: >
       WSL が組み込まれた一般的な開発ワークフローについて説明してください。
     answer: >
@@ -64,7 +64,7 @@ sections:
       OSS プロジェクトでの作業中、PowerShell プロンプトから Bash を実行すると非常に役立つシナリオが多数あります。 Bash のサポートは補完的なものであり、Windows でのそのコマンド ラインの価値を高め、PowerShell と PowerShell コミュニティでその他の一般的なテクノロジを利用できるようにします。
 
 
-      詳細については、PowerShell チームのブログ「[Windows の Bash:それがすばらしい理由と PowerShell における意味](https://blogs.msdn.microsoft.com/powershell/2016/04/01/bash-for-windows-why-its-awesome-and-what-it-means-for-powershell/)」をお読みください
+      詳細については、PowerShell チームのブログ「[Windows の Bash:それがすばらしい理由と PowerShell における意味](https://devblogs.microsoft.com/powershell/bash-for-windows-why-its-awesome-and-what-it-means-for-powershell/)」をお読みください
   - question: >
       WSL ですべての Linux アプリを実行できますか。
     answer: "いいえ。 WSL は、Bash およびコア Linux コマンド ライン ツールを必要とするユーザーが Windows 上でそれらを実行できるようにすることを目的としたツールです。\n\nWSL はまだ GUI デスクトップやアプリケーション (Gnome、KDE など) をサポートしていません。更新については、 [コマンドラインのブログ](https://devblogs.microsoft.com/commandline/whats-new-in-the-windows-subsystem-for-linux-september-2020/#gui-apps) を参照してください。  \n\nまた、多くの一般的なサーバー アプリケーション (Redis など) を実行できる場合でも、実稼働サービスをホストする目的には WSL をお勧めしません。Microsoft は、Azure、Hyper-V、Docker で実稼働 Linux ワークロードを実行するためのさまざまなソリューションを提供しています。 \n"
@@ -81,7 +81,7 @@ sections:
   - question: >
       C: ドライブにアクセスするにはどうすればよいですか。
     answer: >
-      ローカル コンピューター上のハード ドライブのマウント ポイントが自動的に作成され、Windows ファイル システムに簡単にアクセスできるようになります。
+      ローカルコンピューター上のハードドライブのマウントポイントが自動的に作成され、Windows ファイルシステムに簡単にアクセスできるようになります。
 
 
       **/mnt/\<drive letter>/**
@@ -109,7 +109,7 @@ sections:
       このサポートは、[Linux 用 Windows サブシステムと Windows そのものとの相互運用性](./interop.md)に依存しています。
   - question: >
       Linux アプリで Windows ファイルをどのように使用しますか。
-    answer: "WSL の利点の 1 つは、Windows と Linux の両方のアプリまたはツールを経由してファイルにアクセスできることです。 \n\nWSL では、コンピューターの固定ドライブを Linux ディストリビューションの `/mnt/<drive>` フォルダーの下にマウントします。 たとえば、 `C:` ドライブは `/mnt/c/` の下にマウントされます。\n\nマウントされたドライブを使用すると、[Visual Studio](https://visualstudio.microsoft.com/vs/) または[VS Code](https://code.visualstudio.com/)を使用して、たとえば `C:\\dev\\myproj\\` 内のコードを編集したり、`/mnt/c/dev/myproj` を介して同じファイルにアクセスして Linux でそのコードをビルド/テストしたりできます。\n\n> **重要な注意**:WSL を使用する際の主な制限事項の 1 つは、Windows アプリまたはツールを使用して Linux ディストリビューションのファイル システム内のファイルに直接アクセスしたり、変更したりすることがサポートされていないことです。 以下を参照してください。[Windows アプリやツールを使用して Linux ファイルを変更しない](https://blogs.msdn.microsoft.com/commandline/2016/11/17/do-not-change-linux-files-using-windows-apps-and-tools/)\n"
+    answer: "WSL の利点の 1 つは、Windows と Linux の両方のアプリまたはツールを経由してファイルにアクセスできることです。 \n\nWSL では、コンピューターの固定ドライブを Linux ディストリビューションの `/mnt/<drive>` フォルダーの下にマウントします。 たとえば、 `C:` ドライブは `/mnt/c/` の下にマウントされます。\n\nマウントされたドライブを使用すると、[Visual Studio](https://visualstudio.microsoft.com/vs/) または[VS Code](https://code.visualstudio.com/)を使用して、たとえば `C:\\dev\\myproj\\` 内のコードを編集したり、`/mnt/c/dev/myproj` を介して同じファイルにアクセスして Linux でそのコードをビルド/テストしたりできます。\n\n> **重要な注意** 事項: wsl を使用する際の主な制限事項の1つは、Windows アプリまたはツールを使用して Linux ディストリビューションのファイルシステムのファイルに直接アクセスしたり変更したりすることができないことです。 以下を参照してください。[Windows アプリやツールを使用して Linux ファイルを変更しない](https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/)\n"
   - question: >
       Linux ドライブのファイルはマウントされた Windows ドライブのものとは異なりますか。
     answer: >
@@ -127,7 +127,7 @@ sections:
     answer: "一部のパッケージでは、Microsoft がまだ実装していない機能が使用されています。 たとえば、`udev` はまだサポートされていないため、`apt-get upgrade` エラーがいくつか発生します。\n\n`udev` に関連する問題を修正するには、次の手順に従います。\n\n1. 次の内容を `/usr/sbin/policy-rc.d` に記述して、変更を保存します。\n\n    ```bash\n    #!/bin/sh\n    exit 101\n    ```\n\n2. 実行のアクセス許可を `/usr/sbin/policy-rc.d` に追加します\n\n    ```bash\n    chmod +x /usr/sbin/policy-rc.d\n    ```\n  \n3. 次のコマンドを実行します\n\n    ```bash\n    dpkg-divert --local --rename --add /sbin/initctl\n    ln -s /bin/true /sbin/initctl\n    ```\n"
   - question: >
       WSL ディストリビューションをアンインストールするにはどうすればよいですか。
-    answer: "1709 (16299) より前のビルドでは、コマンド プロンプトを開き、次を実行します。\n\n  ```batchfile\n  lxrun /uninstall /full\n  ```\n  \nストアからインストールされた WSL ディストリビューションは、他の Windows アプリと同様に、アプリ タイルを右クリックして [アンインストール] をクリックするか、[`Remove-AppxPackage` コマンドレット](/previous-versions//hh856038(v=technet.10))を使用して PowerShell を介してアンインストールできます。\n"
+    answer: "1709 (16299) より前のビルドでは、コマンド プロンプトを開き、次を実行します。\n\n  ```batchfile\n  lxrun /uninstall /full\n  ```\n  \nストアからインストールされた WSL ディストリビューションは、他の Windows アプリと同様にアンインストールできます。アプリタイルを右クリックして [アンインストール] をクリックするか、 [ `Remove-AppxPackage` コマンドレット](https://docs.microsoft.com/powershell/module/appx/remove-appxpackage)を使用して PowerShell を使用します)。\n"
   - question: >
       ping によってアクセス拒否エラーが発生するのはなぜですか。
     answer: >
@@ -173,9 +173,13 @@ sections:
 
       1. Kaspersky
 
-      1. AVG
+      2. AVG
 
-      1. Avast
+      3. Avast
+
+      4. Symantec Endpoint Protection
+
+      5. F-セキュリティ保護
 
 
       ファイアウォールをオフにすると、アクセスできる場合があります。 場合によっては、ファイアウォールをインストールするだけでアクセスがブロックされるようです。
@@ -185,7 +189,7 @@ sections:
       WSL は Windows で実行されているため、Windows の IP アドレスを共有します。 そのため、localhost 上の任意のポートにアクセスできます。たとえば、ポート 1234 に Web コンテンツがあるとすると、 https://localhost:1234 を Windows ブラウザーに入力できます。
   - question: >
       WSL ディストリビューションをバックアップしたり、別のドライブに移動したりするにはどうすればよいですか。
-    answer: "ディストリビューションをバックアップまたは移動する最適な方法は、Windows バージョン 1809 以降で使用できるエクスポート/インポート コマンドを使用することです。 `wsl --export` コマンドを使用して、ディストリビューション全体を tarball にエクスポートできます。 その後、`wsl --import` コマンドを使用してこのディストリビューションを WSL にインポートし直すことができます。これにより、インポート用の新しいドライブの場所に名前を付けて、WSL ディストリビューションをバックアップして状態を保存 (または移動) できます。 \n\nAppdata フォルダーのファイルをバックアップする従来のバックアップ サービス (Windows バックアップなど) によって Linux ファイルが破損することはありません。\n"
+    answer: "ディストリビューションをバックアップまたは移動する最適な方法は、Windows バージョン 1809 以降で使用できるエクスポート/インポート コマンドを使用することです。 `wsl --export` コマンドを使用して、ディストリビューション全体を tarball にエクスポートできます。 その後、`wsl --import` コマンドを使用してこのディストリビューションを WSL にインポートし直すことができます。これにより、インポート用の新しいドライブの場所に名前を付けて、WSL ディストリビューションをバックアップして状態を保存 (または移動) できます。 \n\nAppData フォルダー (Windows バックアップなど) のファイルをバックアップする従来のバックアップサービスでは、Linux ファイルが破損しないことに注意してください。\n"
   - question: >
       フィードバックはどこで提供できますか。
     answer: >-
@@ -201,6 +205,6 @@ sections:
       WSL の最新ニュースを入手するには、以下をご利用ください。
 
 
-      * [Microsoft のコマンド ライン チームのブログ](https://blogs.msdn.microsoft.com/commandline/)
+      * [Microsoft のコマンド ライン チームのブログ](https://devblogs.microsoft.com/commandline/)
 
       * Twitter。 ニュース、更新などを確認するには、Twitter で [@craigaloewen](https://twitter.com/craigaloewen) をフォローしてください。

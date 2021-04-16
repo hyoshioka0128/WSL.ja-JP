@@ -1,16 +1,16 @@
 ---
-title: MySQL MongoDB、PostgreSQL、SQLite、Microsoft SQL Server、または Redis を使用して、Windows Subsystem for Linux でデータベースをセットアップする
+title: WSL を使用したデータベースの追加または接続
 description: Windows Subsystem for Linux で MySQL MongoDB、PostgreSQL、SQLite、Microsoft SQL Server、または Redis を設定する方法について説明します。
 keywords: wsl、windows、windowssubsystem、MySQL MongoDB、PostgreSQL、SQLite、Microsoft SQL Server、Redis、windows 10
-ms.date: 07/07/2020
+ms.date: 04/07/2021
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e84863619faf682ae0c25b15fe70f7aa86cce579
-ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
+ms.openlocfilehash: 7fd5cc05282025dd9e0d7fa505e3667c8f67c5a9
+ms.sourcegitcommit: 7f4a813fdcbfca65412ecb2311f0b5c8b546fef8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104725989"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107493584"
 ---
 # <a name="get-started-with-databases-on-windows-subsystem-for-linux"></a>Windows Subsystem for Linux でデータベースを使ってみる
 
@@ -130,7 +130,7 @@ MongoDB をインストールした後は、次の 3 つのコマンドについ
 - データベースの実行を停止する `sudo service mongodb stop`
 
 > [!NOTE]
-> チュートリアルや記事で、`sudo systemctl status mongodb` コマンドが使用されている場合があります。 軽量状態を維持するために、WSL には `systemd` (Linux のサービス管理システム) は含まれていません。 代わりに、SysVinit を使用してマシン上のサービスを開始します。 違いはほとんどありませんが、チュートリアルで `sudo systemctl` が使用されている場合は、代わりに `sudo /etc/init.d/` を使用します。 たとえば、`sudo /etc/inid.d/mongodb status` は WSL では `sudo systemctl status mongodb` になります。または、`sudo service mongodb status` を使用することもできます。
+> チュートリアルや記事で、`sudo systemctl status mongodb` コマンドが使用されている場合があります。 軽量状態を維持するために、WSL には `systemd` (Linux のサービス管理システム) は含まれていません。 代わりに、SysVinit を使用してマシン上のサービスを開始します。 違いはほとんどありませんが、チュートリアルで `sudo systemctl` が使用されている場合は、代わりに `sudo /etc/init.d/` を使用します。 たとえば、`sudo /etc/init.d/mongodb status` は WSL では `sudo systemctl status mongodb` になります。または、`sudo service mongodb status` を使用することもできます。
 
 ローカルサーバーで Mongo データベースを実行するには、次のようにします。
 

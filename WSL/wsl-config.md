@@ -4,12 +4,12 @@ description: Windows Subsystem for Linux で実行されている複数の Linux
 keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, windowssubsystem, ubuntu, wsl.conf, wslconfig
 ms.date: 03/26/2021
 ms.topic: article
-ms.openlocfilehash: 6a18fe22740f01536e46df206f3d2cf7dc6b54d4
-ms.sourcegitcommit: 18ce6b800db6bca7643de0c2bea02fb383761bcd
+ms.openlocfilehash: 9ba7ec9eedf08a5a5118c9fa36e57b0eb7a9f3a8
+ms.sourcegitcommit: 7f4a813fdcbfca65412ecb2311f0b5c8b546fef8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105994110"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107493594"
 ---
 # <a name="wsl-commands-and-launch-configurations"></a>WSL コマンドと起動構成
 
@@ -281,6 +281,7 @@ Windows ドライブ (DrvFs) にさまざまなマウント オプションを�
 |fmask | すべてのファイルに対して除外するアクセス許可の 8 進数のマスク | 000
 |dmask | すべてのディレクトリに対して除外するアクセス許可の 8 進数のマスク | 000
 |metadata | Linux システムのアクセス許可をサポートするためにメタデータを Windows ファイルに追加するかどうか | disabled
+|case | 大文字と小文字が区別されるディレクトリを指定します。また、WSL で作成された新しいディレクトリがフラグを設定するかどうかを指定します。 オプションの詳細については、「 [ディレクトリごとの大文字と小文字の区別」と「WSL](https://devblogs.microsoft.com/commandline/per-directory-case-sensitivity-and-wsl/#per-directory-case-sensitivity-in-wsl) 」を参照してください。 | `dir`
 
 **注:** アクセス許可マスクは、ファイルまたはディレクトリに適用される前に論理 OR 演算によって配置されます。 
 

@@ -1,16 +1,16 @@
 ---
-title: Windows Subsystem for Linux で Git の使用を開始する
+title: WSL で Git の使用を開始する
 description: Windows Subsystem for Linux でバージョン管理用の Git を設定する方法について説明します。
 keywords: wsl、windows、windowssubsystem、gnu、linux、bash、git、github、バージョン管理
 ms.date: 06/04/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e17e779a926ddd32223dba260d6435b976fa843
-ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
+ms.openlocfilehash: 1e8a856e35682571d37ad57db39cec257ad22c56
+ms.sourcegitcommit: 7f4a813fdcbfca65412ecb2311f0b5c8b546fef8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104726019"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107493624"
 ---
 # <a name="get-started-using-git-on-windows-subsystem-for-linux"></a>Windows Subsystem for Linux で Git の使用を開始する
 
@@ -18,7 +18,7 @@ Git は、最も一般的に使用されるバージョン管理システムで�
 
 ## <a name="git-can-be-installed-on-windows-and-on-wsl"></a>Git は、Windows および WSL にインストールできます。
 
-重要な考慮事項: WSL を有効にして Linux ディストリビューションをインストールする場合は、Windows NTFS C:\ から分離した新しいファイルシステムをインストールします。コンピューター上のドライブ。 Linux では、ドライブに文字が指定されていません。 これらにはマウントポイントが指定されています。 ファイルシステムのルートは、 `/` ルートパーティションのマウントポイント、または WSL の場合はフォルダーです。 すべてが同じドライブであるとは限りません `/` 。 たとえば、ラップトップには、2つのバージョンの Ubuntu (20.04 と 18.04) と Debian がインストールされています。 これらの配布を開いた場合は、コマンドを使用してルートディレクトリを選択 `cd ~` し、コマンドを入力すると、 `explorer.exe .` Windows ファイルエクスプローラーが開き、その配布のディレクトリパスが表示されます。
+重要な考慮事項: WSL を有効にして Linux ディストリビューションをインストールする場合は、Windows NTFS C:\ から分離した新しいファイルシステムをインストールします。コンピューター上のドライブ。 Linux では、ドライブに文字が指定されていません。 これらにはマウントポイントが指定されています。 ファイルシステムのルートは、 `/` ルートパーティションのマウントポイント、または WSL の場合はフォルダーです。 すべてが同じドライブであるとは限りません `/` 。 たとえば、ラップトップには、2つのバージョンの Ubuntu (20.04 と 18.04) と Debian がインストールされています。 これらの配布を開いた場合は、コマンドを使用してホームディレクトリを選択 `cd ~` し、コマンドを入力すると、 `explorer.exe .` Windows ファイルエクスプローラーが開き、その配布のディレクトリパスが表示されます。
 
 | Linux ディストリビューション | ホームフォルダーにアクセスするための Windows パス |
 | ----------- | ----------- |

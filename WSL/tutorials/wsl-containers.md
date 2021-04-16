@@ -1,16 +1,16 @@
 ---
-title: Windows Subsystem for Linux で Docker コンテナーの使用を開始する
+title: WSL で Docker コンテナーを使ってみる
 description: Windows Subsystem for Linux で Docker コンテナーを設定する方法について説明します。
 keywords: wsl、windows、windowssubsystem、windows 10、docker、コンテナー
 ms.date: 08/28/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: efd28892d108ccaa9d1e0372108b73df876f450c
-ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
+ms.openlocfilehash: 213ceaa4d10a88b2807bdffc123e81f271ec9290
+ms.sourcegitcommit: 7f4a813fdcbfca65412ecb2311f0b5c8b546fef8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104726029"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107493634"
 ---
 # <a name="get-started-with-docker-remote-containers-on-wsl-2"></a>WSL 2 での Docker リモート コンテナーの概要
 

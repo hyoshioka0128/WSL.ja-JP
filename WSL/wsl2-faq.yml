@@ -1,19 +1,19 @@
 ### YamlMime:FAQ
 metadata:
-  title: WSL 2 についてよく寄せられる質問
+  title: Windows Subsystem for Linux 2 に関する FAQ
   description: "\"仮想マシンで WSL 2 を実行できますか?\" などの、Linux 用 Windows サブシステム 2 についてよく寄せられる質問 (FAQ) への回答をご確認いただけます。"
   keywords: BashOnWindows, bash, wsl, wsl2, windows, windows subsystem for linux, windowssubsystem, ubuntu, debian, suse, windows 10, install
-  ms.date: 05/30/2019
+  ms.date: 04/07/2021
   ms.topic: article
   ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
   ms.custom: seodec18
   ms.localizationpriority: high
-  ms.openlocfilehash: d812230c46dc9efb1a18f73d1eeb92813b76a39e
-  ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
+  ms.openlocfilehash: 46f533ec9e9dda8b13c749e1cfaa8ec6be250e72
+  ms.sourcegitcommit: 7f4a813fdcbfca65412ecb2311f0b5c8b546fef8
   ms.translationtype: MT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 03/20/2021
-  ms.locfileid: "104729315"
+  ms.lasthandoff: 04/14/2021
+  ms.locfileid: "107493294"
 title: WSL 2 に関する FAQ
 summary: Linux 用 Windows サブシステム 2 についてよく寄せられる質問 (FAQ) の一覧を次に示します。
 sections:

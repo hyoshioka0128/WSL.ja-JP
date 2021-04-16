@@ -1,17 +1,17 @@
 ---
-title: ファイルのアクセス許可
+title: WSL のファイルのアクセス許可
 description: WSL が Windows でファイルのアクセス許可を特定する方法について
 keywords: BashOnWindows, bash, wsl, wsl2, windows, linux 用 windows サブシステム, windowssubsystem, ubuntu, debian, suse, windows 10, ファイル, アクセス許可
 ms.date: 01/14/2020
 ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.localizationpriority: high
-ms.openlocfilehash: 3de8553baf616ee8d5d45f0738615f83df952942
-ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
+ms.openlocfilehash: 01bf0d66267a64a7fba21d2cdeca3fe68a9b42fa
+ms.sourcegitcommit: 7f4a813fdcbfca65412ecb2311f0b5c8b546fef8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91413223"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107493524"
 ---
 # <a name="file-permissions-for-wsl"></a>WSL のファイルのアクセス許可
 

@@ -1,17 +1,17 @@
 ---
-title: Windows 10 記念日更新プログラムまたは作成者更新プログラムのインストールまたは削除
+title: Windows 10 記念日更新プログラムをインストールまたは削除する
 description: Windows 10 記念日更新プログラムまたは作成者更新プログラムのインストールとインストール解除の手順 (従来のベータディストリビューション)
 keywords: BashOnWindows、bash、wsl、windows、windows subsystem for linux、windowssubsystem、ubuntu、debian、suse、windows 10、legacy、beta、install、remove、uninstall、un/install、delete、deprecated
 ms.date: 07/24/2018
 ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.custom: seodec18
-ms.openlocfilehash: a7b917bc507328788d0e8962efa14d88e868e338
-ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
+ms.openlocfilehash: 5c35ba1e630d80b4ba4e06bd9486bc055c46fc04
+ms.sourcegitcommit: 7f4a813fdcbfca65412ecb2311f0b5c8b546fef8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104725759"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107493534"
 ---
 # <a name="guide-to-install-or-uninstall-windows-subsystem-for-linux-on-windows-10-anniversary-update-and-creators-update"></a>Windows 10 記念日更新プログラムおよび作成者の更新プログラムで Windows Subsystem for Linux をインストールまたはアンインストールするためのガイド 
 
@@ -40,7 +40,7 @@ Windows 10 の更新プログラム (バージョン 1709) より前のバージ
 
     ![Ubuntu のインストールを確認する](media/bashShellInstall.png)
 
-    Windows で Bash on Ubuntu を初めて実行するときに、UNIX ユーザー名とパスワードの作成を求められます。 [新しいディストリビューションインスタンスの指示](initialize-distro.md)に従って、インストールを完了します。
+    Windows で Bash on Ubuntu を初めて実行するときに、UNIX ユーザー名とパスワードの作成を求められます。 [新しいディストリビューションインスタンスの指示](./install-win10.md)に従って、インストールを完了します。
 
 1. 次のいずれかの方法で新しい Ubuntu シェルを起動します。
     * `bash`コマンドプロンプトからの実行

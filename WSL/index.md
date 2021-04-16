@@ -1,16 +1,16 @@
 ---
-title: Linux 用 Windows サブシステムの概要
+title: Windows Subsystem for Linux に関するドキュメント
 description: Linux 用 Windows サブシステム ドキュメントを参照します。
 keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, gnu, linux
 ms.topic: article
 ms.date: 09/15/2020
 ms.localizationpriority: high
-ms.openlocfilehash: a810a5189f6c3b6b37671bf0dfeaa8dd52debeec
-ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
+ms.openlocfilehash: 8f00fff5e7a204d3672eee8af114c51cca4dfb9b
+ms.sourcegitcommit: 7f4a813fdcbfca65412ecb2311f0b5c8b546fef8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104725699"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107493394"
 ---
 # <a name="windows-subsystem-for-linux-documentation"></a>Windows Subsystem for Linux に関するドキュメント
 
