@@ -1,16 +1,16 @@
 ---
-title: Windows Subsystem for Linux のコマンド リファレンス
+title: WSL コマンド ライン リファレンス
 description: Linux コマンドを実行するための引数など、Linux 用 Windows サブシステムを管理するコマンドの一覧をご覧ください。
 keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, windowssubsystem, ubuntu
 ms.date: 09/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 8e7f722cfe57ab0229ed7baff9091cc811232274
-ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
+ms.openlocfilehash: b5efc9d69419ba20621946ef2f85222b58f816d0
+ms.sourcegitcommit: 7f4a813fdcbfca65412ecb2311f0b5c8b546fef8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104725749"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107493494"
 ---
 # <a name="command-reference-for-windows-subsystem-for-linux"></a>Windows Subsystem for Linux のコマンド リファレンス
 
@@ -23,6 +23,8 @@ PowerShell で次のコマンドを実行して、新しい Linux ディスト�
 ```powershell
 wsl --set-default-version 2
 ```
+> [!NOTE]
+> wsl.exe (64 ビット ツール) にアクセスするために 32 ビット プロセスを実行している場合は、次の方法で上記のコマンドを実行することが必要な可能性があります: `C:\Windows\Sysnative\wsl.exe --set-default-version 2`
 
 ## <a name="set-your-distribution-version-to-wsl-1-or-wsl-2"></a>ディストリビューションのバージョンを WSL 1 または WSL 2 に設定する
 

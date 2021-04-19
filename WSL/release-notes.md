@@ -1,19 +1,28 @@
 ---
-title: Windows Subsystem for Linux のリリース ノート
+title: WSL のリリース ノート
 description: Linux 用 Windows サブシステムのリリース ノートをお読みください。 これらのリリースノートには、修正された問題が説明されており、毎週更新されます。
 keywords: リリース ノート, wsl, windows, Linux 用 Windows サブシステム, windowssubsystem, ubuntu
 author: benhillis
-ms.date: 05/15/2020
+ms.date: 04/08/2021
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 63803da81504d6ea24ff62b995e224a1a71668cb
-ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
+ms.openlocfilehash: 296c8bd76180cf7d465998d182d005ec5233182f
+ms.sourcegitcommit: 7f4a813fdcbfca65412ecb2311f0b5c8b546fef8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104725689"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107493614"
 ---
 # <a name="release-notes-for-windows-subsystem-for-linux"></a>Windows Subsystem for Linux のリリース ノート
+
+## <a name="build-21354"></a>ビルド 21354
+ビルド 21354 の一般的な Windows 情報については、[Windows ブログ](https://blogs.windows.com/windows-insider/2021/04/07/announcing-windows-10-insider-preview-build-21354/)を参照してください。
+
+* \\wsl プレフィックスが \\wsl.localhost に切り替えられ、"wsl" という名前のネットワーク上にコンピューターがある場合に問題が発生しないようにします。 \\wsl$ は引き続き機能します。
+* wow プロセスの Linux クイック アクセス アイコンが有効になります。
+* wslapi RegisterDistribution を介して常にバージョン 2 が渡されていた問題が更新されます。
+* /usr/lib/wsl/lib ディレクトリの fmask が 222 に変更され、ファイルが実行可能としてマークされます [GH 3847]
+* 仮想マシン プラットフォームが有効になっていない場合の wsl サービスのクラッシュが修正されます。
 
 ## <a name="build-21286"></a>ビルド 21286
 ビルド 21286 の一般的な Windows 情報については、[Windows ブログ](https://blogs.windows.com/windows-insider/2021/01/06/announcing-windows-10-insider-preview-build-21286/)を参照してください。

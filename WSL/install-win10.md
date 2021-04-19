@@ -1,16 +1,16 @@
 ---
-title: Windows Subsystem for Linux (WSL) を Windows 10 にインストールする
-description: Windows 10 への WSL のインストール ガイド。Bash ターミナルを使用し、Ubuntu、Debian、SUSE、Kali、Fedora、Pengwin、Alpine などを含みます。
+title: Windows 10 に WSL をインストールする
+description: Ubuntu、Debian、SUSE、Kali、Fedora、Pengwin、Alpine などの Linux ディストリビューションを、Bash ターミナルを使用して、Windows 10 マシンにインストールする方法について説明します。
 keywords: BashOnWindows, bash, wsl, windows, linux 用 windows サブシステム, windowssubsystem, ubuntu, debian, suse, windows 10, インストール, 有効にする, WSL2, バージョン 2
-ms.date: 09/15/2020
+ms.date: 04/07/2021
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: ccb1e9c4ba25befc642bfbb41d66ac175503b331
-ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
+ms.openlocfilehash: 12ffb624a51134698479fc2aa91ff230073f1661
+ms.sourcegitcommit: 7f4a813fdcbfca65412ecb2311f0b5c8b546fef8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104725769"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107493424"
 ---
 # <a name="windows-subsystem-for-linux-installation-guide-for-windows-10"></a>Windows 10 用 Windows Subsystem for Linux のインストール ガイド
 
@@ -83,7 +83,7 @@ WSL 2 に更新するには、Windows 10 を実行している必要がありま
 - ARM64 システムの場合:**バージョン 2004** 以降、**ビルド 19041** 以上。
 - 18362 より前のビルドは WSL 2 をサポートしていません。 [Windows 更新アシスタント](https://www.microsoft.com/software-download/windows10)を使用して、お使いのバージョンの Windows を更新します。
 
-バージョンとビルド番号を確認するには、**Windows ロゴ キー + R キー** を押して、「**winver**」と入力し、 **[OK]** を選択します。 (または、Windows コマンド プロンプトで `ver` コマンドを入力します)。 [設定] メニューで、[最新の Windows バージョンに更新](ms-settings:windowsupdate)します。
+バージョンとビルド番号を確認するには、**Windows ロゴ キー + R キー** を押して、「**winver**」と入力し、 **[OK]** を選択します。 [設定] メニューで、[最新の Windows バージョンに更新](ms-settings:windowsupdate)します。
 
 > [!NOTE]
 > Windows 10 バージョン 1903 または 1909 を実行している場合は、Windows メニューから [設定] を開き、[更新とセキュリティ] に移動して、[更新プログラムのチェック] を選択します。 ビルド番号は、18362.1049+ または 18363.1049+ で、マイナー ビルド番号は .1049 より大きい必要があります。 詳細については、「[Windows 10 バージョン 1903 および 1909 で WSL 2 のサポート開始](https://devblogs.microsoft.com/commandline/wsl-2-support-is-coming-to-windows-10-versions-1903-and-1909/)」を参照してください。 また、[トラブルシューティング手順](./troubleshooting.md#im-on-windows-10-version-1903-and-i-still-do-not-see-options-for-wsl-2)も参照してください。
@@ -106,7 +106,7 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
     - [x64 マシン用 WSL2 Linux カーネル更新プログラム パッケージ](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
 
     > [!NOTE]
-    > ARM64 マシンを使用している場合は、代わりに [ARM64 パッケージ](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_arm64.msi)をダウンロードしてください。 使用しているマシンの種類がわからない場合は、コマンド プロンプトまたは PowerShell を開き、「`systeminfo | find "System Type"`」と入力します。
+    > ARM64 マシンを使用している場合は、代わりに [ARM64 パッケージ](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_arm64.msi)をダウンロードしてください。 使用しているマシンの種類がわからない場合は、コマンド プロンプトまたは PowerShell を開き、「`systeminfo | find "System Type"`」と入力します。 **注意事項:** 英語以外の Windows バージョンでは、検索テキストの変更が必要になる場合があります。たとえば、ドイツ語では `systeminfo | find "Systemtyp"` のようになります。
 
 2. 前の手順でダウンロードした更新プログラム パッケージを実行します。 (ダブルクリックして実行します。管理者特権のアクセス許可を求めるメッセージが表示されます。[はい] を選択して、このインストールを承認します。)
 
@@ -183,7 +183,7 @@ wsl --set-version <distribution name> <versionNumber>
 > [!NOTE]
 > 対象のディストリビューションのサイズによっては、WSL 1 から WSL 2 への更新が完了するまでに数分かかる場合があります。 Windows 10 Anniversary Update または Creators Update から WSL 1 の古い (レガシ) インストールを実行している場合は、更新エラーが発生することがあります。 次の手順に従って、[レガシ ディストリビューションをアンインストールして削除](./install-legacy.md#uninstallingremoving-the-legacy-distro)します。
 >
-> `wsl --set-default-version` の結果が無効なコマンドである場合は、「`wsl --help`」と入力してください。 `--set-default-version` が表示されない場合は、お使いの OS によってサポートされていないことを意味しているため、バージョン 1903、ビルド 18362 以上に更新する必要があります。
+> `wsl --set-default-version` の結果が無効なコマンドである場合は、「`wsl --help`」と入力してください。 `--set-default-version` が表示されない場合は、お使いの OS によってサポートされていないことを意味しているため、バージョン 1903、ビルド 18362 以上に更新する必要があります。 ARM64 用のビルド 19041 では、PowerShell を使用しているときにこのコマンドが失敗する可能性があります。その場合は、代わりに "*コマンド プロンプト*" を使用して ``wsl.exe`` コマンドを実行できます。
 >
 > コマンドの実行後に、次のメッセージが表示される場合: `WSL 2 requires an update to its kernel component. For information please visit https://aka.ms/wsl2kernel`。 さらに MSI Linux カーネル更新パッケージをインストールする必要があります。
 
@@ -210,6 +210,7 @@ wsl --set-default-version 2
 
 - **インストールがエラー 0x80070003 またはエラー 0x80370102 で失敗した**
   - コンピューターの BIOS 内部で仮想化が有効になっていることを確認してください。 これを行う方法の手順は、コンピューターによって異なりますが、最も可能性が高いのは CPU 関連のオプションの下です。
+  - WSL2 を使用するには、CPU で Second Level Address Translation (SLAT) 機能がサポートされている必要があります。これは Intel Nehalem プロセッサ (Intel Core 第 1 世代) と AMD Opteron で導入されました。 以前の CPU (Intel Core 2 Duo など) では、仮想マシン プラットフォームが正常にインストールされていても、WSL2 を実行できません。 
 
 - **アップグレードしようとしたときに次のエラーが発生する: `Invalid command line option: wsl --set-version Ubuntu 2`**
   - Linux 用 Windows サブシステムが有効になっていること、および Windows ビルド バージョン 18362 以上を使用していることをご確認ください。 WSL を有効にするには、PowerShell プロンプトで管理者特権を使用してこのコマンドを実行します: `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux`。

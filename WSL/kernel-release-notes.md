@@ -1,16 +1,16 @@
 ---
-title: Linux 用 Windows サブシステム カーネルのリリース ノート
+title: WSL カーネルのリリース ノート
 description: Windows Subsystem for Linux のリリース ノート。  毎月更新されます。
 keywords: リリース ノート, wsl, windows, Linux 用 Windows サブシステム, windowssubsystem, ubuntu, カーネル
 ms.date: 06/09/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 941ecf751f2889130529fb09b42af2f229353c53
-ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
+ms.openlocfilehash: 894e56af8791f285525bba765cb9ff97b2da9503
+ms.sourcegitcommit: 7f4a813fdcbfca65412ecb2311f0b5c8b546fef8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104725819"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107493344"
 ---
 # <a name="release-notes-for-windows-subsystem-for-linux-kernel"></a>Linux 用 Windows サブシステム カーネルのリリース ノート
 

@@ -1,17 +1,17 @@
 ---
-title: Linux 用 Windows サブシステムについて
+title: Linux 用 Windows サブシステムとは
 description: Linux 用 Windows サブシステムのさまざまなバージョンやそれらの使用方法などについて説明します。
 keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, gnu, linux
 ms.date: 07/21/2020
 ms.topic: article
 ms.assetid: 3cefe0db-7616-4848-a2b6-9296746a178b
 ms.localizationpriority: high
-ms.openlocfilehash: ba96d2c74a8bbfc74601da372e2091f2e6826463
-ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
+ms.openlocfilehash: 0967bef23a244bcf0719df6c638e1a74a2939910
+ms.sourcegitcommit: 7f4a813fdcbfca65412ecb2311f0b5c8b546fef8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104725809"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107493564"
 ---
 # <a name="what-is-the-windows-subsystem-for-linux"></a>Linux 用 Windows サブシステムとは
 

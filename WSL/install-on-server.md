@@ -5,12 +5,12 @@ keywords: BashOnWindows, bash, wsl, windows, Linux 用 Windows サブシステ�
 ms.date: 05/12/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: ffa0d16bc0c0b1367dec94e7d2a1ae5d2a74415b
-ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
+ms.openlocfilehash: 5b20efbb58e35922cd783c4c192d02c7f3658aaf
+ms.sourcegitcommit: 7f4a813fdcbfca65412ecb2311f0b5c8b546fef8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104725709"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107493514"
 ---
 # <a name="windows-server-installation-guide"></a>Windows Server インストール ガイド
 
@@ -52,10 +52,10 @@ Linux ディストリビューションをダウンロードしたら、その�
 3. PowerShell を使用して、Windows 環境の PATH (この例では `C:\Users\Administrator\Ubuntu`) にディストリビューション パスを追加します。
 
 ```powershell
-$userenv = [System.Environment]::GetEnvironmentVariable("Path", "User")
+$userenv = [System.Environment]::GetEnvironmentVariable("Path&quot;, &quot;User")
 [System.Environment]::SetEnvironmentVariable("PATH", $userenv + ";C:\Users\Administrator\Ubuntu", "User")
 ```
 
 これで、「`<distro>.exe`」と入力して任意のパスからディストリビューションを起動できるようになりました。 たとえば、 `ubuntu.exe`と指定します。
 
-インストールされたら、使用する前に[新しいディストリビューション インスタンスを初期化する](initialize-distro.md)必要があります。
+インストールされたら、使用する前に[新しいディストリビューション インスタンスを初期化する](./install-win10.md)必要があります。

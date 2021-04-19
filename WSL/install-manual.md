@@ -5,12 +5,12 @@ keywords: wsl, linux 用 windows subsystem, 手動インストール, 手動で�
 ms.date: 09/15/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d035aa07df915bba6ec3a05736257d219ec0a26f
-ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
+ms.openlocfilehash: d7fa82f17f9da48e3f7332980b6e913fb14d501a
+ms.sourcegitcommit: 7f4a813fdcbfca65412ecb2311f0b5c8b546fef8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104725729"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107493384"
 ---
 # <a name="manually-download-windows-subsystem-for-linux-distro-packages"></a>Linux 用 Windows サブシステム ディストリビューション パッケージを手動でダウンロードする
 
@@ -30,8 +30,9 @@ Microsoft Store アプリを使用できない場合は、以下のリンクを�
 * [Ubuntu 16.04](https://aka.ms/wsl-ubuntu-1604)
 * [Debian GNU/Linux](https://aka.ms/wsl-debian-gnulinux)
 * [Kali Linux](https://aka.ms/wsl-kali-linux-new)
-* [OpenSUSE Leap 42](https://aka.ms/wsl-opensuse-42)
 * [SUSE Linux Enterprise Server 12](https://aka.ms/wsl-sles-12)
+* [SUSE Linux Enterprise Server 15 SP2](https://aka.ms/wsl-SUSELinuxEnterpriseServer15SP2)
+* [openSUSE Leap 15.2](https://aka.ms/wsl-opensuseleap15-2)
 * [WSL のための Fedora リミックス](https://github.com/WhitewaterFoundry/WSLFedoraRemix/releases/)
 
 これにより、選択したフォルダーに `<distro>.appx` パッケージがダウンロードされます。 [インストール手順](#installing-your-distro)に従って、ダウンロードしたディストリビューションをインストールします。

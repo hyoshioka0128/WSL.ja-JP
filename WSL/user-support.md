@@ -1,16 +1,16 @@
 ---
-title: Linux ディストリビューションのユーザー アカウントを作成および更新する
+title: Linux ディストリビューションのユーザー アカウントを作成する
 description: Windows Subsystem for Linux を使用したユーザー アカウントとアクセス許可の管理のリファレンス。
 keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, windowssubsystem, ubuntu, ユーザー アカウント
 ms.date: 05/12/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 3dcae6314db8fd32a446164725c42773660c454f
-ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
+ms.openlocfilehash: 34c5be732619d3547cd05bfdf43f935558aac96c
+ms.sourcegitcommit: 7f4a813fdcbfca65412ecb2311f0b5c8b546fef8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104725959"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107493374"
 ---
 # <a name="create-a-user-account-and-password-for-your-new-linux-distribution"></a>新しい Linux ディストリビューションのユーザー アカウントとパスワードを作成する
 

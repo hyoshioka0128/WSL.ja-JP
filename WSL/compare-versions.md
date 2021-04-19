@@ -1,17 +1,17 @@
 ---
-title: WSL 2 と WSL 1 の比較
+title: WSL 1 と WSL 2 の比較
 description: Linux 用 Windows サブシステムのバージョン 1 とバージョン 2 を比較します。 WSL 2 の新機能について説明します。
 keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, gnu, linux, ubuntu, debian, suse, windows 10, UX の変更, WSL 2, linux カーネル, ネットワーク アプリケーション, localhost, IPv6, 仮想ハードウェア ディスク, VHD, VHD の制限, VHD エラー
 ms.date: 09/28/2020
 ms.topic: conceptual
 ms.localizationpriority: high
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: cce3077384c857607cc81a0d4af604331fa22a14
-ms.sourcegitcommit: 18ce6b800db6bca7643de0c2bea02fb383761bcd
+ms.openlocfilehash: c3169460f86bfc2c0f1c2c89b723efd31088cf35
+ms.sourcegitcommit: 7f4a813fdcbfca65412ecb2311f0b5c8b546fef8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105994126"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107493504"
 ---
 # <a name="comparing-wsl-1-and-wsl-2"></a>WSL 1 と WSL 2 の比較
 
@@ -103,6 +103,8 @@ WSL2 ではより高速なパフォーマンスと 100% のシステム コー�
   - WSL Linux ディストリビューションを使用して Windows ファイル システム上のプロジェクト ファイルにアクセスする予定で、これらのファイルを Linux ファイル システムに格納できない場合は、WSL 1 を使用することにより、OS ファイル システム間でより高速なパフォーマンスを実現できます。
 - 同じファイルに対して Windows と Linux の両方のツールを使用したクロスコンパイルを必要とするプロジェクト。
   - Windows オペレーティング システムと Linux オペレーティング システムの間のファイル パフォーマンスは WSL 1 の方が WSL 2 よりも高速です。そのため、Windows アプリケーションを使用して Linux ファイルにアクセスする場合、現時点では WSL 1 を使用する方がより高速なパフォーマンスを得られます。
+- プロジェクトには、シリアル ポートまたは USB デバイスへのアクセスが必要です。
+   - [WSL 2 に関する FAQ](https://docs.microsoft.com/windows/wsl/wsl2-faq#can-i-access-the-gpu-in-wsl-2-are-there-plans-to-increase-hardware-support) によれば、WSL 2 にはシリアル ポートにアクセスするためのサポートは含まれていません。 [シリアル ポートに関する未解決のイシュー](https://github.com/microsoft/WSL/issues/4322)は、サポートがまだ追加されていないことを示しています。
 - 厳密なメモリ要件がある
   - WSL 2 のメモリ使用量は、使用時に拡張および縮小されます。 プロセスによってメモリが解放されると、それは自動的に Windows に返されます。 ただし現在、WSL 2 では、WSL インスタンスがシャットダウンされるまで、メモリ内のキャッシュ ページが解放されて Windows に戻されることはありません。 WSL セッションが長時間実行されている場合、または非常に大量のファイルにアクセスする場合、このキャッシュによって Windows 上のメモリが占有される可能性があります。 [WSL の Github リポジトリ イシュー 4166](https://github.com/microsoft/WSL/issues/4166) で、このエクスペリエンスを改善するための作業を追跡しています。
 

@@ -5,12 +5,12 @@ keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, ubuntu
 ms.date: 09/28/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: ecbea5245714f3659ecf28885b8837f98d413bea
-ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
+ms.openlocfilehash: b328d348486567bb06325293b69a9c92d0fc55fa
+ms.sourcegitcommit: 7f4a813fdcbfca65412ecb2311f0b5c8b546fef8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104726009"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107493403"
 ---
 # <a name="troubleshooting-windows-subsystem-for-linux"></a>Windows Subsystem for Linux のトラブルシューティング
 
@@ -114,6 +114,14 @@ fi
 
 Debian での正しい方法は、上記の行を削除することです。
 以下に示すように、割り当て時に $PATH を追加することもできますが、これは WSL と VSCode に関連する[その他の問題](https://salsa.debian.org/debian/WSL/-/commit/7611edba482fd0b3f67143aa0fc1e2cc1d4100a6)につながります。
+
+```Bash
+if [ "`id -u`" -eq 0 ]; then
+  PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
+else
+  PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$PATH"
+fi
+```
 
 詳細については、問題 [5296](https://github.com/microsoft/WSL/issues/5296) と問題 [5779](https://github.com/microsoft/WSL/issues/5779) を参照してください。
 
@@ -236,6 +244,7 @@ sudo update-locale LANG=en_US.UTF8
 1. Kaspersky
 2. AVG
 3. Avast
+4. Symantec Endpoint Protection
 
 ファイアウォールをオフにすると、アクセスできる場合があります。  場合によっては、ファイアウォールをインストールするだけでアクセスがブロックされるようです。
 

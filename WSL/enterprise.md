@@ -1,17 +1,17 @@
 ---
-title: エンタープライズ向けの WSL
-description: エンタープライズ環境で WSL を最適に使用する方法に関するリソースと手順。
+title: エンタープライズ企業向けの WSL
+description: エンタープライズ環境で Linux 用 Windows サブシステムを最適に使用する方法に関するリソースと手順。
 keywords: BashOnWindows, bash, wsl, windows, linux 用 windows サブシステム, windowssubsystem, ubuntu, debian, suse, windows 10, エンタープライズ, デプロイ, オフライン, パッケージング, ストア, ディストリビューション, インストール, インストール
 ms.date: 12/14/2020
 ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.custom: seodec18
-ms.openlocfilehash: 24f795fcd0c8bda80dd0672555ea6f75b41f346e
-ms.sourcegitcommit: aa6a9cb0d5daa62d8fd0e463a0fe5fa82612087c
+ms.openlocfilehash: 24f6dfcd62b57fb41e7cd79a1f1990ebbc13dfa4
+ms.sourcegitcommit: 7f4a813fdcbfca65412ecb2311f0b5c8b546fef8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104725739"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107493544"
 ---
 # <a name="windows-subsystem-for-linux-for-enterprise"></a>エンタープライズ向け Windows Subsystem for Linux
 
