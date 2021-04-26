@@ -5,16 +5,24 @@ keywords: リリース ノート, wsl, windows, Linux 用 Windows サブシス�
 ms.date: 06/09/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 894e56af8791f285525bba765cb9ff97b2da9503
-ms.sourcegitcommit: 7f4a813fdcbfca65412ecb2311f0b5c8b546fef8
+ms.openlocfilehash: 5b0ebdd60eda5c5a0ba93cd6d95416654ef7fca7
+ms.sourcegitcommit: 2f9d6f3112eba9dd818b04953257f900c3136d1d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107493344"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107569806"
 ---
 # <a name="release-notes-for-windows-subsystem-for-linux-kernel"></a>Linux 用 Windows サブシステム カーネルのリリース ノート
 
 WSL 2 ディストリビューションのサポートが追加されました。ここでは、[完全な Linux カーネルが使用されます](https://devblogs.microsoft.com/commandline/shipping-a-linux-kernel-with-windows/)。 この Linux カーネルはオープン ソースであり、そのソースコードは [WSL2-Linux-Kernel](https://github.com/microsoft/WSL2-Linux-Kernel) リポジトリから入手できます。 この Linux カーネルは Microsoft Update を介してコンピューターに配信され、Windows イメージの一部として提供される Linux 用 Windows サブシステムの個別のリリース スケジュールに従います。
+
+## <a name="510163"></a>5.10.16.3
+"*リリース日*": プレリリース 2021 年 4 月 16 日
+
+[公式の GitHub リリース リンク](https://github.com/microsoft/WSL2-Linux-Kernel/releases/tag/linux-msft-wsl-5.10.16.3)
+
+* [GH 5324](https://github.com/microsoft/WSL/issues/5324) の修正
+* wsl --mount を使用した LUKS 暗号化ディスクのサポートが追加されます
 
 ## <a name="5491"></a>5.4.91
 "*リリース日*": プレリリース 2021 年 2 月 22 日
