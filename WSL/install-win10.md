@@ -156,13 +156,13 @@ wsl --set-default-version 2
 
 **お疲れさまでした。これで、Windows オペレーティング システムと完全に統合された Linux ディストリビューションのインストールと設定が正常に完了しました。**
 
-## <a name="install-windows-terminal-optional"></a>Windows ターミナルをインストールする (省略可能)
+## <a name="install-windows-terminal-optional"></a>Windows Terminal をインストールする (省略可能)
 
-Windows ターミナルでは、複数のタブ (複数の Linux コマンド ライン、Windows コマンド プロンプト、PowerShell、Azure CLI などをすばやく切り替える) が有効になり、カスタム キー バインド (タブを開くまたは閉じる、コピーと貼り付けを行うなどのためのショートカット キー) を作成でき、検索機能、カスタム テーマ (配色、フォント スタイルとサイズ、背景画像、ぼかし、透明度) を使用できます。 [詳細情報。](/windows/terminal)
+Windows Terminal では、複数のタブ (複数の Linux コマンド ライン、Windows コマンド プロンプト、PowerShell、Azure CLI などをすばやく切り替える) が有効になり、カスタム キー バインド (タブを開くまたは閉じる、コピーと貼り付けを行うなどのためのショートカット キー) を作成でき、検索機能、カスタム テーマ (配色、フォント スタイルとサイズ、背景画像、ぼかし、透明度) を使用できます。 [詳細情報。](/windows/terminal)
 
-[Windows ターミナルをインストール](/windows/terminal/get-started)します。
+[Windows Terminal をインストール](/windows/terminal/get-started)します。
 
-  ![Windows ターミナル](media/terminal.png)
+  ![Windows Terminal](media/terminal.png)
 
 ## <a name="set-your-distribution-version-to-wsl-1-or-wsl-2"></a>ディストリビューションのバージョンを WSL 1 または WSL 2 に設定する
 
