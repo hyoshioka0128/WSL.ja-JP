@@ -50,7 +50,7 @@
   href: wsl2-faq.yml
 - name: トラブルシューティング
   href: troubleshooting.md
-- name: のリリース ノート
+- name: リリース ノート
   items:
     - name: 一般のリリース ノート
       href: release-notes.md
